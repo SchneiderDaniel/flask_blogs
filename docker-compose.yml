@@ -1,0 +1,49 @@
+version: "3.9"
+
+services:
+
+  flask_hippocooking:
+    build: ./flask_hippocooking
+    env_file: 
+      - flask.env
+    container_name: flask
+    restart: always
+    volumes:
+      - ./flask_hippocooking_volume/resources:/app/homepage/static/resources
+      - ./flask_hippocooking_volume/reqlog:/tmp/reqlog
+      - ./flask_hippocooking_volume/errlog:/tmp/errlog
+    expose:
+      - 8080
+
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    volumes:
+      - ./nginx_volume/ssl:/etc/letsencrypt
+      - ./nginx_volume/ssl-dhparams:/etc/ssl/certs
+    entrypoint: /bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $$!; done'
+    networks:
+      - docker_network
+
+
+  nginx_web_server:
+    build: ./nginx
+    container_name: nginx_web_server
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx_volume/nginx_errors:/var/log/nginx
+      - ./nginx_volume/ssl:/etc/letsencrypt
+      - ./nginx_volume/ssl-dhparams:/etc/ssl/certs
+    depends_on:
+      - certbot
+    networks:
+      - docker_network
+
+
+#Docker Networks
+networks:
+  docker_network:
+    driver: bridge
