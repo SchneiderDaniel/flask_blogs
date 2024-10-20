@@ -1,15 +1,15 @@
 # save this as app.py
 from flask import Flask
+import sys
 
 
-def create_app(config_class=Config):
+def create_app():
     print('Start creating the app',  file=sys.stderr)
     app = Flask(__name__)
-    print('Start configure the app',  file=sys.stderr)
-    app.config.from_object(Config)
     
     from homepage.main.routes import main
     app.register_blueprint(main)
 
-    
     print('Finished creating the app',  file=sys.stderr)
+
+    return app
