@@ -1,0 +1,13 @@
+# flask_hippocooking/env
+# flask_hippocooking.env
+# flask_hippocooking/.vscode/
+# flask_hippocooking/homepage/__pycache__
+
+# flask_data/env
+# flask_data.env
+# flask_hdata/.vscode/
+# flask_data/homepage/__pycache__
+
+# .env
+# __pycache__
+# .pytest_cache
