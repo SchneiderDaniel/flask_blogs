@@ -10,23 +10,12 @@ services:
     restart: always
     volumes:
       - ./flask_hippocooking_volume/resources:/app/homepage/static/resources
-      - ./flask_hippocooking_volume/reqlog:/tmp/reqlog
-      - ./flask_hippocooking_volume/errlog:/tmp/errlog
-    expose:
-      - 8080
+      - ./flask_hippocooking_volume/uwsgilogs:/var/log/uwsgi/
 
-  # flask_data:
-  #   build: ./flask_data
-  #   env_file: 
-  #     - flask_data.env
-  #   container_name: flask_data
-  #   restart: always
-  #   volumes:
-  #     - ./flask_data_volume/resources:/app/homepage/static/resources
-  #     - ./flask_data_volume/reqlog:/tmp/reqlog
-  #     - ./flask_data_volume/errlog:/tmp/errlog
-  #   expose:
-  #     - 8081
+    expose:
+      - 5001
+    networks:
+      - docker_network
 
   certbot:
     image: certbot/certbot
