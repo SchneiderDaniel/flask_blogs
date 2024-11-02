@@ -8,7 +8,7 @@ def create_app():
     app = Flask(__name__)
     
     from homepage.main.routes import main
-    app.register_blueprint(main)
+    app.register_blueprint(main, url_prefix='/' )
 
     print('Finished creating the app',  file=sys.stderr)
 

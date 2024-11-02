@@ -1,7 +1,8 @@
-# flask_hippocooking/env
-# flask_hippocooking.env
-# flask_hippocooking/.vscode/
-# flask_hippocooking/homepage/__pycache__
+flask_hippocooking/env
+flask_hippocooking.env
+flask_hippocooking/.vscode/
+flask_hippocooking/homepage/__pycache__
+flask_hippocooking/homepage/main/__pycache__
 
 # flask_data/env
 # flask_data.env

@@ -1,3 +1,20 @@
+Installation
+------------
+
+You should create a virtual environment and install the required packages with the following commands:
+
+    windows:
+    python -m venv env
+    .\env\Scripts\activate    
+    (env) $ pip install -r requirements.txt
+
+
+    Linux:
+    python3 -m venv env
+    source env/bin/activate
+    (env) $ pip install -r requirements.txt
+
+
 # Build the Docker Image
 `docker build -t flask_hippocooking . `
 
@@ -30,3 +47,6 @@
 
 # What service are running
 `ss -tuln`
+
+# Run python silent in docker to test
+`python run.py > /dev/null 2>&1 &`

@@ -1,2 +1,2 @@
-flask
-uwsgi
+flask==3.0.3
+uwsgi==2.0.28
