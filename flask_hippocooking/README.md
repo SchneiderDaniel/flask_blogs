@@ -19,7 +19,7 @@ You should create a virtual environment and install the required packages with t
 `docker build -t flask_hippocooking . `
 
 # Run the Docker Container
-`docker run -d -p 8080:8080 -v ./logs:/tmp/ flask_hippocooking`
+`docker run -d -p 5001:5001 -v ./logs:/var/log flask_hippocooking`  
 
 # Stop
 `docker stop container_name_or_id`
