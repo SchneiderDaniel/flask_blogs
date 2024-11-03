@@ -49,16 +49,14 @@ if ! command -v docker-compose &> /dev/null; then
     install_docker_compose
 fi
 
-# Define your domain and email here
-DOMAIN="hippocooking.com"  # Replace with your actual domain
-EMAIL="daniel.schneider.privat@googlemail.com"  # Replace with your actual email
 
 # Create the necessary directories for the webroot
 mkdir -p ./nginx_volume/certbot
 mkdir -p ./nginx_volume/ssl
+mkdir -p ./nginx_volume/certbotlogs
 
 # Adjust permissions on the webroot
-sudo chown -R $USER:$USER ./nginx_volume/certbot ./nginx_volume/ssl
+sudo chown -R $USER:$USER ./nginx_volume/certbot ./nginx_volume/ssl ./nginx_volume/certbotlogs
 
 # Install Certbot if it's not already installed
 if ! command -v certbot &> /dev/null; then
@@ -66,9 +64,14 @@ if ! command -v certbot &> /dev/null; then
     sudo apt install certbot -y
 fi
 
-# Run the Certbot command to obtain the SSL certificates
-sudo certbot certonly --webroot --webroot-path=$(pwd)/nginx_volume/certbot \
-  -d $DOMAIN -d www.$DOMAIN --email $EMAIL --agree-tos --no-eff-email
+## Cert
+docker run -it --rm -v ./nginx_volume/ssl:/etc/letsencrypt  \
+-v ./nginx_volume/ssl-dhparams:/etc/ssl/certs  \
+-v ./nginx_volume/certbot:/var/www/certbot  \
+-v ./nginx_volume/certbotlogs:/var/log/letsencrypt  \
+-p 80:80  \
+certbot/certbot \
+certonly  --standalone --preferred-challenges http
 
 # Check if the command succeeded
 if [ $? -eq 0 ]; then

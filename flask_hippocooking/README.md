@@ -50,3 +50,16 @@ You should create a virtual environment and install the required packages with t
 
 # Run python silent in docker to test
 `python run.py > /dev/null 2>&1 &`
+
+
+## Cert
+
+
+docker run -it --rm -v ./nginx_volume/ssl:/etc/letsencrypt -v ./nginx_volume/ssl-dhparams:/etc/ssl/certs -v ./nginx_volume/certbot:/var/www/certbot -v ./nginx_volume/certbotlogs:/var/log/letsencrypt -p 80:80 certbot/certbot
+
+
+docker exec -it certbot /bin/sh
+
+sudo certbot certonly --standalone --email daniel.schneider.privat@googlemail.com --agree-tos -d hippocooking.com -d www.hippocooking.com
+
+sudo certbot certonly --standalone --email your_email@example.com --agree-tos -d yourdomain.com
