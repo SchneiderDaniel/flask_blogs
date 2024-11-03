@@ -55,14 +55,14 @@ fi
 
 # Create the necessary directories for the webroot
 mkdir -p ./nginx_volume/certbot
-mkdir -p ./nginx_volume/letsencrypt
+mkdir -p ./nginx_volume/ssl
 
 # Adjust permissions on the webroot
-sudo chown -R $USER:$USER ./nginx_volume/certbot
+sudo chown -R $USER:$USER ./nginx_volume/certbot ./nginx_volume/ssl
 
 # Run the Certbot command to obtain the SSL certificates
 docker-compose run --rm certbot certonly --webroot --webroot-path=/var/www/certbot \
-  -d $DOMAIN -d www.$DOMAIN --email $EMAIL --agree-tos --no-eff-email
+  -d $DOMAIN -d www.$DOMAIN --email $EMAIL --agree-tos --no-eff-email --force-renewal
 
 # Check if the command succeeded
 if [ $? -eq 0 ]; then
