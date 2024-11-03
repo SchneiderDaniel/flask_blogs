@@ -27,12 +27,13 @@ services:
   #   networks:
   #     - docker_network
 
-  
+
 
   nginx_web_server:
-    build: ./nginx
-    env_file: 
-      - nginx/nginx.env
+    build:
+      context: ./nginx  # Path to the Dockerfile
+      args:
+        ENVIRONMENT: ${ENVIRONMENT}  # Pass the ENVIRONMENT variable
     container_name: nginx_web_server
     restart: always
     ports:

@@ -6,8 +6,8 @@ flask_hippocooking/homepage/main/__pycache__
 
 
 # Env files
-flask_hippocooking.env
-nginx.env
+# flask_hippocooking.env
+# nginx.env
 
 # VSCode
 flask_hippocooking/.vscode/
