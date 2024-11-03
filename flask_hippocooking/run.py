@@ -14,6 +14,8 @@ def create_app():
 
     from homepage.main.routes import main as main_blueprint
     app.register_blueprint(main_blueprint, url_prefix='/' )
+    from homepage.errors.handlers import errors as errors_blueprint
+    app.register_blueprint(errors_blueprint)
 
     print('Finished creating the app',  file=sys.stderr)
 
