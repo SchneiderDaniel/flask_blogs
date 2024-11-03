@@ -4,7 +4,7 @@ FROM ubuntu:24.04
 
 # Install dependencies and NGINX with extras
 RUN apt-get update && \
-    apt-get install -y nginx-extras && \
+    apt-get install -y nginx-extras openssl && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 ARG ENVIRONMENT=prd
