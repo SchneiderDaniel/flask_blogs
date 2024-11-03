@@ -7,4 +7,4 @@ main = Blueprint('main', __name__)
 
 @main.route('/')
 def index():
-     return "Hello, World Hippocooking! " + get_current_time()
+     return "Welcome to Hippocooking.com. This page is currently rebuild. Please visit us later this year. Current time of request: " + get_current_time()
