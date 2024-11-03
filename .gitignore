@@ -1,17 +1,18 @@
+
+#Python
 flask_hippocooking/env
-flask_hippocooking.env
-flask_hippocooking/.vscode/
 flask_hippocooking/homepage/__pycache__
 flask_hippocooking/homepage/main/__pycache__
 
+
+# Env files
+flask_hippocooking.env
 nginx.env
 
+# VSCode
+flask_hippocooking/.vscode/
 
-# flask_data/env
-# flask_data.env
-# flask_hdata/.vscode/
-# flask_data/homepage/__pycache__
 
-# .env
-# __pycache__
-# .pytest_cache
+# Volumes
+flask_hippocooking_volume
+nginx_volume

@@ -1,40 +1,38 @@
-version: "3.9"
-
 services:
 
   flask_hippocooking:
     build: ./flask_hippocooking
     env_file: 
-      - flask_hippocooking.env
+      - flask_hippocooking/flask_hippocooking.env
     container_name: flask_hippocooking
     restart: always
     volumes:
       - ./flask_hippocooking_volume/resources:/app/homepage/static/resources
       - ./flask_hippocooking_volume/uwsgilogs:/var/log/uwsgi/
-
     expose:
       - 5001
     networks:
       - docker_network
 
-  certbot:
-    image: certbot/certbot
-    container_name: certbot
-    volumes:
-      - ./nginx_volume/ssl:/etc/letsencrypt
-      - ./nginx_volume/ssl-dhparams:/etc/ssl/certs
-    entrypoint: /bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $$!; done'
-    depends_on:
-      - flask_hippocooking
-      # - flask_data
-    networks:
-      - docker_network
+  # certbot:
+  #   image: certbot/certbot
+  #   container_name: certbot
+  #   volumes:
+  #     - ./nginx_volume/ssl:/etc/letsencrypt
+  #     - ./nginx_volume/ssl-dhparams:/etc/ssl/certs
+  #   entrypoint: /bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $$!; done'
+  #   depends_on:
+  #     - flask_hippocooking
+  #     # - flask_data
+  #   networks:
+  #     - docker_network
 
+  
 
   nginx_web_server:
     build: ./nginx
     env_file: 
-      - nginx.env
+      - nginx/nginx.env
     container_name: nginx_web_server
     restart: always
     ports:
@@ -44,8 +42,8 @@ services:
       - ./nginx_volume/nginx_errors:/var/log/nginx
       - ./nginx_volume/ssl:/etc/letsencrypt
       - ./nginx_volume/ssl-dhparams:/etc/ssl/certs
-    depends_on:
-      - certbot
+    # depends_on:
+    #   - certbot
     networks:
       - docker_network
 
