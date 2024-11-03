@@ -71,7 +71,7 @@ docker run -it --rm -v ./nginx_volume/ssl:/etc/letsencrypt  \
 -v ./nginx_volume/certbotlogs:/var/log/letsencrypt  \
 -p 80:80  \
 certbot/certbot \
-certonly  --standalone --preferred-challenges http
+certonly  --standalone --preferred-challenges http -d hippocooking.com -d www.hippocooking.com
 
 # Check if the command succeeded
 if [ $? -eq 0 ]; then
