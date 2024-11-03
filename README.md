@@ -12,6 +12,7 @@ You should create a virtual environment and install the required packages with t
     .\env\Scripts\activate    
     (env) $ pip install -r requirements.txt
 
+    .\env\Scripts\deactivate.bat
 
     Linux:
     python3 -m venv env
