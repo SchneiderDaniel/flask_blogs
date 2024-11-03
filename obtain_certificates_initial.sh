@@ -61,7 +61,7 @@ mkdir -p ./nginx_volume/ssl
 sudo chown -R $USER:$USER ./nginx_volume/certbot ./nginx_volume/ssl
 
 # Run the Certbot command to obtain the SSL certificates
-docker-compose run -v --rm certbot certonly --webroot --webroot-path=/var/www/certbot \
+docker-compose run --rm certbot certonly --webroot --webroot-path=/var/www/certbot \
   -d $DOMAIN -d www.$DOMAIN --email $EMAIL --agree-tos --no-eff-email
 
 # Check if the command succeeded
