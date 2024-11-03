@@ -1,2 +1,2 @@
 flask==3.0.3
-uwsgi==2.0.28
+uwsgi==2.0.28; platform_system != "Windows"
