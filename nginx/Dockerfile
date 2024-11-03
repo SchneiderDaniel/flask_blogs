@@ -1,13 +1,14 @@
 # Use the official NGINX base image
-FROM nginx:1.22.1
+FROM nginx:1.27.2
 
-ARG ENVIRONMENT=prd
 
 # Install the nginx-extras package and OpenSSL
 RUN apt-get update && \
-    apt-get install -y nginx-extras openssl && \
+    apt-get install -y nginx-extras && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
+
+ARG ENVIRONMENT=prd
 
 # Remove the default nginx.conf
 RUN rm /etc/nginx/conf.d/default.conf
