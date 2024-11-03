@@ -21,6 +21,7 @@ services:
       - ./nginx_volume/ssl:/etc/letsencrypt
       - ./nginx_volume/ssl-dhparams:/etc/ssl/certs
       - ./nginx_volume/certbot:/var/www/certbot
+      - ./nginx_volume/certbotlogs:/var/log/letsencrypt
     entrypoint: /bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $$!; done'
     networks:
       - docker_network
