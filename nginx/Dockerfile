@@ -1,17 +1,13 @@
 # Use the official NGINX base image
-FROM nginx:1.27.2
+# Use the latest stable version of the official Ubuntu image
+FROM ubuntu:24.04
 
-
-# Install the nginx-extras package and OpenSSL
+# Install dependencies and NGINX with extras
 RUN apt-get update && \
     apt-get install -y nginx-extras && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
 ARG ENVIRONMENT=prd
-
-# Remove the default nginx.conf
-RUN rm /etc/nginx/conf.d/default.conf
 
 # Copy custom nginx_dev.conf to the Nginx configuration directory as nginx.conf
 COPY nginx_${ENVIRONMENT}.conf /etc/nginx/nginx.conf
