@@ -9,12 +9,15 @@
     "@type": "Person",
     "name": "Jane Doe"
   },
+  "mainEntityOfPage": "https://hippocooking.com/recipes/00000",
   "datePublished": "2024-11-03",
   "description": "Leckere und weiche klassische Schokoladenkekse.",
   "prepTime": "PT15M",
   "cookTime": "PT10M",
   "totalTime": "PT25M",
   "recipeYield": "24 Kekse",
+  "recipeCategory": "Dessert",
+  "recipeCuisine": "amerikanisch",
   "recipeIngredient": [
     "2 1/4 Tassen Allzweckmehl",
     "1/2 Teelöffel Natron",
@@ -64,12 +67,5 @@
       "text": "Die Kekse ein paar Minuten auf dem Backblech abkühlen lassen, dann auf ein Kuchengitter legen."
     }
   ],
-  "nutrition": {
-    "@type": "NutritionInformation",
-    "calories": "200 Kalorien",
-    "fatContent": "10 Gramm",
-    "carbohydrateContent": "30 Gramm",
-    "proteinContent": "2 Gramm"
-  },
   "keywords": "Schokoladenkekse, Dessert, Backen"
 }

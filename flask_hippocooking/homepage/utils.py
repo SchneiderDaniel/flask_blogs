@@ -5,7 +5,6 @@ from flask import current_app
 from typing import Any
 
 
-
 def get_current_time():
     # Get the current time
     now = datetime.now()
@@ -22,8 +21,6 @@ def load_translation_file(locale_id: int, filename: str) -> Any:
         current_app.root_path, 'static', 'translations', str(locale_id), file_name_translations
     )
     
-    print("File path for translations: " + file_path_translations)
-
     # Read and parse the JSON data
     with open(file_path_translations, 'r', encoding='utf-8') as file:
         json_translations = json.load(file)

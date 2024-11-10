@@ -1,10 +1,65 @@
 {% extends 'base.html' %}
 
+{% block head %}
+    <!-- Google Recipe Structured Data using JSON-LD -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Recipe",
+            "name": "{{ json_recipe.name | default('Klassische Schokoladenkekse') }}",
+            "image": {{ json_recipe.image | default(["https://example.com/photos/default-image.jpg"]) | tojson }},
+            "author": {
+                "@type": "Person",
+                "name": "{{ json_recipe.author.name | default('Unbekannt') }}"
+            },
+            "mainEntityOfPage": "{{ json_recipe.mainEntityOfPage | default('https://hippocooking.com/recipes/00000') }}",
+            "datePublished": "{{ json_recipe.datePublished | default('2024-01-01') }}",
+            "description": "{{ json_recipe.description | default('Leckere Kekse.') }}",
+            "prepTime": "{{ json_recipe.prepTime | default('PT0M') }}",
+            "cookTime": "{{ json_recipe.cookTime | default('PT0M') }}",
+            "totalTime": "{{ json_recipe.totalTime | default('PT0M') }}",
+            "recipeYield": "{{ json_recipe.recipeYield | default('1 Portion') }}",
+            "recipeCategory": "{{ json_recipe.recipeCategory | default('Allgemein') }}",
+            "recipeCuisine": "{{ json_recipe.recipeCuisine | default('Unbekannt') }}",
+            "recipeIngredient": {{ json_recipe.recipeIngredient | default([]) | tojson }},
+            "recipeInstructions": {{ json_recipe.recipeInstructions | default([]) | tojson }},
+            "keywords": "{{ json_recipe.keywords | default('Rezept') }}"
+        }
+    </script>
+
+{% endblock %}
+
+
 {% block content %}
 
+<h1>{{ json_recipe.name | default("Rezept") }}</h1>
+<p><strong>Beschreibung:</strong> {{ json_recipe.description | default("Beschreibung nicht verfügbar.") }}</p>
+<img src="{{ json_recipe.image[0] | default("https://example.com/photos/default-image.jpg") }}" alt="{{ json_recipe.name | default("Rezept") }}" style="max-width: 100%; height: auto;"/>
+<p><strong>Autor:</strong> {{ json_recipe.author.name | default("Unbekannt") }}</p>
+<p><strong>Veröffentlichungsdatum:</strong> {{ json_recipe.datePublished | default("2024-01-01") }}</p>
+<p><strong>Vorbereitungszeit:</strong> {{ json_recipe.prepTime | default("PT0M") }}</p>
+<p><strong>Backzeit:</strong> {{ json_recipe.cookTime | default("PT0M") }}</p>
+<p><strong>Gesamtzeit:</strong> {{ json_recipe.totalTime | default("PT0M") }}</p>
+<p><strong>Ergibt:</strong> {{ json_recipe.recipeYield | default("1 Portion") }}</p>
+<p><strong>Kategorie:</strong> {{ json_recipe.recipeCategory | default("Allgemein") }}</p>
+<p><strong>Küche:</strong> {{ json_recipe.recipeCuisine | default("Unbekannt") }}</p>
+<p><strong>Keywords:</strong> {{ json_recipe.keywords | default("Rezept") }}</p>
 
+<h2>Zutaten</h2>
+<ul>
+    {% for ingredient in json_recipe.recipeIngredient | default([]) %}
+        <li>{{ ingredient }}</li>
+    {% endfor %}
+</ul>
 
-Recipe json:
+<h2>Anleitung</h2>
+<ol>
+    {% for instruction in json_recipe.recipeInstructions | default([]) %}
+        <li>{{ instruction.text | default("Schritt nicht verfügbar.") }}</li>
+    {% endfor %}
+</ol>
 
-{{ json_recipe }}
+<h2>Rezept-Details</h2>
+<p><strong>Hauptseite:</strong> <a href="{{ json_recipe.mainEntityOfPage | default('https://hippocooking.com/recipes/00000') }}">{{ json_recipe.mainEntityOfPage | default('Rezeptlink') }}</a></p>
+
 {% endblock %}
