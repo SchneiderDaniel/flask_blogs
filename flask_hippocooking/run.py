@@ -1,11 +1,16 @@
 from flask import Flask, request
 import sys
 from flask_bootstrap import Bootstrap5
-from flask_babel import Babel, _
+from flask_babel import Babel
 
 bs = Bootstrap5()
 babel = Babel()
 
+#Babel
+def get_locale():
+    # Determine the best match for supported locales
+    print("Accepted languages:", request.accept_languages, file=sys.stderr)
+    return request.args.get('lang') or request.accept_languages.best_match(app.config['BABEL_SUPPORTED_LOCALES'])
 
 
 def create_app():
@@ -15,17 +20,7 @@ def create_app():
     bs.init_app(app) # Initialize Bootstrap
     print('Bootstrap initialized', file=sys.stderr)
 
-    #Babel
-    def get_locale():
-        # Determine the best match for supported locales
-        print("Accepted languages:", request.accept_languages, file=sys.stderr)
-        return request.args.get('lang') or request.accept_languages.best_match(app.config['BABEL_SUPPORTED_LOCALES'])
-        #return request.args.get('lang') or app.config['BABEL_DEFAULT_LOCALE']
-
-    # Set the locale selector function for Babel
-    babel.locale_selector = get_locale
-
-    babel.init_app(app)
+    babel.init_app(app,locale_selector=get_locale)
     print('Babel initialized', file=sys.stderr)
 
     app.config['BABEL_DEFAULT_LOCALE'] = 'de'

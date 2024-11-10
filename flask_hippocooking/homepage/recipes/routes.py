@@ -13,7 +13,6 @@ def recipe(recipe_id, locale_id):
         # Get the current locale from Flask-Babel's settings
         preferred_locale = str(get_locale())
        
-
         # Redirect to the same route with the correct locale in the URL
         return redirect(url_for('recipes.recipe', locale_id=preferred_locale, recipe_id=recipe_id))
 
