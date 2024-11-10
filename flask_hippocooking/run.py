@@ -20,7 +20,7 @@ def create_app():
     bs.init_app(app) # Initialize Bootstrap
     print('Bootstrap initialized', file=sys.stderr)
 
-    babel.init_app(app,locale_selector=get_locale)
+    babel.init_app(app,locale_selector=get_locale, default_translation_directories='translations')
     print('Babel initialized', file=sys.stderr)
 
     app.config['BABEL_DEFAULT_LOCALE'] = 'de'

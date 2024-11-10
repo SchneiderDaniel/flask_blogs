@@ -2,11 +2,12 @@ from flask import render_template, send_from_directory, current_app, redirect, u
 from . import recipes
 from flask_babel import _, get_locale
 import os, sys
-import json
+from ..utils import load_translation_file
 
 @recipes.route('/recipes/<string:recipe_id>', defaults={'locale_id': None})
 @recipes.route('/recipes/<string:locale_id>/<string:recipe_id>')
 def recipe(recipe_id, locale_id):
+
 
     # Detect the preferred locale if it's not provided in the URL
     if locale_id is None:
@@ -22,16 +23,19 @@ def recipe(recipe_id, locale_id):
         # Fallback to the default locale if the provided one is not supported
         return redirect(url_for('recipes.recipe', locale_id='en', recipe_id=recipe_id))
 
+    json_translations = load_translation_file((str)(locale_id),'recipes')
+
     file_name = f'{recipe_id}.json'
     file_path = os.path.join(current_app.root_path, 'static', 'recipes', locale_id, file_name)
 
     # Check if the file exists
     if not os.path.exists(file_path):
-        return render_template('recipes/not_found.html', title='TODO')
+        return render_template('recipes/not_found.html', translations=json_translations, locale_id=locale_id)
 
     # Send the file if it exists
     json = send_from_directory(os.path.dirname(file_path), file_name, mimetype='application/json')
 
+    
 
     # Return the rendered template
-    return render_template('recipes/recipes.html', json_recipe=json, title='TODO')
+    return render_template('recipes/recipes.html', json_recipe=json, translations=json_translations, locale_id=locale_id)

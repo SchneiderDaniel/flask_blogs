@@ -1,8 +1,8 @@
-from flask import render_template, send_from_directory, current_app, url_for, redirect,request
+from flask import render_template, send_from_directory, current_app, url_for, redirect
 from flask_babel import _, get_locale
 from . import main
-import os
-
+import os, json
+from ..utils import load_translation_file
 
 
 @main.route('/', defaults={'locale_id': None})
@@ -13,7 +13,6 @@ def index(locale_id):
     if locale_id is None:
         # Get the current locale from Flask-Babel's settings
         preferred_locale = str(get_locale())
-        print("Prefered Locale: :", preferred_locale)
         # Redirect to the same route with the correct locale in the URL
         return redirect(url_for('main.index', locale_id=preferred_locale))
 
@@ -22,14 +21,20 @@ def index(locale_id):
         # If the locale_id is not supported, redirect to the preferred locale
         return redirect(url_for('main.index', locale_id=str(get_locale())))
 
-    print("Render in language: " +locale_id)
-    return render_template('main/index.html', title='Blog')
+    json_translations = load_translation_file((str)(locale_id),'index')
+    return render_template('main/index.html', translations=json_translations, locale_id=locale_id)
+
+
+@main.route('/about', defaults={'locale_id': None})
+@main.route('/<string:locale_id>/about')
+def about(locale_id):
+    json_translations = load_translation_file((str)(locale_id),'about')
+    return render_template('main/about.html',translations=json_translations, locale_id=locale_id)
+
 
 @main.route('/favicon.ico')
 def favicon():
     return send_from_directory(os.path.join(current_app.root_path, 'static'), 'resources/icons/favicon.ico', mimetype='image/vnd.microsoft.icon')
 
-@main.route('/about')
-def about():
-    return render_template('main/about.html', title='Über uns')
+
 

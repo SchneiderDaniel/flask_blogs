@@ -1,6 +1,6 @@
 {% from 'bootstrap5/form.html' import render_form %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang= "{{ locale_id }}" >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,11 +11,8 @@
         content="Recipes, tasty">
     {% endblock %}
 
-    {% if title %}
-    <title>Hippocooking.com - {{ title }}</title>
-    {% else %}
-    <title>Hippocooking.com</title>
-    {% endif %}
+    <title>Hippocooking.com {{ translations.titel }}</title>
+ 
 
 
     {{ bootstrap.load_css() }}

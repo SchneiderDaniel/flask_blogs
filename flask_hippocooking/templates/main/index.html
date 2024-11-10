@@ -4,8 +4,8 @@
 
 <!-- Jumbotron -->
 <div class="jumbotron text-center bg-light p-5">
-    <h1 class="display-4">Welcome to Hippocooking.com!</h1>
-    <p class="lead">Hippocooking.com is currently under construction. Please visit us later.</p>
-    <a class="btn btn-primary btn-lg" href="{{ url_for( 'recipes.recipe', recipe_id='00000') }}" role="button">Demo Recipe</a>
+    <h1 class="display-4">{{ translations.willkommen }}</h1>
+    <p class="lead">{{ translations.aufbau }}</p>
+    <a class="btn btn-primary btn-lg" href="{{ url_for( 'recipes.recipe', recipe_id='00000') }}" role="button">{{ translations.beispiel }}</a>
 </div>
 {% endblock %}
