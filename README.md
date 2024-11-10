@@ -62,3 +62,6 @@ You should create a virtual environment and install the required packages with t
 ### buidl and run with force
 
 `docker-compose up --build --force-recreate`
+
+
+http://localhost:5000/?lang=de

@@ -1,8 +1,11 @@
-from flask import Flask
+from flask import Flask, request
 import sys
 from flask_bootstrap import Bootstrap5
+from flask_babel import Babel, _
 
 bs = Bootstrap5()
+babel = Babel()
+
 
 
 def create_app():
@@ -12,10 +15,29 @@ def create_app():
     bs.init_app(app) # Initialize Bootstrap
     print('Bootstrap initialized', file=sys.stderr)
 
+    #Babel
+    def get_locale():
+        # Determine the best match for supported locales
+        print("Accepted languages:", request.accept_languages, file=sys.stderr)
+        return request.args.get('lang') or request.accept_languages.best_match(app.config['BABEL_SUPPORTED_LOCALES'])
+        #return request.args.get('lang') or app.config['BABEL_DEFAULT_LOCALE']
+
+    # Set the locale selector function for Babel
+    babel.locale_selector = get_locale
+
+    babel.init_app(app)
+    print('Babel initialized', file=sys.stderr)
+
+    app.config['BABEL_DEFAULT_LOCALE'] = 'de'
+    app.config['BABEL_SUPPORTED_LOCALES'] = ['en', 'es', 'fr','de']
+    
+
     from homepage.main.routes import main as main_blueprint
     app.register_blueprint(main_blueprint, url_prefix='/' )
     from homepage.errors.handlers import errors as errors_blueprint
     app.register_blueprint(errors_blueprint)
+    from homepage.recipes.routes import recipes as recipes_blueprint
+    app.register_blueprint(recipes_blueprint)
 
     print('Finished creating the app',  file=sys.stderr)
 
