@@ -9,22 +9,25 @@
     <a class="btn btn-primary btn-lg" href="{{ url_for( 'recipes.recipe', recipe_id='00000') }}" role="button">{{ translations.beispiel }}</a>
 </div>
 
+
 <div class="container py-4">
     <h2 class="mb-4 text-center">Tile Gallery</h2>
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="tile-gallery">
-        {% for i in range(number_of_recipes) %}
+        {% for json in json_files %}
         <div class="col tile">
             <div class="card h-100">
                 <!-- Set a placeholder image as src and the actual image URL in data-src -->
                 <img src="{{ url_for('static', filename='resources/images/no_image.png') }}" 
                      data-src="{{ url_for('static', filename='resources/images/no_image.png') }}" 
-                     class="card-img-top lazy-image" alt="Image {{ i + 1 }}">
+                     class="card-img-top lazy-image" alt="Image {{ json.name }}">
                 <div class="card-body">
-                    <h5 class="card-title">Tile Title {{ i + 1 }}</h5>
-                    <p class="card-text">Some quick example text to build on the card title.</p>
+                    <h5 class="card-title">{{ json.name }}</h5>
+                    <p class="card-text">{{ json.description }}</p>
                 </div>
             </div>
         </div>
+        {% else %}
+        <p>No recipes found.</p>
         {% endfor %}
     </div>
 </div>

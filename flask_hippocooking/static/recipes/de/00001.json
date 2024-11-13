@@ -3,7 +3,7 @@
   "@type": "Recipe",
   "name": "Klassische Schokoladenkekse1",
   "image": [
-    "https://example.com/photos/chocolate-chip-cookies.jpg"
+    "no_image.jpg"
   ],
   "author": {
     "@type": "Person",

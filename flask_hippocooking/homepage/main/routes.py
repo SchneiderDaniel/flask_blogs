@@ -37,8 +37,27 @@ def index(locale_id):
     folder_path = os.path.join(current_app.root_path, 'static', 'recipes', locale_id)
     number_of_recipes = count_json_files(folder_path)*100
 
+    folder_path = os.path.join(current_app.root_path, 'static', 'recipes', locale_id)
 
-    return render_template('main/index.html', translations=json_translations, locale_id=locale_id, number_of_recipes=number_of_recipes)
+    # List to store the JSON data
+    json_data = []
+
+    # Check if the directory exists, and then loop through the JSON files in the folder
+    if os.path.exists(folder_path):
+        for filename in os.listdir(folder_path):
+            if filename.endswith('.json'):
+                file_path = os.path.join(folder_path, filename)
+                with open(file_path, 'r', encoding='utf-8') as file:
+                    try:
+                        data = json.load(file)
+                        json_data.append(data)
+                    except json.JSONDecodeError:
+                        continue  # Skip files that are not valid JSON
+    else:
+        # If the folder does not exist, you might want to handle the error here
+        return f"Folder {folder_path} not found.", 404
+
+    return render_template('main/index.html', translations=json_translations, locale_id=locale_id, number_of_recipes=number_of_recipes,json_files=json_data)
 
 
 @main.route('/about', defaults={'locale_id': None})
