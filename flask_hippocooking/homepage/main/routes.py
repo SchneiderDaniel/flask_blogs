@@ -2,7 +2,7 @@ from flask import render_template, send_from_directory, current_app, url_for, re
 from flask_babel import _, get_locale
 from . import main
 import os, json
-from ..utils import load_translation_file
+from ..utils import load_translation_file, count_json_files
 
 
 @main.route('/', defaults={'locale_id': None})
@@ -21,8 +21,24 @@ def index(locale_id):
         # If the locale_id is not supported, redirect to the preferred locale
         return redirect(url_for('main.index', locale_id=str(get_locale())))
 
+    
+    file_path_index = os.path.join(current_app.root_path, 'static', 'translations', locale_id, "index.json")
+   
+    # Check if the file exists
+    if not os.path.exists(file_path_index):
+        json_translations = {
+        "titel": "Translation Not found",
+        }
+        return render_template('recipes/not_found.html', translations=json_translations, locale_id=locale_id)
+
     json_translations = load_translation_file((str)(locale_id),'index')
-    return render_template('main/index.html', translations=json_translations, locale_id=locale_id)
+
+
+    folder_path = os.path.join(current_app.root_path, 'static', 'recipes', locale_id)
+    number_of_recipes = count_json_files(folder_path)*100
+
+
+    return render_template('main/index.html', translations=json_translations, locale_id=locale_id, number_of_recipes=number_of_recipes)
 
 
 @main.route('/about', defaults={'locale_id': None})

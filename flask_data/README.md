@@ -1,1 +1,0 @@
-This is placeholder for a second webpage
