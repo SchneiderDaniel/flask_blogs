@@ -7,7 +7,7 @@ body {
     background-color: white
 }
 
-.custom-bg-color {
+.custom-bg-color1 {
     background-color: #F8F8EC !important; /* Replace with your desired color */
 }
 
@@ -27,6 +27,19 @@ p, ul, ol, li {
 a {
     color: #333; /* Example color */
     text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #005fa3;
+}
+
+/* Image styling */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
 }
 
 

@@ -1,0 +1,47 @@
+
+/* Content container */
+.recipe_box {
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+h1, h2 {
+    color: #4a4a4a;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 2rem;
+    border-bottom: 2px solid #e2e2e2;
+    padding-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+/* Paragraphs */
+/* p {
+    margin-bottom: 15px;
+} */
+
+/* Lists */
+ul, ol {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+/* Strong text */
+strong {
+    color: #333;
+}
