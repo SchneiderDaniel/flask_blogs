@@ -1,0 +1,33 @@
+/* Apply Quicksand font to the entire body */
+body {
+    font-family: 'Quicksand', sans-serif;
+    line-height: 1.6; /* Optional: improves readability */
+    margin: 0;
+    padding: 0;
+    background-color: white
+}
+
+.custom-bg-color {
+    background-color: #F8F8EC !important; /* Replace with your desired color */
+}
+
+/* Style headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Quicksand', sans-serif; /* Use a bold or heavier weight if needed */
+    font-weight: 600; /* Optional: change to 400 for a normal weight */
+}
+
+/* Styling for paragraphs and content */
+p, ul, ol, li {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 300; /* Lighter weight for body text */
+}
+
+/* Add any additional styling you need */
+a {
+    color: #333; /* Example color */
+    text-decoration: none;
+}
+
+
+

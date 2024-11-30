@@ -17,10 +17,24 @@
 
 
     {{ bootstrap.load_css() }}
+
+    <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='css/base.css') }}>
+    <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='css/footer.css') }}>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     {% block content %}{% endblock %}
 
     {{ bootstrap.load_js() }}
+
+    <footer class="custom-bg-color" >
+        <p>&copy; <span id="current-year"></span> Hippocooking.com |  All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript to set the current year dynamically
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+
 </body>
 </html>

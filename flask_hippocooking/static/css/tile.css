@@ -1,0 +1,34 @@
+/* Tile styling */
+.tile a {
+    display: block; /* Ensure the entire tile is clickable */
+    text-decoration: none; /* Remove default link styles */
+    color: inherit; /* Inherit text color */
+    transition: transform 0.3s ease, box-shadow 0.4s ease; /* Smooth hover animation */
+    border-radius: 8px; /* Optional: Rounded corners for better aesthetics */
+}
+
+/* Hover effect on the entire card */
+.tile a:hover {
+    transform: translateY(-5px) scale(1.03); /* Lift and scale the entire tile */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19); /* Add depth */
+}
+
+/* Ensure the image fills the card */
+.tile img {
+    width: 100%; /* Make sure the image stretches to fit */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.3s ease; /* Smooth transition for hover */
+}
+
+/* Prevent image scaling independently */
+.tile a:hover img {
+    transform: none; /* Disable independent scaling on the image */
+}
+
+/* Accessibility: Add focus styles for keyboard navigation */
+.tile a:focus {
+    outline: 2px solid #007bff; /* Highlight tile on focus */
+    outline-offset: 4px;
+    transform: translateY(-5px) scale(1.03); /* Match hover effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+}

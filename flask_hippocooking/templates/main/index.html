@@ -1,30 +1,38 @@
 {% extends 'base.html' %}
 
+{% block head %}
+
+<link rel="stylesheet" type="text/css" href={{ url_for('static', filename='css/tile.css') }}>
+
+{% endblock %}
+
+
 {% block content %}
 
 <!-- Jumbotron -->
-<div class="jumbotron text-center bg-light p-5">
+<div class="jumbotron text-center bg-light p-5 custom-bg-color">
     <h1 class="display-4">{{ translations.willkommen }}</h1>
-    <p class="lead">{{ translations.aufbau }}</p>
-    <a class="btn btn-primary btn-lg" href="{{ url_for( 'recipes.recipe', recipe_id='00000') }}" role="button">{{ translations.beispiel }}</a>
+    <!-- <p class="lead">{{ translations.aufbau }}</p> -->
+    <img src="{{ url_for('static', filename='resources/images/logo_huge.png') }}" alt="Logo of Hippocooking.com" style="max-width: 15%; height: auto;">
 </div>
 
 
+
 <div class="container py-4">
-    <h2 class="mb-4 text-center">Tile Gallery</h2>
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="tile-gallery">
         {% for json in json_files %}
         <div class="col tile">
-            <div class="card h-100">
-                <!-- Set a placeholder image as src and the actual image URL in data-src -->
-                <img src="{{ url_for('static', filename='resources/images/no_image.png') }}" 
-                     data-src="{{ url_for('static', filename='resources/images/no_image.png') }}" 
-                     class="card-img-top lazy-image" alt="Image {{ json.name }}">
-                <div class="card-body">
-                    <h5 class="card-title">{{ json.name }}</h5>
-                    <p class="card-text">{{ json.description }}</p>
+            <a href="{{ url_for('recipes.recipe', recipe_id=json.mainEntityOfPage[-5:]) }}" class="text-decoration-none">
+                <div class="card h-100">
+                    {% set image_id = json.mainEntityOfPage[-5:] %}
+                    <img src="{{ url_for('images.serve_image', image_id=json.mainEntityOfPage[-5:]) }}" 
+                        class="card-img-top lazy-image" alt="Image {{ json.name }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ json.name }}</h5>
+                        <p class="card-text">{{ json.description }}</p>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
         {% else %}
         <p>No recipes found.</p>

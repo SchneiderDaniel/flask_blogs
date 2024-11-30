@@ -33,6 +33,8 @@ def create_app():
     app.register_blueprint(errors_blueprint)
     from homepage.recipes.routes import recipes as recipes_blueprint
     app.register_blueprint(recipes_blueprint)
+    from homepage.images.routes import images as images_blueprint
+    app.register_blueprint(images_blueprint)
 
     print('Finished creating the app',  file=sys.stderr)
 
