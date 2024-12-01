@@ -1,4 +1,4 @@
-from flask import render_template, send_from_directory, current_app, url_for, redirect
+from flask import render_template, send_from_directory, current_app, url_for, redirect, Response
 from flask_babel import _, get_locale
 from . import main
 import os, json
@@ -71,5 +71,42 @@ def about(locale_id):
 def favicon():
     return send_from_directory(os.path.join(current_app.root_path, 'static'), 'resources/icons/favicon.ico', mimetype='image/vnd.microsoft.icon')
 
+@main.route('/robots.txt')
+def robots_txt():
+    return send_from_directory(os.path.join(current_app.root_path, 'static'), 'others/robots.txt')
+
+@main.route('/sitemap.xml')
+def sitemap_xml():
+    xml = ['<?xml version="1.0" encoding="UTF-8"?>']
+    xml.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
+
+    # Get array of locale
+    locale_array = current_app.config['BABEL_SUPPORTED_LOCALES']
+    for locale in locale_array:
+        # Load recipes per locale
+        recipe_array = ["00000"]
+        for recipe in recipe_array:
+            # Add default recipe URL
+            xml.append("<url>")
+            xml.append(f"<loc>https://hippocooking.com/recipes/{locale}/{recipe}</loc>")
+            xml.append("<changefreq>weekly</changefreq>")
+            xml.append("<priority>1.0</priority>")
+            xml.append("</url>")
+    xml.append('</urlset>')
+    return Response("\n".join(xml), mimetype='application/xml')
 
 
+# <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+#   <url>
+#     <loc>https://yourdomain.com/recipes/recipe123</loc>
+#     <lastmod>2024-12-01</lastmod>
+#     <changefreq>monthly</changefreq>
+#     <priority>0.8</priority>
+#   </url>
+#   <url>
+#     <loc>https://yourdomain.com/recipes/en/recipe123</loc>
+#     <lastmod>2024-12-01</lastmod>
+#     <changefreq>monthly</changefreq>
+#     <priority>0.7</priority>
+#   </url>
+# </urlset>
