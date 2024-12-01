@@ -35,37 +35,37 @@
 <div class="recipe_box">
     
 
-    <h1>{{ json_recipe.name | default("Rezept") }}</h1>
+    <h1>{{ json_recipe.name | default("Recipe") }}</h1>
     <br>
-    <p><strong>Beschreibung:</strong> {{ json_recipe.description | default("Beschreibung nicht verfügbar.") }}</p>
+    <p><strong>{{ translations.beschreibung }}:</strong> {{ json_recipe.description | default("Description not available.") }}</p>
 
     <div style="text-align: center;">
         <img src="{{ url_for('images.serve_image', image_id=json_recipe.mainEntityOfPage[-5:]) }}"  alt="{{ json_recipe.name | default("Rezept") }}" style="max-width: 100%; height: auto;"/>
-        <p><strong>Autor:</strong> {{ json_recipe.author.name | default("Unbekannt") }}</p>
-        <p><strong>Veröffentlichungsdatum:</strong> {{ json_recipe.datePublished | default("2024-01-01") }}</p>
-        <p><strong>Kategorie:</strong> {{ json_recipe.recipeCategory | default("Allgemein") }}</p>
-        <p><strong>Küche:</strong> {{ json_recipe.recipeCuisine | default("Unbekannt") }}</p>
-        <p><strong>Keywords:</strong> {{ json_recipe.keywords | default("Rezept") }}</p>
+        <p><strong>{{ translations.autor }}:</strong> {{ json_recipe.author.name | default("Unbekannt") }}</p>
+        <p><strong>{{ translations.veroeffentlichungsdatum }}:</strong> {{ json_recipe.datePublished | default("2024-01-01") }}</p>
+        <p><strong>{{ translations.kategorie }}:</strong> {{ json_recipe.recipeCategory | default("Allgemein") }}</p>
+        <p><strong>{{ translations.kueche }}:</strong> {{ json_recipe.recipeCuisine | default("Unbekannt") }}</p>
+        <p><strong>{{ translations.stichworte }}:</strong> {{ json_recipe.keywords | default("Rezept") }}</p>
         <br>
-        <p><strong>Vorbereitungszeit:</strong> {{ json_recipe.prepTime | default("PT0M") }}</p>
-        <p><strong>Backzeit:</strong> {{ json_recipe.cookTime | default("PT0M") }}</p>
-        <p><strong>Gesamtzeit:</strong> {{ json_recipe.totalTime | default("PT0M") }}</p>
-        <p><strong>Ergibt:</strong> {{ json_recipe.recipeYield | default("1 Portion") }}</p>
+        <p><strong>{{ translations.vorbereitungszeit }}:</strong> {{ json_recipe.prepTime | default("PT0M") }}</p>
+        <p><strong>{{ translations.backzeit }}:</strong> {{ json_recipe.cookTime | default("PT0M") }}</p>
+        <p><strong>{{ translations.gesamtzeit }}:</strong> {{ json_recipe.totalTime | default("PT0M") }}</p>
+        <p><strong>{{ translations.ergibt }}:</strong> {{ json_recipe.recipeYield | default("1 Portion") }}</p>
 
     </div>
 
 
-    <h2>Zutaten</h2>
+    <h2>{{ translations.zutaten }}</h2>
     <ul>
         {% for ingredient in json_recipe.recipeIngredient | default([]) %}
             <li>{{ ingredient }}</li>
         {% endfor %}
     </ul>
 
-    <h2>Anleitung</h2>
+    <h2>{{ translations.anleitung }}</h2>
     <ol>
         {% for instruction in json_recipe.recipeInstructions | default([]) %}
-            <li>{{ instruction.text | default("Schritt nicht verfügbar.") }}</li>
+            <li>{{ instruction.text | default("No recipeInstructions.") }}</li>
         {% endfor %}
     </ol>
 

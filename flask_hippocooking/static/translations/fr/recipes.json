@@ -1,0 +1,15 @@
+{
+    "titel": "Recettes",
+    "beschreibung": "Description",
+    "autor": "Auteur",
+    "veroeffentlichungsdatum": "Date de publication",
+    "kategorie": "Catégorie",
+    "kueche": "Cuisine",
+    "stichworte": "Mots-clés",
+    "vorbereitungszeit": "Temps de préparation",
+    "backzeit": "Temps de cuisson",
+    "gesamtzeit": "Temps total",
+    "ergibt": "Rendement",
+    "zutaten": "Ingrédients",
+    "anleitung": "Instructions"
+}

@@ -1,3 +1,17 @@
 {
-    "titel": "Rezepte"
+    "titel": "Rezepte",
+    "beschreibung": "Beschreibung",
+    "autor" : "Autor",
+    "veroeffentlichungsdatum": "Veröffentlichungsdatum",
+    "kategorie": "Kategorie",
+    "kueche": "Küche",
+    "stichworte" : "Stichworte",
+    "vorbereitungszeit" : "Vorbereitungszeit",
+    "backzeit" : "Backzeit",
+    "gesamtzeit" : "Gesamtzeit",
+    "ergibt" : "Ergibt",
+    "zutaten" : "Zutaten", 
+    "anleitung" : "Anleitung"
+
+
 }

@@ -1,0 +1,15 @@
+{
+    "titel": "Recetas",
+    "beschreibung": "Descripción",
+    "autor": "Autor",
+    "veroeffentlichungsdatum": "Fecha de publicación",
+    "kategorie": "Categoría",
+    "kueche": "Cocina",
+    "stichworte": "Etiquetas",
+    "vorbereitungszeit": "Tiempo de preparación",
+    "backzeit": "Tiempo de cocción",
+    "gesamtzeit": "Tiempo total",
+    "ergibt": "Rendimiento",
+    "zutaten": "Ingredientes",
+    "anleitung": "Instrucciones"
+}

@@ -1,0 +1,15 @@
+{
+    "titel": "Recipes",
+    "beschreibung": "Description",
+    "autor": "Author",
+    "veroeffentlichungsdatum": "Publication Date",
+    "kategorie": "Category",
+    "kueche": "Cuisine",
+    "stichworte": "Tags",
+    "vorbereitungszeit": "Preparation Time",
+    "backzeit": "Baking Time",
+    "gesamtzeit": "Total Time",
+    "ergibt": "Yields",
+    "zutaten": "Ingredients",
+    "anleitung": "Instructions"
+}
