@@ -1,8 +1,18 @@
-from flask import render_template, send_from_directory, current_app, url_for, redirect, Response
+from flask import render_template, send_from_directory, current_app, url_for, redirect, Response,request, g
 from flask_babel import _, get_locale
 from . import main
 import os, json
 from ..utils import load_translation_file, count_json_files
+
+
+@main.before_request
+def check_cookie_consent():
+    # Check if 'cookieConsentHippocookingcom' cookie is present in the request
+    if 'cookieConsentHippocookingcom' in request.cookies:
+        # Add any pre-processing logic you want here (e.g., logging or modifying behavior)
+        g.cookie_consent = True  # You can use `g` to store data for use in your routes
+    else:
+        g.cookie_consent = False  # Set `g.cookie_consent` to False if the cookie isn't present
 
 
 @main.route('/', defaults={'locale_id': None})
@@ -21,6 +31,8 @@ def index(locale_id):
         # If the locale_id is not supported, redirect to the preferred locale
         return redirect(url_for('main.index', locale_id=str(get_locale())))
 
+
+    json_translations_base = load_translation_file((str)(locale_id),'base')
     
     file_path_index = os.path.join(current_app.root_path, 'static', 'translations', locale_id, "index.json")
    
@@ -29,7 +41,7 @@ def index(locale_id):
         json_translations = {
         "titel": "Translation Not found",
         }
-        return render_template('recipes/not_found.html', translations=json_translations, locale_id=locale_id)
+        return render_template('recipes/not_found.html', translations=json_translations,translations_base=json_translations_base, locale_id=locale_id, cookie_consent=g.cookie_consent)
 
     json_translations = load_translation_file((str)(locale_id),'index')
 
@@ -57,8 +69,8 @@ def index(locale_id):
         # If the folder does not exist, you might want to handle the error here
         return f"Folder {folder_path} not found.", 404
 
-    json_translations_base = load_translation_file((str)(locale_id),'base')
-    return render_template('main/index.html', translations=json_translations, translations_base=json_translations_base, locale_id=locale_id, number_of_recipes=number_of_recipes,json_files=json_data)
+    
+    return render_template('main/index.html', translations=json_translations, translations_base=json_translations_base, locale_id=locale_id, number_of_recipes=number_of_recipes,json_files=json_data, cookie_consent=g.cookie_consent)
 
 
 @main.route('/about', defaults={'locale_id': None})
@@ -74,7 +86,7 @@ def about(locale_id):
 
     json_translations = load_translation_file((str)(locale_id),'about')
     json_translations_base = load_translation_file((str)(locale_id),'base')
-    return render_template('main/about.html',translations=json_translations, locale_id=locale_id, translations_base=json_translations_base)
+    return render_template('main/about.html',translations=json_translations, locale_id=locale_id, translations_base=json_translations_base, cookie_consent=g.cookie_consent)
 
 @main.route('/impressum', defaults={'locale_id': None})
 @main.route('/<string:locale_id>/impressum')
@@ -89,7 +101,7 @@ def impressum(locale_id):
 
     json_translations = load_translation_file((str)(locale_id),'impressum')
     json_translations_base = load_translation_file((str)(locale_id),'base')
-    return render_template('main/impressum.html',translations=json_translations, locale_id=locale_id, translations_base=json_translations_base)
+    return render_template('main/impressum.html',translations=json_translations, locale_id=locale_id, translations_base=json_translations_base, cookie_consent=g.cookie_consent)
 
 @main.route('/dataprotection', defaults={'locale_id': None})
 @main.route('/<string:locale_id>/dataprotection')
@@ -104,7 +116,7 @@ def dataprotection(locale_id):
 
     json_translations = load_translation_file((str)(locale_id),'dataprotection')
     json_translations_base = load_translation_file((str)(locale_id),'base')
-    return render_template('main/dataprotection.html',translations=json_translations, locale_id=locale_id, translations_base=json_translations_base)
+    return render_template('main/dataprotection.html',translations=json_translations, locale_id=locale_id, translations_base=json_translations_base, cookie_consent=g.cookie_consent)
 
 
 @main.route('/favicon.ico')

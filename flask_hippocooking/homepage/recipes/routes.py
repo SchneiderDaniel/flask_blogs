@@ -1,8 +1,18 @@
-from flask import render_template, send_from_directory, current_app, redirect, url_for, abort
+from flask import render_template, send_from_directory, current_app, redirect, url_for, abort, request, g
 from . import recipes
 from flask_babel import _, get_locale
 import os, sys, json
 from ..utils import load_translation_file
+
+@recipes.before_request
+def check_cookie_consent():
+    # Check if 'cookieConsentHippocookingcom' cookie is present in the request
+    if 'cookieConsentHippocookingcom' in request.cookies:
+        # Add any pre-processing logic you want here (e.g., logging or modifying behavior)
+        g.cookie_consent = True  # You can use `g` to store data for use in your routes
+    else:
+        g.cookie_consent = False  # Set `g.cookie_consent` to False if the cookie isn't present
+
 
 @recipes.route('/recipes/<string:recipe_id>', defaults={'locale_id': None})
 @recipes.route('/recipes/<string:locale_id>/<string:recipe_id>')
@@ -35,7 +45,7 @@ def recipe(recipe_id, locale_id):
         json_translations = {
         "titel": "Recipe Not found",
         }
-        return render_template('recipes/not_found.html', translations=json_translations,translations_base=json_translations_base, locale_id=locale_id)
+        return render_template('recipes/not_found.html', translations=json_translations,translations_base=json_translations_base, locale_id=locale_id, cookie_consent=g.cookie_consent)
     
     json_translations = load_translation_file((str)(locale_id),'recipes')
    
@@ -48,4 +58,4 @@ def recipe(recipe_id, locale_id):
         json_recipe = json.load(file)
 
     # Return the rendered template
-    return render_template('recipes/recipes.html', json_recipe=json_recipe, translations=json_translations, translations_base=json_translations_base, locale_id=locale_id)
+    return render_template('recipes/recipes.html', json_recipe=json_recipe, translations=json_translations, translations_base=json_translations_base, locale_id=locale_id, cookie_consent=g.cookie_consent)

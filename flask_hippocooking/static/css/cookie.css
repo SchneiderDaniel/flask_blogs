@@ -1,0 +1,22 @@
+#cookie-banner {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+#cookie-banner p {
+    margin: 0;
+    padding-right: 10px;
+}
+
+#accept-cookies {
+    background-color: #f1f1f1;
+    color: #333;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
