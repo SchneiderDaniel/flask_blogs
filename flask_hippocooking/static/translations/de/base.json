@@ -1,5 +1,8 @@
 {
     "ueberuns": "Über uns",
     "impressum" : "Impressum",
-    "dataprotection" : "Datenschutzerklärung"
+    "dataprotection" : "Datenschutzerklärung",
+    "cookietext" :"Wir verwenden Cookies, um Ihre Erfahrung zu verbessern. Durch die weitere Nutzung der Website stimmen Sie der Verwendung von Cookies zu.",
+    "cookiebuttontext" : "Einverstanden",
+    "cookiebuttonmore" : "Mehr Information"
 }
