@@ -1,4 +1,7 @@
 User-agent: *
-Disallow: /about
+Disallow: /de/impressum
+Disallow: /es/impressum
+Disallow: /en/impressum
+Disallow: /fr/impressum
 Allow: /
 Sitemap: https://hippocooking.com/sitemap.xml

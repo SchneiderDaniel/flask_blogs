@@ -84,14 +84,41 @@ def sitemap_xml():
     locale_array = current_app.config['BABEL_SUPPORTED_LOCALES']
     for locale in locale_array:
         # Load recipes per locale
-        recipe_array = ["00000"]
+
+        recipe_array = []
+        folder_path = os.path.join(current_app.root_path, 'static', 'recipes', locale)
+        if os.path.exists(folder_path):
+            for filename in os.listdir(folder_path):
+                if filename.endswith('.json'):
+                    name, _ = os.path.splitext(filename)
+                    recipe_array.append(name)
+
         for recipe in recipe_array:
             # Add default recipe URL
             xml.append("<url>")
             xml.append(f"<loc>https://hippocooking.com/recipes/{locale}/{recipe}</loc>")
             xml.append("<changefreq>weekly</changefreq>")
-            xml.append("<priority>1.0</priority>")
+            xml.append("<priority>0.9</priority>")
             xml.append("</url>")
+
+        xml.append("<url>")
+        xml.append(f"<loc>https://hippocooking.com/{locale}</loc>")
+        xml.append("<changefreq>weekly</changefreq>")
+        xml.append("<priority>0.8</priority>")
+        xml.append("</url>")
+
+        xml.append("<url>")
+        xml.append(f"<loc>https://hippocooking.com/{locale}/about</loc>")
+        xml.append("<changefreq>weekly</changefreq>")
+        xml.append("<priority>0.7</priority>")
+        xml.append("</url>")
+
+        xml.append("<url>")
+        xml.append(f"<loc>https://hippocooking.com/{locale}/impressum</loc>")
+        xml.append("<changefreq>weekly</changefreq>")
+        xml.append("<priority>0.6</priority>")
+        xml.append("</url>")
+
     xml.append('</urlset>')
     return Response("\n".join(xml), mimetype='application/xml')
 
