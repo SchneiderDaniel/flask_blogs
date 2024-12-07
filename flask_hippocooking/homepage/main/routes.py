@@ -119,6 +119,14 @@ def dataprotection(locale_id):
     return render_template('main/dataprotection.html',translations=json_translations, locale_id=locale_id, translations_base=json_translations_base, cookie_consent=g.cookie_consent)
 
 
+
+@main.route('/alive')
+def alive():
+    locale_id = str(get_locale())
+    json_translations = load_translation_file((str)(locale_id),'dataprotection')
+    json_translations_base = load_translation_file((str)(locale_id),'base')
+    return render_template('main/alive.html', translations=json_translations, translations_base=json_translations_base, cookie_consent=g.cookie_consent)
+
 @main.route('/favicon.ico')
 def favicon():
     return send_from_directory(os.path.join(current_app.root_path, 'static'), 'resources/icons/favicon.ico', mimetype='image/vnd.microsoft.icon')
