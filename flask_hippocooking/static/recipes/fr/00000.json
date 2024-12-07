@@ -37,5 +37,37 @@
       },
       {
         "@type": "HowToStep",
-        "text": "Dans un petit bol, mélangez la farine et le bicarbonate
+        "text": "Dans un petit bol, mélangez la farine et le bicarbonate de soude et réservez."
+      },
+      {
+        "@type": "HowToStep",
+        "text": "Dans un grand bol, utilisez un mixeur électrique pour battre le beurre et les sucres à vitesse moyenne jusqu'à ce que le mélange soit léger et aéré."
+      },
+      {
+        "@type": "HowToStep",
+        "text": "Ajoutez le sel, la vanille et les œufs et mélangez jusqu'à ce que tout soit bien incorporé."
+      },
+      {
+        "@type": "HowToStep",
+        "text": "Ajoutez progressivement le mélange de farine et mélangez juste ce qu'il faut pour combiner."
+      },
+      {
+        "@type": "HowToStep",
+        "text": "Incorporez les pépites de chocolat."
+      },
+      {
+        "@type": "HowToStep",
+        "text": "Déposez des portions de pâte avec une cuillère sur des plaques de cuisson recouvertes de papier parchemin."
+      },
+      {
+        "@type": "HowToStep",
+        "text": "Faites cuire jusqu'à ce que les biscuits soient dorés, environ 10-12 minutes."
+      },
+      {
+        "@type": "HowToStep",
+        "text": "Laissez refroidir les biscuits sur la plaque de cuisson pendant quelques minutes, puis transférez-les sur une grille."
+      }
+    ],
+    "keywords": "biscuits aux pépites de chocolat, dessert, pâtisserie"
+  }
   
