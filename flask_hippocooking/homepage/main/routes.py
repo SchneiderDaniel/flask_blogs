@@ -57,7 +57,8 @@ def index(locale_id):
         # If the folder does not exist, you might want to handle the error here
         return f"Folder {folder_path} not found.", 404
 
-    return render_template('main/index.html', translations=json_translations, locale_id=locale_id, number_of_recipes=number_of_recipes,json_files=json_data)
+    json_translations_base = load_translation_file((str)(locale_id),'base')
+    return render_template('main/index.html', translations=json_translations, translations_base=json_translations_base, locale_id=locale_id, number_of_recipes=number_of_recipes,json_files=json_data)
 
 
 @main.route('/about', defaults={'locale_id': None})
@@ -72,7 +73,38 @@ def about(locale_id):
         return redirect(url_for('main.about', locale_id=preferred_locale))
 
     json_translations = load_translation_file((str)(locale_id),'about')
-    return render_template('main/about.html',translations=json_translations, locale_id=locale_id)
+    json_translations_base = load_translation_file((str)(locale_id),'base')
+    return render_template('main/about.html',translations=json_translations, locale_id=locale_id, translations_base=json_translations_base)
+
+@main.route('/impressum', defaults={'locale_id': None})
+@main.route('/<string:locale_id>/impressum')
+def impressum(locale_id):
+
+     # Detect the preferred locale if it's not provided in the URL
+    if locale_id is None:
+        # Get the current locale from Flask-Babel's settings
+        preferred_locale = str(get_locale())
+        # Redirect to the same route with the correct locale in the URL
+        return redirect(url_for('main.impressum', locale_id=preferred_locale))
+
+    json_translations = load_translation_file((str)(locale_id),'impressum')
+    json_translations_base = load_translation_file((str)(locale_id),'base')
+    return render_template('main/impressum.html',translations=json_translations, locale_id=locale_id, translations_base=json_translations_base)
+
+@main.route('/dataprotection', defaults={'locale_id': None})
+@main.route('/<string:locale_id>/dataprotection')
+def dataprotection(locale_id):
+
+     # Detect the preferred locale if it's not provided in the URL
+    if locale_id is None:
+        # Get the current locale from Flask-Babel's settings
+        preferred_locale = str(get_locale())
+        # Redirect to the same route with the correct locale in the URL
+        return redirect(url_for('main.dataprotection', locale_id=preferred_locale))
+
+    json_translations = load_translation_file((str)(locale_id),'dataprotection')
+    json_translations_base = load_translation_file((str)(locale_id),'base')
+    return render_template('main/dataprotection.html',translations=json_translations, locale_id=locale_id, translations_base=json_translations_base)
 
 
 @main.route('/favicon.ico')
@@ -121,27 +153,6 @@ def sitemap_xml():
         xml.append("<priority>0.7</priority>")
         xml.append("</url>")
 
-        xml.append("<url>")
-        xml.append(f"<loc>https://hippocooking.com/{locale}/impressum</loc>")
-        xml.append("<changefreq>weekly</changefreq>")
-        xml.append("<priority>0.6</priority>")
-        xml.append("</url>")
-
     xml.append('</urlset>')
     return Response("\n".join(xml), mimetype='application/xml')
 
-
-# <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-#   <url>
-#     <loc>https://yourdomain.com/recipes/recipe123</loc>
-#     <lastmod>2024-12-01</lastmod>
-#     <changefreq>monthly</changefreq>
-#     <priority>0.8</priority>
-#   </url>
-#   <url>
-#     <loc>https://yourdomain.com/recipes/en/recipe123</loc>
-#     <lastmod>2024-12-01</lastmod>
-#     <changefreq>monthly</changefreq>
-#     <priority>0.7</priority>
-#   </url>
-# </urlset>

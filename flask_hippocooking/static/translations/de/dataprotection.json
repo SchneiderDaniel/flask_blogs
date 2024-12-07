@@ -1,0 +1,20 @@
+{
+    "titel": "Datenschutzerklärung",
+    "subtitel01" : "Einleitung",
+    "subinhalt01" : "Wir freuen uns über Ihren Besuch auf unserer Website und Ihr Interesse an unserem Online-Angebot. Der Schutz Ihrer personenbezogenen Daten ist uns sehr wichtig. In dieser Datenschutzerklärung informieren wir Sie darüber, wie wir Ihre personenbezogenen Daten erheben, verarbeiten und schützen, wenn Sie unsere Website nutzen.",
+    "subtitel02" : "Verantwortlicher",
+    "subinhalt02" : "Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:",
+    "subtitel03" : "Erhebung und Verarbeitung personenbezogener Daten",
+    "subinhalt03" : "Bei der Nutzung unserer Website erheben wir nur personenbezogene Daten, die Ihr Browser automatisch an unseren Server überträgt. Diese sind: IP-Adresse: Wird anonymisiert, um Ihre Identität zu schützen. Datum und Uhrzeit des Zugriffs. Zeitzonendifferenz zur Greenwich Mean Time (GMT). Zugriffsstatus/HTTP-Statuscode. Menge der gesendeten Daten. Website, von der der Zugriff erfolgt (Referrer). Browsertyp und -version. Betriebssystem und dessen Oberfläche. Sprache und Version der Browsersoftware. Die Verarbeitung dieser Daten erfolgt zur Sicherstellung der Funktionsfähigkeit unserer Website sowie zur Verbesserung und Optimierung unserer Inhalte.",
+    "subtitel04" : "Einsatz von Google Analytics",
+    "subinhalt04" : "Unsere Website verwendet Google Analytics, einen Webanalysedienst der Google LLC. Google Analytics verwendet Cookies, die eine Analyse der Benutzung der Website durch die Nutzer ermöglichen. Die durch das Cookie erzeugten Informationen über Ihre Benutzung unserer Website werden in der Regel an einen Server von Google in den USA übertragen und dort gespeichert. Zweck der Verarbeitung: Analyse der Nutzung unserer Website zur Verbesserung der Benutzererfahrung. Rechtsgrundlage: Ihre Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO, die Sie über unser Cookie-Banner erteilen. Speicherdauer: Die von Google gesammelten Daten werden für 14 Monate gespeichert. Weitere Informationen: Weitere Informationen zum Datenschutz und zu den Datenschutzrichtlinien von Google finden Sie hier und zu Google Analytics hier.",
+    "subtitel05" : "Cookies",
+    "subinhalt05" : "Unsere Website verwendet Cookies, um die Benutzererfahrung zu verbessern. Cookies sind kleine Textdateien, die auf Ihrem Endgerät gespeichert werden. Sie haben die Möglichkeit, die Speicherung von Cookies in Ihrem Browser zu verhindern oder Cookies jederzeit zu löschen.",
+    "subtitel06" : "Ihre Rechte",
+    "subinhalt06" : "Sie haben das Recht, Auskunft über Ihre bei uns gespeicherten personenbezogenen Daten zu verlangen und diese zu berichtigen, zu löschen oder die Verarbeitung einzuschränken. Des Weiteren haben Sie das Recht, der Verarbeitung Ihrer personenbezogenen Daten zu widersprechen und das Recht auf Datenübertragbarkeit. Um Ihre Rechte geltend zu machen, wenden Sie sich bitte an die oben angegebenen Kontaktdaten",
+    "subtitel07" : "Änderungen dieser Datenschutzerklärung",
+    "subinhalt07" : "Wir behalten uns vor, diese Datenschutzerklärung anzupassen, um sie an geänderte rechtliche Rahmenbedingungen oder bei Änderungen unserer Leistungen anzupassen. Die aktuelle Version ist auf unserer Website abrufbar.",
+    "subtitel08" : "Kontakt",
+    "subinhalt08" : "Wenn Sie Fragen zu dieser Datenschutzerklärung haben, kontaktieren Sie uns bitte über die oben genannten Kontaktdaten."
+
+}

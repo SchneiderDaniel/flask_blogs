@@ -28,15 +28,17 @@ def recipe(recipe_id, locale_id):
     file_name_recipe = f'{recipe_id}.json'
     file_path_recipe = os.path.join(current_app.root_path, 'static', 'recipes', locale_id, file_name_recipe)
 
+    json_translations_base = load_translation_file((str)(locale_id),'base')
+
     # Check if the file exists
     if not os.path.exists(file_path_recipe):
         json_translations = {
         "titel": "Recipe Not found",
         }
-        return render_template('recipes/not_found.html', translations=json_translations, locale_id=locale_id)
+        return render_template('recipes/not_found.html', translations=json_translations,translations_base=json_translations_base, locale_id=locale_id)
     
     json_translations = load_translation_file((str)(locale_id),'recipes')
-
+   
     # Send the file if it exists
     # json = send_from_directory(os.path.dirname(file_path), file_name, mimetype='application/json')
 
@@ -46,4 +48,4 @@ def recipe(recipe_id, locale_id):
         json_recipe = json.load(file)
 
     # Return the rendered template
-    return render_template('recipes/recipes.html', json_recipe=json_recipe, translations=json_translations, locale_id=locale_id)
+    return render_template('recipes/recipes.html', json_recipe=json_recipe, translations=json_translations, translations_base=json_translations_base, locale_id=locale_id)

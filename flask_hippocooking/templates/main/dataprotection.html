@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<link rel="stylesheet" type="text/css" href={{ url_for('static', filename='css/dataprotection.css') }}>
+
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="content_box">
+    
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center mb-4">{{ translations.titel }}</h1>
+                <div class="card">
+                    <div class="card-body">
+                        <h2>1. {{ translations.subtitel01 }}</h2>
+                        <p>{{ translations.subinhalt01 }}</p>
+
+                        <h2>2. {{ translations.subtitel02 }}</h2>
+                        <p>Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:</p>
+                        <a href="{{ url_for( 'main.impressum') }}" class="btn btn-primary">
+                            <i class="bi bi-arrow-right"></i> 
+                        </a>
+                        <div style="height: 20px;"></div>
+
+                        <h2>3. {{ translations.subtitel03 }}</h2>
+                        <p>{{ translations.subinhalt03 }}</p>
+
+                        <h2>4. {{ translations.subtitel04 }}</h2>
+                        <p>{{ translations.subinhalt04 }}</p>
+
+                        <h2>5. {{ translations.subtitel05 }}</h2>
+                        <p>{{ translations.subinhalt05 }}</p>
+
+                        <h2>6. {{ translations.subtitel06 }}</h2>
+                        <p>{{ translations.subinhalt06 }}</p>
+
+                        <h2>7. {{ translations.subtitel07 }}</h2>
+                        <p>{{ translations.subinhalt07 }}</p>
+
+                        <h2>8. {{ translations.subtitel08 }}</h2>
+                        <p>{{ translations.subinhalt08 }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+</div>
+
+
+{% endblock %}

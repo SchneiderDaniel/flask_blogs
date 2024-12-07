@@ -1,4 +1,5 @@
 User-agent: *
+Disallow: /impressum
 Disallow: /de/impressum
 Disallow: /es/impressum
 Disallow: /en/impressum

@@ -17,6 +17,7 @@
 
 
     {{ bootstrap.load_css() }}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='css/base.css') }}>
     <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='css/footer.css') }}>
@@ -28,7 +29,7 @@
     {{ bootstrap.load_js() }}
 
     <footer class="custom-bg-color1" >
-        <p>&copy; 2021-<span id="current-year"></span> Hippocooking.com | <a href="{{ url_for( 'main.about') }}">{{ translations.ueberuns }}</a>  </p>
+        <p>&copy; 2021-<span id="current-year"></span> Hippocooking.com | <a href="{{ url_for( 'main.about') }}">{{ translations_base.ueberuns }}</a> | <a href="{{ url_for( 'main.impressum') }}">{{ translations_base.impressum }}</a>  | <a href="{{ url_for( 'main.dataprotection') }}">{{ translations_base.dataprotection }}</a> </p>
     </footer>
 
     <script>

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<link rel="stylesheet" type="text/css" href={{ url_for('static', filename='css/impressum.css') }}>
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="content_box">
+    
+    <header class="bg-light text-black py-3">
+        <div class="container">
+            <h1 class="text-center">{{ translations.titel }}</h1>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <section class="border p-4 rounded bg-light">
+            <h2 class="h4">{{ translations.subtitel }}</h2>
+            <p>
+                <strong>{{ translations.name }}</strong><br>
+                {{ translations.strasse }}<br>
+                {{ translations.ort }}<br>
+                <strong>{{ translations.mail }}</strong>:
+                <a href="mailto:contact.blackandwhitedata@gmail.com">contact.blackandwhitedata@gmail.com</a>
+            </p>
+        </section>
+    </main>
+
+</div>
+
+
+{% endblock %}
