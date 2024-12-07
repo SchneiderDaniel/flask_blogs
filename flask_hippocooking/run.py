@@ -9,7 +9,6 @@ babel = Babel()
 #Babel
 def get_locale():
     # Determine the best match for supported locales
-    print("Accepted languages:", request.accept_languages, file=sys.stderr)
     return request.args.get('lang') or request.accept_languages.best_match(app.config['BABEL_SUPPORTED_LOCALES'])
 
 

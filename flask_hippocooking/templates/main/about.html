@@ -1,5 +1,54 @@
 {% extends 'base.html' %}
 
+{% block head %}
+
+<link rel="stylesheet" type="text/css" href={{ url_for('static', filename='css/about.css') }}>
+
+{% endblock %}
+
+
 {% block content %}
 {{ translations.inhalt }}
+
+<div class="content_box">
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>{{ translations.subtitel01 }}</h1>
+        <p class="lead">{{ translations.subinhalt01 }}</p>
+    </header>
+
+    <!-- About Section -->
+    <section class="container content">
+        <h2 class="text-center my-5">{{ translations.subtitel02 }}</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">{{ translations.subsubtitel01 }}</h5>
+                        <p class="card-text">{{ translations.subsubinhalt01 }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">{{ translations.subsubtitel02 }}</h5>
+                        <p class="card-text">{{ translations.subsubinhalt02 }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">{{ translations.subsubtitel03 }}</h5>
+                        <p class="card-text">{{ translations.subsubinhalt03 }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+
 {% endblock %}

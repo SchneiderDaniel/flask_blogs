@@ -63,6 +63,14 @@ def index(locale_id):
 @main.route('/about', defaults={'locale_id': None})
 @main.route('/<string:locale_id>/about')
 def about(locale_id):
+
+     # Detect the preferred locale if it's not provided in the URL
+    if locale_id is None:
+        # Get the current locale from Flask-Babel's settings
+        preferred_locale = str(get_locale())
+        # Redirect to the same route with the correct locale in the URL
+        return redirect(url_for('main.about', locale_id=preferred_locale))
+
     json_translations = load_translation_file((str)(locale_id),'about')
     return render_template('main/about.html',translations=json_translations, locale_id=locale_id)
 
