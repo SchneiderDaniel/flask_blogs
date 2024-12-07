@@ -5,7 +5,7 @@
     "veroeffentlichungsdatum": "Publication Date",
     "kategorie": "Category",
     "kueche": "Cuisine",
-    "stichworte": "Tags",
+    "stichworte": "Keywords",
     "vorbereitungszeit": "Preparation Time",
     "backzeit": "Baking Time",
     "gesamtzeit": "Total Time",
@@ -13,3 +13,4 @@
     "zutaten": "Ingredients",
     "anleitung": "Instructions"
 }
+
