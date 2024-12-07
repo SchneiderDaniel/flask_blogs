@@ -1,0 +1,41 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Recipe",
+    "name": "Biscuits Classiques aux Pépites de Chocolat",
+    "image": [
+      "https://example.com/photos/chocolate-chip-cookies.jpg"
+    ],
+    "author": {
+      "@type": "Person",
+      "name": "Jane Doe"
+    },
+    "mainEntityOfPage": "https://hippocooking.com/recipes/fr/00000",
+    "datePublished": "2024-11-03",
+    "description": "Les biscuits aux pépites de chocolat sont de petites douceurs sucrées qui ravissent par leur texture moelleuse et leur goût intense de chocolat. Souvent remplis de morceaux de chocolat fondants, chaque bouchée offre un mélange parfait de croustillant et de crémeux. L'odeur seule est alléchante et rappelle les pâtisseries fraîchement cuites maison. Que ce soit avec une tasse de café ou comme en-cas, les biscuits aux pépites de chocolat sont un délice irrésistible pour tous les amateurs de douceurs.",
+    "descriptionShort": "Biscuits classiques aux pépites de chocolat délicieux et moelleux.",
+    "prepTime": "PT15M",
+    "cookTime": "PT10M",
+    "totalTime": "PT25M",
+    "recipeYield": "24 biscuits",
+    "recipeCategory": "Dessert",
+    "recipeCuisine": "Américaine",
+    "recipeIngredient": [
+      "2 1/4 tasses de farine tout usage",
+      "1/2 cuillère à café de bicarbonate de soude",
+      "1 tasse de beurre non salé, à température ambiante",
+      "1/2 tasse de sucre granulé",
+      "1 tasse de sucre brun clair, tassé",
+      "1 cuillère à café de sel",
+      "2 cuillères à café d'extrait de vanille pur",
+      "2 gros œufs",
+      "2 tasses de pépites de chocolat mi-sucré et/ou au lait"
+    ],
+    "recipeInstructions": [
+      {
+        "@type": "HowToStep",
+        "text": "Préchauffez le four à 175°C (350°F)."
+      },
+      {
+        "@type": "HowToStep",
+        "text": "Dans un petit bol, mélangez la farine et le bicarbonate
+  
