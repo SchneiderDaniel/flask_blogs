@@ -1,10 +1,37 @@
 /* Apply Quicksand font to the entire body */
-body {
+body,html {
     font-family: 'Quicksand', sans-serif;
-    line-height: 1.6; /* Optional: improves readability */
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: white
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.custom-container {
+    margin: 0 !important; /* Override any Bootstrap margins */
+    padding: 0 !important; /* Override any Bootstrap padding */
+    width: 100%; /* Ensure full width */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* Content container */
+.content_box {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* align-items: center;  */
+    /* display: flex; */
 }
 
 .custom-bg-color1 {
@@ -41,16 +68,3 @@ img {
     border-radius: 8px;
     margin-bottom: 20px;
 }
-
-/* Content container */
-.content_box {
-    max-width: 900px;
-    margin: 20px auto;
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-
-

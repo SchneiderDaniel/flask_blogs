@@ -1,20 +1,12 @@
-/* Ensure the page fills at least the viewport height */
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Full height of the viewport */
-    margin: 0; /* Remove default margin */
-}
-
-/* Main content area should expand to fill space above the footer */
-.container {
-    flex: 1; /* This makes the container expand to fill available space */
-}
-
-/* Footer styles */
+/* Style the footer */
 footer {
-    text-align: center;
+    background-color: #f1f1f1;
     padding: 10px;
-    color: #777;
-    border-top: 1px solid #ddd;
+    text-align: center;
+    border-top: 1px solid #ccc;
+    margin-top: auto; /* Pushes the footer to the bottom */
+}
+
+footer p {
+    margin: 5px 0;
 }

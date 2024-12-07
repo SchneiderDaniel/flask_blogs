@@ -1,88 +1,103 @@
-{% from 'bootstrap5/form.html' import render_form %}
+<!-- {% from 'bootstrap5/form.html' import render_form %} -->
 <!DOCTYPE html>
-<html lang= "{{ locale_id }}" >
+<html lang="{{ locale_id }}">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Daniel Schneider"> 
+    <meta name="author" content="Daniel Schneider">
 
     {% block keywords %}
-    <meta name="keywords"
-        content="Recipes, tasty">
+    <meta name="keywords" content="Recipes, tasty">
     {% endblock %}
 
     <title>Hippocooking.com {{ translations.titel }}</title>
- 
+
     {% block head %}{% endblock %}
 
-
+    <!-- CSS -->
     {{ bootstrap.load_css() }}
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='css/base.css') }}>
-    <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='css/footer.css') }}>
-    <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='css/cookie.css') }}>
+    <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='css/base.css' ) }}>
+    <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='css/footer.css' ) }}>
+    <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='css/cookie.css' ) }}>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <!-- Semi-transparent overlay -->
-    <div id="cookie-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); display: none; z-index: 999; pointer-events: none;">
-    </div>
-
-    <!-- Cookie Banner -->
-    <div id="cookie-banner" style="position: fixed; top: 0; width: 100%; background-color: #333; color: white; text-align: center; padding: 10px; display: none; z-index: 1000;">
-        <p style="margin: 0;">{{ translations_base.cookietext }} <a href="{{ url_for( 'main.dataprotection') }}" style="color: lightblue;">{{ translations_base.cookiebuttonmore }}</a></p>
-        <button id="accept-cookies" style="background-color: #f1f1f1; color: #333; border: none; padding: 5px 10px; cursor: pointer; margin-left: 10px; margin-top: 10px;">{{ translations_base.cookiebuttontext }}</button>
-    </div>
+    <div class="container-fluid custom-container">
 
 
-    {% block content %}{% endblock %}
+        <!-- Semi-transparent overlay -->
+        <div id="cookie-overlay"
+            style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); display: none; z-index: 999; pointer-events: none;">
+        </div>
 
-    {{ bootstrap.load_js() }}
+        <!-- Cookie Banner -->
+        <div id="cookie-banner"
+            style="position: fixed; top: 0; width: 100%; background-color: #333; color: white; text-align: center; padding: 10px; display: none; z-index: 1000;">
+            <p style="margin: 0;">{{ translations_base.cookietext }} <a href="{{ url_for( 'main.dataprotection') }}"
+                    style="color: lightblue;">{{ translations_base.cookiebuttonmore }}</a></p>
+            <button id="accept-cookies"
+                style="background-color: #f1f1f1; color: #333; border: none; padding: 5px 10px; cursor: pointer; margin-left: 10px; margin-top: 10px;">{{
+                translations_base.cookiebuttontext }}</button>
+        </div>
 
-    <footer class="custom-bg-color1" >
-        <p>&copy; 2021-<span id="current-year"></span>  <a href="{{ url_for( 'main.index') }}">Hippocooking.com</a>  | <a href="{{ url_for( 'main.about') }}">{{ translations_base.ueberuns }}</a> | <a href="{{ url_for( 'main.impressum') }}">{{ translations_base.impressum }}</a>  | <a href="{{ url_for( 'main.dataprotection') }}">{{ translations_base.dataprotection }}</a> </p>
-    </footer>
 
-    <script>
-        // JavaScript to set the current year dynamically
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-    </script>
+        {% block content %}{% endblock %}
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const cookieBanner = document.getElementById('cookie-banner');
-            const cookieOverlay = document.getElementById('cookie-overlay');
-            const acceptButton = document.getElementById('accept-cookies');
-        
-            // Check if the 'cookieConsentHippocookingcom' cookie is set
-            if (!document.cookie.split('; ').find(row => row.startsWith('cookieConsentHippocookingcom='))) {
-                cookieBanner.style.display = 'block';
-                cookieOverlay.style.display = 'block';
-            } else {
-                // Hide overlay if consent is given
-                cookieOverlay.style.display = 'none';
-            }
-        
-            acceptButton.addEventListener('click', function() {
-                document.cookie = "cookieConsentHippocookingcom=true; path=/; max-age=" + (60 * 60 * 24 * 365); // 1 year expiry
-                cookieBanner.style.display = 'none';
-                cookieOverlay.style.display = 'none';
+        {{ bootstrap.load_js() }}
+
+        <footer class="custom-bg-color1">
+            <p>&copy; 2021-<span id="current-year"></span> <a href="{{ url_for( 'main.index') }}">Hippocooking.com</a> |
+                <a href="{{ url_for( 'main.about') }}">{{ translations_base.ueberuns }}</a> | <a
+                    href="{{ url_for( 'main.impressum') }}">{{ translations_base.impressum }}</a> | <a
+                    href="{{ url_for( 'main.dataprotection') }}">{{ translations_base.dataprotection }}</a> </p>
+        </footer>
+
+        <script>
+            // JavaScript to set the current year dynamically
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        </script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const cookieBanner = document.getElementById('cookie-banner');
+                const cookieOverlay = document.getElementById('cookie-overlay');
+                const acceptButton = document.getElementById('accept-cookies');
+
+                // Check if the 'cookieConsentHippocookingcom' cookie is set
+                if (!document.cookie.split('; ').find(row => row.startsWith('cookieConsentHippocookingcom='))) {
+                    cookieBanner.style.display = 'block';
+                    cookieOverlay.style.display = 'block';
+                } else {
+                    // Hide overlay if consent is given
+                    cookieOverlay.style.display = 'none';
+                }
+
+                acceptButton.addEventListener('click', function () {
+                    document.cookie = "cookieConsentHippocookingcom=true; path=/; max-age=" + (60 * 60 * 24 * 365); // 1 year expiry
+                    cookieBanner.style.display = 'none';
+                    cookieOverlay.style.display = 'none';
+                });
             });
-        });
-    </script>
+        </script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const cookieOverlay = document.getElementById('cookie-overlay');
-        
-            {% if not cookie_consent %}
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const cookieOverlay = document.getElementById('cookie-overlay');
+
+                {% if not cookie_consent %}
                 // Show the overlay if consent has not been given
                 cookieOverlay.style.display = 'block';
-            {% endif %}
-        });
-    </script>
-    
+                {% endif %}
+            });
+        </script>
 
+    </div>
 </body>
+
 </html>

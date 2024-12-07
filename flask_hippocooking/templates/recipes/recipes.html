@@ -54,7 +54,7 @@
 
     </div>
 
-
+    <div>
     <h2>{{ translations.zutaten }}</h2>
     <ul>
         {% for ingredient in json_recipe.recipeIngredient | default([]) %}
@@ -68,6 +68,8 @@
             <li>{{ instruction.text | default("No recipeInstructions.") }}</li>
         {% endfor %}
     </ol>
+    </div>
+
 
 
 
