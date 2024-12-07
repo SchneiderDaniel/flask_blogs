@@ -27,7 +27,7 @@
 
 /* Accessibility: Add focus styles for keyboard navigation */
 .tile a:focus {
-    outline: 2px solid #007bff; /* Highlight tile on focus */
+    outline: 2px solid #742424; /* Highlight tile on focus */
     outline-offset: 4px;
     transform: translateY(-5px) scale(1.03); /* Match hover effect */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);

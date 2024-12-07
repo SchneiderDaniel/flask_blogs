@@ -14,6 +14,17 @@
 
     <title>Hippocooking.com {{ translations.titel }}</title>
 
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-43DKSZYBDG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-43DKSZYBDG');
+    </script>
+
     {% block head %}{% endblock %}
 
     <!-- CSS -->
@@ -55,7 +66,8 @@
             <p>&copy; 2021-<span id="current-year"></span> <a href="{{ url_for( 'main.index') }}">Hippocooking.com</a> |
                 <a href="{{ url_for( 'main.about') }}">{{ translations_base.ueberuns }}</a> | <a
                     href="{{ url_for( 'main.impressum') }}">{{ translations_base.impressum }}</a> | <a
-                    href="{{ url_for( 'main.dataprotection') }}">{{ translations_base.dataprotection }}</a> </p>
+                    href="{{ url_for( 'main.dataprotection') }}">{{ translations_base.dataprotection }}</a>
+            </p>
         </footer>
 
         <script>

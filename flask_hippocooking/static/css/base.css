@@ -9,6 +9,7 @@ body,html {
     flex-direction: column;
     height: 100%;
     width: 100%;
+    font-size: 18px;
 }
 
 .custom-container {
@@ -58,7 +59,7 @@ a {
 
 a:hover {
     text-decoration: underline;
-    color: #005fa3;
+    color: #742424
 }
 
 /* Image styling */
@@ -67,4 +68,17 @@ img {
     height: auto;
     border-radius: 8px;
     margin-bottom: 20px;
+}
+
+
+@media (max-width: 768px) {
+    body {
+      font-size: 16px; /* Smaller font size for screens 768px or less */
+    }
+}
+  
+@media (max-width: 480px) {
+body {
+    font-size: 14px; /* Even smaller for smaller screens */
+}
 }

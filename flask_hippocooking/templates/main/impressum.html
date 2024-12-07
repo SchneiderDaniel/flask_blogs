@@ -10,25 +10,21 @@
 {% block content %}
 
 <div class="content_box">
-    
-    <header class="bg-light text-black py-3">
-        <div class="container">
-            <h1 class="text-center">{{ translations.titel }}</h1>
+    <!-- About Section -->
+    <section class="container content">
+        <h2 class="text-center my-5">{{ translations.subtitel }}</h2>
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <p>
+                            <strong>{{ translations.name }}</strong><br>
+                            {{ translations.strasse }}<br>
+                            {{ translations.ort }}<br>
+                            <strong>{{ translations.mail }}</strong>:
+                            <a href="mailto:contact.blackandwhitedata@gmail.com">contact.blackandwhitedata@gmail.com</a>
+                        </p>
+                    </div>
         </div>
-    </header>
-
-    <main class="container my-5">
-        <section class="border p-4 rounded bg-light">
-            <h2 class="h4">{{ translations.subtitel }}</h2>
-            <p>
-                <strong>{{ translations.name }}</strong><br>
-                {{ translations.strasse }}<br>
-                {{ translations.ort }}<br>
-                <strong>{{ translations.mail }}</strong>:
-                <a href="mailto:contact.blackandwhitedata@gmail.com">contact.blackandwhitedata@gmail.com</a>
-            </p>
-        </section>
-    </main>
+    </section>
 
 </div>
 
