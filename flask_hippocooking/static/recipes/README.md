@@ -31,10 +31,14 @@ write me the following as a json with only text and no attributes:
 ## Keywords
 - XXL
 - Curry
-- gesund
-- schnell
-- vegetarisch
-- vegan
+- Gesund
+- Schnell
+- Vegetarisch
+- Vegan
+- Weihnachten
+- Liebling
+- Süß
+- Backen
 
 
 

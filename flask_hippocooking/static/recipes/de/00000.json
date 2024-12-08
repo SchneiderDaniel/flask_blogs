@@ -4,13 +4,13 @@
   "name": "Bärentatzen",
   "author": {
     "@type": "Person",
-    "name": "Jane Doe"
+    "name": "Daniel"
   },
-  "datePublished": "2024-11-03",
+  "datePublished": "2024-12-08",
   "description": "Bärentatzen zählen wohl, zumindest in Süddeutschland, zu den bekanntesten Plätzchen. Mit ihrem herben, aber zugleich süßen Geschmack sind sie ein Klassiker, der auf keinem Weihnachtsmarkt fehlen darf. Sie gehören zu meinen absoluten Lieblingsplätzchen, und ich werde oft darum gebeten, sie zu backen.",
   "descriptionShort" : "Bärentatzen, weich und knusprig.",
-  "prepTime": "PT15M",
-  "cookTime": "PT10M",
+  "prepTime": "25 Minuten",
+  "cookTime": "15 Minuten",
   "totalTime": "3 Stunden",
   "recipeYield": "36 Plätzchen",
   "recipeCategory": "Weihnachtsplätzchen",
@@ -19,51 +19,59 @@
     "6 Eiweiß",
     "300 g Zucker",
     "140 g Zucker",
-    "2 200 g Tafel Zartbitterschokolade (50%)",
+    "200 g Tafel Zartbitterschokolade (50%)",
     "500 g Mandeln, geschält, gemahlen",
     "1 TL Zimt",
     "2 EL Kakao",
-    "2 Packungen 16 g Vanillezucker",
+    "2 Packungen, 16 g Vanillezucker",
     "1 Bio-Zitrone",
     "1 Schale Zucker zum Ausrollen"
   ],  
   "recipeInstructions": [
     {
       "@type": "HowToStep",
-      "text": "Heizen Sie den Ofen auf 175°C (350°F) vor."
+      "text": "Als erstes nimmt man die Tafeln Zartbitterschokolade und man zerhackt diese mit einem Messer auf einem Schneidebrett bis man feine Raspeln hat. Hinweis: Keine fertig geraspelte Schokolade nehmen, die schmecken meistens nicht"
     },
     {
       "@type": "HowToStep",
-      "text": "In einer kleinen Schüssel das Mehl und das Natron vermischen und beiseite stellen."
+      "text": "Danach schlägt man das Eiweiß in einer hohen Rührschüssel zu Eischnee und gibt danach die 300g Zucker dazu."
     },
     {
       "@type": "HowToStep",
-      "text": "In einer großen Schüssel mit einem elektrischen Mixer Butter und Zucker auf mittlerer Stufe cremig rühren, bis die Mischung leicht und fluffig ist."
+      "text": "In einer zweiten großen Schüssel vermischt man nun die Schokolade, Mandeln, Zimt, Kakao, Vanillezucker und die geriebene Schale der Zitrone."
     },
     {
       "@type": "HowToStep",
-      "text": "Salz, Vanille und Eier hinzufügen und vermischen, bis alles gut verbunden ist."
+      "text": "Nun wird der Zucker-Eischnee untergehoben"
     },
     {
       "@type": "HowToStep",
-      "text": "Nach und nach die Mehlmischung hinzufügen und nur so lange rühren, bis alles vermischt ist."
+      "text": "Nun ist der Teig fertig, ist aber ein wenig zu üssig. Deswegen muss er für mindestens zwei Stunden in den Kühlschrank gestellt werden."
     },
     {
       "@type": "HowToStep",
-      "text": "Die Schokoladenstückchen unterheben."
+      "text": "Danach formt man die Plätzchen. Hierzu nimmt man eine gehäufte Teelöfel große Menge an Teig und formt eine Kugel."
     },
     {
       "@type": "HowToStep",
-      "text": "Teig mit einem Esslöffel portionsweise auf mit Backpapier ausgelegte Backbleche geben."
+      "text": "Diese Kugel rollt man dann in einer Schale voll Zucker, bis diese großzügig mit Zucker umhüllt sind."
     },
     {
       "@type": "HowToStep",
-      "text": "Backen, bis die Kekse goldbraun sind, etwa 10-12 Minuten."
+      "text": "Nun hat man zwei Optionen: 1. Wenn man nun eine Bärentatzenform beschichtet hat (siehe Link oben), drückt man die Kugeln nun in die Form und stürzt sie auf einem Backblech. 2. Wenn man klassisch eine einzelne Bärentatzenform in Holz hat (bekommt man auf jedem Weihnachtsmarkt, siehe Bild oben), dann gibt man die Kugeln auf das Backblech, befeuchtet die Holzform und streut Zucker auf die Backform und drückt die Form auf die Kugel und hebt sie wieder an. Hinweis: Die erste Option hat natürlich ein bischen weniger Zucker, aber nur bei der zweiten Option bekommt die Bärentatze diese bekannte Zuckerkruste."
     },
     {
       "@type": "HowToStep",
-      "text": "Die Kekse ein paar Minuten auf dem Backblech abkühlen lassen, dann auf ein Kuchengitter legen."
+      "text": "Diese geformten Bärentatzen lässt man nun auf dem Blech für eine Nacht ruhen."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Am nächsten Tag muss man die Bärentatzen noch für 15 Minuten auf 180° C im Ofen backen. Nicht länger, da die Bärentatzen außen knusprig, aber innen noch ein wenig weich, aber nicht teigig, sein sollen."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Letzteres ist die Kunst an diesen Plätzchen."
     }
   ],
-  "keywords": "Schokoladenkekse, Dessert, Backen"
+  "keywords": "Weihnachten, Liebling, Backen"
 }
