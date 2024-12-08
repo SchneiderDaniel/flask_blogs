@@ -2,7 +2,7 @@
 FROM python:3.12-alpine
 
 # Install bash and other necessary packages
-RUN apk add --no-cache bash python3-dev build-base linux-headers pcre-dev nano
+RUN apk add --no-cache bash python3-dev build-base linux-headers pcre-dev nano ttf-dejavu
 
 # Create the log directory
 RUN mkdir -p /var/log/uwsgi
