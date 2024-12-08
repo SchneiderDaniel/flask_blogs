@@ -14,7 +14,7 @@ COPY nginx_${ENVIRONMENT}.conf /etc/nginx/nginx.conf
 
 # Copy the script to the container
 COPY init_nginx.sh /init_nginx.sh
-RUN chmod +x /init_nginx.sh
+RUN chmod +x init_nginx.sh
 
 # Expose HTTP and HTTPS ports
 EXPOSE 80 443
