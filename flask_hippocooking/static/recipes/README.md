@@ -1,12 +1,27 @@
 # Prompt for Translation
 
-Could you please translate the values of this JSON into English (en), Spanish (es) and French (fr)? For each language, provide a separate output.Please do not translate the types in the json.
+Could you please translate the values of this JSON into English (en), Spanish (es) and French (fr)? For each language, provide a separate output.Please do not translate the types in the json: 
 
 # Prompt for json creation:
 write me the following as a json with only text and no attributes:
 
 # Prompt zu Rechtschreibpürfung:
 Kannst du hier die Rechtschreibung prüfen und korrigieren, aber nur wenig verändern?
+
+## Stichpunkte
+
+Bitte schreibe den Inhalt unten in eine json struktur wie hier
+recipeInstructions": [
+      {
+        "@type": "HowToStep",
+        "text": "XXXXX"
+      }
+]
+Kannst du hier auch die Rechtschreibung prüfen und korrigieren, aber nur wenig verändern?
+Der Text ist:
+
+
+
 
 ## Kategorien:
 - Vorspeise
