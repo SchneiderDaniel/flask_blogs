@@ -1,69 +1,77 @@
 {
-    "@context": "https://schema.org",
-    "@type": "Recipe",
-    "name": "Biscuits Classiques aux Pépites de Chocolat",
-    "author": {
-      "@type": "Person",
-      "name": "Jane Doe"
+  "@context": "https://schema.org",
+  "@type": "Recipe",
+  "name": "Pattes d'Ours",
+  "author": {
+    "@type": "Person",
+    "name": "Daniel"
+  },
+  "datePublished": "2024-12-08",
+  "description": "Les pattes d'ours sont probablement parmi les biscuits les plus connus, surtout dans le sud de l'Allemagne. Avec leur saveur amère mais douce à la fois, elles sont un classique incontournable de tout marché de Noël. Elles font partie de mes biscuits préférés et on me demande souvent de les préparer.",
+  "descriptionShort": "Pattes d'ours, tendres et croustillantes.",
+  "prepTime": "25 minutes",
+  "cookTime": "15 minutes",
+  "totalTime": "3 heures",
+  "recipeYield": "36 biscuits",
+  "recipeCategory": "Biscuits de Noël",
+  "recipeCuisine": "Allemande",
+  "recipeIngredient": [
+    "6 blancs d'œufs",
+    "300 g de sucre",
+    "140 g de sucre",
+    "200 g de chocolat noir en tablettes (50%)",
+    "500 g d'amandes, émondées et moulues",
+    "1 cuillère à café de cannelle",
+    "2 cuillères à soupe de cacao",
+    "2 paquets, 16 g de sucre vanillé",
+    "1 citron bio",
+    "1 bol de sucre pour rouler"
+  ],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Tout d'abord, prenez les tablettes de chocolat noir et hachez-les avec un couteau sur une planche à découper jusqu'à obtenir des copeaux fins. Remarque : ne pas utiliser de chocolat râpé prêt à l'emploi, car il n'a souvent pas bon goût."
     },
-    "datePublished": "2024-11-03",
-    "description": "Les biscuits aux pépites de chocolat sont de petites douceurs sucrées qui ravissent par leur texture moelleuse et leur goût intense de chocolat. Souvent remplis de morceaux de chocolat fondants, chaque bouchée offre un mélange parfait de croustillant et de crémeux. L'odeur seule est alléchante et rappelle les pâtisseries fraîchement cuites maison. Que ce soit avec une tasse de café ou comme en-cas, les biscuits aux pépites de chocolat sont un délice irrésistible pour tous les amateurs de douceurs.",
-    "descriptionShort": "Biscuits classiques aux pépites de chocolat délicieux et moelleux.",
-    "prepTime": "PT15M",
-    "cookTime": "PT10M",
-    "totalTime": "PT25M",
-    "recipeYield": "24 biscuits",
-    "recipeCategory": "Dessert",
-    "recipeCuisine": "Américaine",
-    "recipeIngredient": [
-      "2 1/4 tasses de farine tout usage",
-      "1/2 cuillère à café de bicarbonate de soude",
-      "1 tasse de beurre non salé, à température ambiante",
-      "1/2 tasse de sucre granulé",
-      "1 tasse de sucre brun clair, tassé",
-      "1 cuillère à café de sel",
-      "2 cuillères à café d'extrait de vanille pur",
-      "2 gros œufs",
-      "2 tasses de pépites de chocolat mi-sucré et/ou au lait"
-    ],
-    "recipeInstructions": [
-      {
-        "@type": "HowToStep",
-        "text": "Préchauffez le four à 175°C (350°F)."
-      },
-      {
-        "@type": "HowToStep",
-        "text": "Dans un petit bol, mélangez la farine et le bicarbonate de soude et réservez."
-      },
-      {
-        "@type": "HowToStep",
-        "text": "Dans un grand bol, utilisez un mixeur électrique pour battre le beurre et les sucres à vitesse moyenne jusqu'à ce que le mélange soit léger et aéré."
-      },
-      {
-        "@type": "HowToStep",
-        "text": "Ajoutez le sel, la vanille et les œufs et mélangez jusqu'à ce que tout soit bien incorporé."
-      },
-      {
-        "@type": "HowToStep",
-        "text": "Ajoutez progressivement le mélange de farine et mélangez juste ce qu'il faut pour combiner."
-      },
-      {
-        "@type": "HowToStep",
-        "text": "Incorporez les pépites de chocolat."
-      },
-      {
-        "@type": "HowToStep",
-        "text": "Déposez des portions de pâte avec une cuillère sur des plaques de cuisson recouvertes de papier parchemin."
-      },
-      {
-        "@type": "HowToStep",
-        "text": "Faites cuire jusqu'à ce que les biscuits soient dorés, environ 10-12 minutes."
-      },
-      {
-        "@type": "HowToStep",
-        "text": "Laissez refroidir les biscuits sur la plaque de cuisson pendant quelques minutes, puis transférez-les sur une grille."
-      }
-    ],
-    "keywords": "biscuits aux pépites de chocolat, dessert, pâtisserie"
-  }
-  
+    {
+      "@type": "HowToStep",
+      "text": "Ensuite, montez les blancs d'œufs dans un grand bol jusqu'à obtenir des pics fermes, puis ajoutez les 300 g de sucre."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Dans un deuxième grand bol, mélangez le chocolat, les amandes, la cannelle, le cacao, le sucre vanillé et le zeste de citron râpé."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Incorporez délicatement le mélange de sucre et de blancs d'œufs."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "La pâte est maintenant prête, mais encore un peu liquide. Il faut la réfrigérer pendant au moins deux heures."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Formez ensuite les biscuits. Prenez une quantité de pâte de la taille d'une cuillère à café bien remplie et formez une boule."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Roulez cette boule dans un bol de sucre jusqu'à ce qu'elle soit généreusement enrobée."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Vous avez maintenant deux options : 1. Si vous avez un moule à pattes d'ours (voir le lien ci-dessus), pressez les boules dans le moule et retournez-les sur une plaque de cuisson. 2. Si vous avez un moule en bois classique à pattes d'ours (disponible sur tous les marchés de Noël, voir l'image ci-dessus), placez les boules sur la plaque de cuisson, humidifiez le moule en bois, saupoudrez de sucre sur le moule, appuyez sur le moule sur la boule, puis soulevez-le. Remarque : La première option a un peu moins de sucre, mais seule la deuxième option donne à la patte d'ours sa croûte de sucre caractéristique."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Laissez reposer les pattes d'ours formées sur la plaque pendant la nuit."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Le lendemain, faites cuire les pattes d'ours pendant 15 minutes à 180° C au four. Pas plus longtemps, car les pattes doivent être croustillantes à l'extérieur mais encore un peu molles à l'intérieur, pas crues."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "C'est là tout le secret de ces biscuits."
+    }
+  ],
+  "keywords": "Noël, préféré, pâtisserie"
+}

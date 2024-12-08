@@ -1,69 +1,77 @@
 {
-    "@context": "https://schema.org",
-    "@type": "Recipe",
-    "name": "Classic Chocolate Chip Cookies",
-    "author": {
-      "@type": "Person",
-      "name": "Jane Doe"
+  "@context": "https://schema.org",
+  "@type": "Recipe",
+  "name": "Bear Claws",
+  "author": {
+    "@type": "Person",
+    "name": "Daniel"
+  },
+  "datePublished": "2024-12-08",
+  "description": "Bear claws are probably among the most well-known cookies, especially in southern Germany. With their bittersweet flavor, they are a classic that cannot be missing from any Christmas market. They are among my absolute favorite cookies, and I am often asked to bake them.",
+  "descriptionShort": "Bear claws, soft and crunchy.",
+  "prepTime": "25 minutes",
+  "cookTime": "15 minutes",
+  "totalTime": "3 hours",
+  "recipeYield": "36 cookies",
+  "recipeCategory": "Christmas Cookies",
+  "recipeCuisine": "German",
+  "recipeIngredient": [
+    "6 egg whites",
+    "300 g sugar",
+    "140 g sugar",
+    "200 g bar dark chocolate (50%)",
+    "500 g almonds, peeled, ground",
+    "1 tsp cinnamon",
+    "2 tbsp cocoa",
+    "2 packets, 16 g vanilla sugar",
+    "1 organic lemon",
+    "1 bowl of sugar for rolling"
+  ],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "First, take the bars of dark chocolate and chop them with a knife on a cutting board until you have fine shavings. Note: Do not use pre-grated chocolate as it usually doesn't taste good."
     },
-    "datePublished": "2024-11-03",
-    "description": "Chocolate chip cookies are small, sweet treats that delight with their soft texture and intense chocolate flavor. Often filled with melting chocolate chips, each bite offers a perfect blend of crispiness and creaminess. The scent alone is enticing and reminds one of freshly baked goodies from home. Whether with a cup of coffee or as a snack, chocolate chip cookies are an irresistible treat for anyone with a sweet tooth.",
-    "descriptionShort": "Delicious and soft classic chocolate chip cookies.",
-    "prepTime": "PT15M",
-    "cookTime": "PT10M",
-    "totalTime": "PT25M",
-    "recipeYield": "24 cookies",
-    "recipeCategory": "Dessert",
-    "recipeCuisine": "American",
-    "recipeIngredient": [
-      "2 1/4 cups all-purpose flour",
-      "1/2 teaspoon baking soda",
-      "1 cup unsalted butter, room temperature",
-      "1/2 cup granulated sugar",
-      "1 cup packed light brown sugar",
-      "1 teaspoon salt",
-      "2 teaspoons pure vanilla extract",
-      "2 large eggs",
-      "2 cups semi-sweet and/or milk chocolate chips"
-    ],
-    "recipeInstructions": [
-      {
-        "@type": "HowToStep",
-        "text": "Preheat the oven to 175°C (350°F)."
-      },
-      {
-        "@type": "HowToStep",
-        "text": "In a small bowl, mix the flour and baking soda and set aside."
-      },
-      {
-        "@type": "HowToStep",
-        "text": "In a large bowl, use an electric mixer to cream the butter and sugars on medium speed until the mixture is light and fluffy."
-      },
-      {
-        "@type": "HowToStep",
-        "text": "Add the salt, vanilla, and eggs and mix until well combined."
-      },
-      {
-        "@type": "HowToStep",
-        "text": "Gradually add the flour mixture and mix just until combined."
-      },
-      {
-        "@type": "HowToStep",
-        "text": "Fold in the chocolate chips."
-      },
-      {
-        "@type": "HowToStep",
-        "text": "Drop spoonfuls of dough onto baking sheets lined with parchment paper."
-      },
-      {
-        "@type": "HowToStep",
-        "text": "Bake until the cookies are golden brown, about 10-12 minutes."
-      },
-      {
-        "@type": "HowToStep",
-        "text": "Let the cookies cool on the baking sheet for a few minutes, then transfer to a wire rack."
-      }
-    ],
-    "keywords": "chocolate chip cookies, dessert, baking"
-  }
-  
+    {
+      "@type": "HowToStep",
+      "text": "Next, beat the egg whites in a high mixing bowl until stiff peaks form, then add the 300 g of sugar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "In a second large bowl, mix the chocolate, almonds, cinnamon, cocoa, vanilla sugar, and grated lemon zest."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Gently fold in the sugar and egg white mixture."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "The dough is now ready but still a bit too runny. It needs to be refrigerated for at least two hours."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Then, shape the cookies. Take a heaping teaspoon-sized amount of dough and form it into a ball."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Roll this ball in a bowl of sugar until it is generously coated."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Now, you have two options: 1. If you have a bear claw mold (see the link above), press the balls into the mold and flip them onto a baking tray. 2. If you have a classic wooden bear claw mold (available at any Christmas market, see the image above), place the balls on the baking tray, moisten the wooden mold, sprinkle sugar onto the mold, press the mold onto the ball, and then lift it off. Note: The first option has a bit less sugar, but only the second option gives the bear claw its well-known sugar crust."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Let these shaped bear claws rest on the tray overnight."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "The next day, bake the bear claws for 15 minutes at 180° C in the oven. No longer, as the bear claws should be crispy on the outside but still a bit soft on the inside, not doughy."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "The latter is the art of these cookies."
+    }
+  ],
+  "keywords": "Christmas, favorite, baking"
+}
