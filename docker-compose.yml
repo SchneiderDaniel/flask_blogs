@@ -7,8 +7,9 @@ services:
     container_name: flask_hippocooking
     restart: always
     volumes:
-      - ./flask_hippocooking_volume/resources:/app/homepage/static/resources
       - ./flask_hippocooking_volume/uwsgilogs:/var/log/uwsgi/
+      - ./flask_hippocooking_volume/recipes:/app/homepage/static/recipes
+      - ./flask_hippocooking_volume/recipes_images:/app/homepage/static/recipes_images
     expose:
       - 5001
     networks:
