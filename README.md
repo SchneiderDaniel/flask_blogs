@@ -11,12 +11,12 @@ You should create a virtual environment and install the required packages with t
     cd flask_hippocooking
     python -m venv env
     .\env\Scripts\activate    
-    (env) $ pip install -r requirements.txt
+    pip install -r requirements.txt
 
     Linux:
     python3 -m venv env
     source env/bin/activate
-    (env) $ pip install -r requirements.txt
+    pip install -r requirements.txt
 
 ### Run
 cd flask_hippocooking
