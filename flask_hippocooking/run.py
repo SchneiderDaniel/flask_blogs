@@ -6,6 +6,8 @@ from flask_babel import Babel
 bs = Bootstrap5()
 babel = Babel()
 
+
+
 #Babel
 def get_locale():
     # Determine the best match for supported locales
@@ -39,7 +41,7 @@ def create_app():
 
     return app
 
+app = create_app()
 
 if __name__ == "__main__":
-    app = create_app()
     app.run(debug=True, threaded=True)
