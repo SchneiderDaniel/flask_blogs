@@ -27,14 +27,14 @@
     "1 Bio-Zitrone",
     "1 Schale Zucker zum Ausrollen"
   ],  
-  "recipeInstructions": [
+"recipeInstructions": [
     {
       "@type": "HowToStep",
-      "text": "Als erstes nimmt man die Tafeln Zartbitterschokolade und man zerhackt diese mit einem Messer auf einem Schneidebrett bis man feine Raspeln hat. Hinweis: Keine fertig geraspelte Schokolade nehmen, die schmecken meistens nicht"
+      "text": "Als erstes nimmt man die Tafeln Zartbitterschokolade und zerhackt diese mit einem Messer auf einem Schneidebrett, bis man feine Raspeln hat. Hinweis: Keine fertig geraspelte Schokolade nehmen, da diese meistens nicht gut schmeckt."
     },
     {
       "@type": "HowToStep",
-      "text": "Danach schlägt man das Eiweiß in einer hohen Rührschüssel zu Eischnee und gibt danach die 300g Zucker dazu."
+      "text": "Danach schlägt man das Eiweiß in einer hohen Rührschüssel zu Eischnee und gibt anschließend die 300 g Zucker dazu."
     },
     {
       "@type": "HowToStep",
@@ -42,31 +42,31 @@
     },
     {
       "@type": "HowToStep",
-      "text": "Nun wird der Zucker-Eischnee untergehoben"
+      "text": "Nun wird der Zucker-Eischnee untergehoben."
     },
     {
       "@type": "HowToStep",
-      "text": "Nun ist der Teig fertig, ist aber ein wenig zu üssig. Deswegen muss er für mindestens zwei Stunden in den Kühlschrank gestellt werden."
+      "text": "Nun ist der Teig fertig, ist jedoch noch ein wenig zu flüssig. Daher muss er für mindestens zwei Stunden in den Kühlschrank gestellt werden."
     },
     {
       "@type": "HowToStep",
-      "text": "Danach formt man die Plätzchen. Hierzu nimmt man eine gehäufte Teelöfel große Menge an Teig und formt eine Kugel."
+      "text": "Danach formt man die Plätzchen. Hierzu nimmt man eine gehäufte Teelöffel-große Menge an Teig und formt eine Kugel."
     },
     {
       "@type": "HowToStep",
-      "text": "Diese Kugel rollt man dann in einer Schale voll Zucker, bis diese großzügig mit Zucker umhüllt sind."
+      "text": "Diese Kugel rollt man dann in einer Schale voll Zucker, bis sie großzügig mit Zucker umhüllt ist."
     },
     {
       "@type": "HowToStep",
-      "text": "Nun hat man zwei Optionen: 1. Wenn man nun eine Bärentatzenform beschichtet hat (siehe Link oben), drückt man die Kugeln nun in die Form und stürzt sie auf einem Backblech. 2. Wenn man klassisch eine einzelne Bärentatzenform in Holz hat (bekommt man auf jedem Weihnachtsmarkt, siehe Bild oben), dann gibt man die Kugeln auf das Backblech, befeuchtet die Holzform und streut Zucker auf die Backform und drückt die Form auf die Kugel und hebt sie wieder an. Hinweis: Die erste Option hat natürlich ein bischen weniger Zucker, aber nur bei der zweiten Option bekommt die Bärentatze diese bekannte Zuckerkruste."
+      "text": "Nun hat man zwei Optionen: 1. Wenn man eine Bärentatzenform beschichtet hat (siehe Link oben), drückt man die Kugeln in die Form und stürzt sie auf ein Backblech. 2. Wenn man eine klassische Bärentatzenform aus Holz hat (die man auf jedem Weihnachtsmarkt bekommen kann, siehe Bild oben), gibt man die Kugeln auf das Backblech, befeuchtet die Holzform, streut Zucker auf die Form und drückt die Form auf die Kugel, bevor man sie wieder anhebt. Hinweis: Die erste Option hat natürlich ein bisschen weniger Zucker, aber nur bei der zweiten Option erhält die Bärentatze ihre bekannte Zuckerkruste."
     },
     {
       "@type": "HowToStep",
-      "text": "Diese geformten Bärentatzen lässt man nun auf dem Blech für eine Nacht ruhen."
+      "text": "Diese geformten Bärentatzen lässt man nun auf dem Blech über Nacht ruhen."
     },
     {
       "@type": "HowToStep",
-      "text": "Am nächsten Tag muss man die Bärentatzen noch für 15 Minuten auf 180° C im Ofen backen. Nicht länger, da die Bärentatzen außen knusprig, aber innen noch ein wenig weich, aber nicht teigig, sein sollen."
+      "text": "Am nächsten Tag muss man die Bärentatzen noch für 15 Minuten bei 180° C im Ofen backen. Nicht länger, da die Bärentatzen außen knusprig, aber innen noch ein wenig weich, jedoch nicht teigig, sein sollen."
     },
     {
       "@type": "HowToStep",

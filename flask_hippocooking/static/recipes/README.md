@@ -5,6 +5,9 @@ Could you please translate the values of this JSON into English (en), Spanish (e
 # Prompt for json creation:
 write me the following as a json with only text and no attributes:
 
+# Prompt zu Rechtschreibpürfung:
+Kannst du hier die Rechtschreibung prüfen und korrigieren, aber nur wenig verändern?
+
 ## Kategorien:
 - Vorspeise
 - Hauptspeise
