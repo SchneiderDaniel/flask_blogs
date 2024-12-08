@@ -42,6 +42,7 @@ Kannst du hier die Rechtschreibung prüfen und korrigieren, aber nur wenig verä
 - Liebling
 - Süß
 - Backen
+- Einfach
 
 
 
