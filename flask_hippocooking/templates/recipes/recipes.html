@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 
 {% block head %}
+
+    <meta name="description" content="{{ json_recipe.description | default('Leckere Kekse.') }}">
+
+
     <!-- Google Recipe Structured Data using JSON-LD -->
     <script type="application/ld+json">
         {
