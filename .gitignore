@@ -26,6 +26,7 @@ flask_hippocooking/static/recipes/de/*.json
 flask_hippocooking/static/recipes/en/*.json
 flask_hippocooking/static/recipes/es/*.json
 flask_hippocooking/static/recipes/fr/*.json
+flask_hippocooking/static/recipes_images/*.jpg
 
 # Exceptions: Do not ignore specific files
 !flask_hippocooking/static/recipes/de/00000.json
@@ -33,3 +34,4 @@ flask_hippocooking/static/recipes/fr/*.json
 !flask_hippocooking/static/recipes/es/00000.json
 !flask_hippocooking/static/recipes/fr/00000.json
 !flask_hippocooking/static/recipes/example.json
+!flask_hippocooking/static/recipes_images/00000.jpg
