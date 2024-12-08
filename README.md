@@ -8,16 +8,21 @@
 You should create a virtual environment and install the required packages with the following commands:
 
     windows:
+    cd flask_hippocooking
     python -m venv env
     .\env\Scripts\activate    
     (env) $ pip install -r requirements.txt
-
-    .\env\Scripts\deactivate.bat
 
     Linux:
     python3 -m venv env
     source env/bin/activate
     (env) $ pip install -r requirements.txt
+
+### Run
+cd flask_hippocooking
+.\env\Scripts\activate   
+python run.py
+
 
 ## Docker Cheatsheet
 
