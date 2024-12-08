@@ -58,4 +58,4 @@ def recipe(recipe_id, locale_id):
         json_recipe = json.load(file)
 
     # Return the rendered template
-    return render_template('recipes/recipes.html', json_recipe=json_recipe, translations=json_translations, translations_base=json_translations_base, locale_id=locale_id, cookie_consent=g.cookie_consent)
+    return render_template('recipes/recipes.html', json_recipe=json_recipe,recipe_id=recipe_id ,translations=json_translations, translations_base=json_translations_base, locale_id=locale_id, cookie_consent=g.cookie_consent)

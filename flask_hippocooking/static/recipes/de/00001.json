@@ -2,14 +2,10 @@
   "@context": "https://schema.org",
   "@type": "Recipe",
   "name": "Klassische Schokoladenkekse1",
-  "image": [
-    "no_image.jpg"
-  ],
   "author": {
     "@type": "Person",
     "name": "Jane Doe"
   },
-  "mainEntityOfPage": "https://hippocooking.com/recipes/de/00000",
   "datePublished": "2024-11-03",
   "description": "Schokoladenkekse sind kleine, süße Leckerbissen, die durch ihre weiche Textur und den intensiven Geschmack von Schokolade begeistern. Oft mit zartschmelzenden Schokostückchen durchzogen, bieten sie bei jedem Bissen eine perfekte Kombination aus Knusprigkeit und Cremigkeit. Ihr Duft allein ist verlockend und erinnert an frisch gebackene Köstlichkeiten aus der heimischen Küche. Ob zu einer Tasse Kaffee oder als Snack zwischendurch – Schokoladenkekse sind ein unwiderstehlicher Genuss für alle Naschkatzen.",
   "descriptionShort" : "Leckere und weiche klassische Schokoladenkekse.",

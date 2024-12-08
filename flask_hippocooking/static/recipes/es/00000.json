@@ -2,14 +2,10 @@
     "@context": "https://schema.org",
     "@type": "Recipe",
     "name": "Galletas Clásicas de Chocolate",
-    "image": [
-      "https://example.com/photos/chocolate-chip-cookies.jpg"
-    ],
     "author": {
       "@type": "Person",
       "name": "Jane Doe"
     },
-    "mainEntityOfPage": "https://hippocooking.com/recipes/es/00000",
     "datePublished": "2024-11-03",
     "description": "Las galletas de chispas de chocolate son pequeños y dulces bocados que deleitan con su textura suave y sabor intenso a chocolate. A menudo llenas de trozos de chocolate que se derriten, cada bocado ofrece una combinación perfecta de crujiente y cremoso. Solo el aroma es tentador y recuerda a los pasteles recién horneados de casa. Ya sea con una taza de café o como merienda, las galletas de chispas de chocolate son un placer irresistible para todos los amantes de los dulces.",
     "descriptionShort": "Deliciosas y suaves galletas clásicas de chocolate.",
