@@ -11,7 +11,7 @@ def serve_image(image_id):
         abort(404)  # Return a 404 if the ID is invalid
 
     # Define the directory where images are stored
-    image_directory = 'static/resources/images'
+    image_directory = 'static/recipes_images'
 
     # Attempt to serve the image
     try:

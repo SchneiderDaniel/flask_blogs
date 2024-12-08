@@ -17,15 +17,14 @@
 </div>
 
 
-
 <div class="container py-4">
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="tile-gallery">
-        {% for json in json_files %}
+        {% for json, id_item in zip(json_files, id_data) %}
         <div class="col tile">
-            <a href="{{ url_for('recipes.recipe', recipe_id=json.mainEntityOfPage[-5:]) }}" class="text-decoration-none">
+            <a href="{{ url_for('recipes.recipe', recipe_id=id_item) }}" class="text-decoration-none">
                 <div class="card h-100">
-                    {% set image_id = json.mainEntityOfPage[-5:] %}
-                    <img src="{{ url_for('images.serve_image', image_id=json.mainEntityOfPage[-5:]) }}" 
+                    {% set image_id = id_item %}
+                    <img src="{{ url_for('images.serve_image', image_id=id_item) }}" 
                         class="card-img-top lazy-image" alt="Image {{ json.name }}">
                     <div class="card-body">
                         <h5 class="card-title">{{ json.name }}</h5>
@@ -39,6 +38,7 @@
         {% endfor %}
     </div>
 </div>
+
 
 
 <!-- <img class="img img-fluid" src="{{ url_for('static', filename='resources/imgage/no_image.jpg') }}"> -->

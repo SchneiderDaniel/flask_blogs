@@ -53,6 +53,7 @@ def index(locale_id):
 
     # List to store the JSON data
     json_data = []
+    id_data = []
 
     # Check if the directory exists, and then loop through the JSON files in the folder
     if os.path.exists(folder_path):
@@ -63,14 +64,17 @@ def index(locale_id):
                     try:
                         data = json.load(file)
                         json_data.append(data)
+                        file_name_without_extension = os.path.splitext(filename)[0]  # Remove the file extension
+                        id_data.append(file_name_without_extension) 
                     except json.JSONDecodeError:
                         continue  # Skip files that are not valid JSON
     else:
         # If the folder does not exist, you might want to handle the error here
         return f"Folder {folder_path} not found.", 404
 
+    print(id_data)
     
-    return render_template('main/index.html', translations=json_translations, translations_base=json_translations_base, locale_id=locale_id, number_of_recipes=number_of_recipes,json_files=json_data, cookie_consent=g.cookie_consent)
+    return render_template('main/index.html', translations=json_translations, translations_base=json_translations_base, locale_id=locale_id, number_of_recipes=number_of_recipes,json_files=json_data, id_data=id_data, cookie_consent=g.cookie_consent,zip=zip)
 
 
 @main.route('/about', defaults={'locale_id': None})
