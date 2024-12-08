@@ -8,8 +8,8 @@ services:
     restart: always
     volumes:
       - ./flask_hippocooking_volume/uwsgilogs:/var/log/uwsgi/
-      - ./flask_hippocooking_volume/recipes:/app/homepage/static/recipes
-      - ./flask_hippocooking_volume/recipes_images:/app/homepage/static/recipes_images
+      - ./flask_hippocooking_volume/recipes:/app/static/recipes
+      - ./flask_hippocooking_volume/recipes_images:/app/static/recipes_images
     expose:
       - 5001
     networks:
