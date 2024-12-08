@@ -19,3 +19,17 @@ flask_hippocooking/.vscode/
 # Volumes
 flask_hippocooking_volume
 nginx_volume
+
+
+# Ignore all JSON files in flask_hippocooking/static/recipes/
+flask_hippocooking/static/recipes/de/*.json
+flask_hippocooking/static/recipes/en/*.json
+flask_hippocooking/static/recipes/es/*.json
+flask_hippocooking/static/recipes/fr/*.json
+
+# Exceptions: Do not ignore specific files
+!flask_hippocooking/static/recipes/de/00000.json
+!flask_hippocooking/static/recipes/en/00000.json
+!flask_hippocooking/static/recipes/es/00000.json
+!flask_hippocooking/static/recipes/fr/00000.json
+!flask_hippocooking/static/recipes/example.json
