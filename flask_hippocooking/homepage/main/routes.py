@@ -178,5 +178,5 @@ def sitemap_xml():
         xml.append("</url>")
 
     xml.append('</urlset>')
-    return Response("\n".join(xml), mimetype='application/xml')
+    return Response("\n".join(xml), content_type='application/xml; charset=utf-8')
 
