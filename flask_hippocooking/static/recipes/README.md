@@ -14,12 +14,17 @@ Bitte schreibe den Inhalt unten in eine json struktur wie hier
 recipeInstructions": [
       {
         "@type": "HowToStep",
+        "name": "YYYYY",
         "text": "XXXXX"
       }
 ]
-Kannst du hier auch die Rechtschreibung prüfen und korrigieren, aber nur wenig verändern?
+Der key "name" soll eine Zusammenfassung in 1-3 worten von "text" sein.
+zusätzlich, kannst du hier auch die Rechtschreibung prüfen und korrigieren, aber nur wenig verändern?
 Der Text ist:
 
+
+## Prompt für name hinzu
+bitte füge in dieser json zu recipeInstructions für jedes element einen  key "name" hinzu. Der Value soll in 1-3 worten deb Text zusammenfassen.
 
 
 

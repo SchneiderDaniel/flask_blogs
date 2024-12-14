@@ -8,7 +8,7 @@
   },
   "datePublished": "2024-12-08",
   "description": "Bärentatzen zählen wohl, zumindest in Süddeutschland, zu den bekanntesten Plätzchen. Mit ihrem herben, aber zugleich süßen Geschmack sind sie ein Klassiker, der auf keinem Weihnachtsmarkt fehlen darf. Sie gehören zu meinen absoluten Lieblingsplätzchen, und ich werde oft darum gebeten, sie zu backen.",
-  "descriptionShort" : "Bärentatzen, weich und knusprig.",
+  "descriptionShort": "Bärentatzen, weich und knusprig.",
   "prepTime": "25 Minuten",
   "cookTime": "15 Minuten",
   "totalTime": "3 Stunden",
@@ -26,50 +26,61 @@
     "2 Packungen, 16 g Vanillezucker",
     "1 Bio-Zitrone",
     "1 Schale Zucker zum Ausrollen"
-  ],  
-"recipeInstructions": [
+  ],
+  "recipeInstructions": [
     {
       "@type": "HowToStep",
+      "name": "Schokolade raspeln",
       "text": "Als erstes nimmt man die Tafeln Zartbitterschokolade und zerhackt diese mit einem Messer auf einem Schneidebrett, bis man feine Raspeln hat. Hinweis: Keine fertig geraspelte Schokolade nehmen, da diese meistens nicht gut schmeckt."
     },
     {
       "@type": "HowToStep",
+      "name": "Eiweiß schlagen",
       "text": "Danach schlägt man das Eiweiß in einer hohen Rührschüssel zu Eischnee und gibt anschließend die 300 g Zucker dazu."
     },
     {
       "@type": "HowToStep",
+      "name": "Trockene Zutaten mischen",
       "text": "In einer zweiten großen Schüssel vermischt man nun die Schokolade, Mandeln, Zimt, Kakao, Vanillezucker und die geriebene Schale der Zitrone."
     },
     {
       "@type": "HowToStep",
+      "name": "Eischnee unterheben",
       "text": "Nun wird der Zucker-Eischnee untergehoben."
     },
     {
       "@type": "HowToStep",
+      "name": "Teig kühlen",
       "text": "Nun ist der Teig fertig, ist jedoch noch ein wenig zu flüssig. Daher muss er für mindestens zwei Stunden in den Kühlschrank gestellt werden."
     },
     {
       "@type": "HowToStep",
+      "name": "Plätzchen formen",
       "text": "Danach formt man die Plätzchen. Hierzu nimmt man eine gehäufte Teelöffel-große Menge an Teig und formt eine Kugel."
     },
     {
       "@type": "HowToStep",
+      "name": "Kugeln wälzen",
       "text": "Diese Kugel rollt man dann in einer Schale voll Zucker, bis sie großzügig mit Zucker umhüllt ist."
     },
     {
       "@type": "HowToStep",
+      "name": "Formen verwenden",
       "text": "Nun hat man zwei Optionen: 1. Wenn man eine Bärentatzenform beschichtet hat (siehe Link oben), drückt man die Kugeln in die Form und stürzt sie auf ein Backblech. 2. Wenn man eine klassische Bärentatzenform aus Holz hat (die man auf jedem Weihnachtsmarkt bekommen kann, siehe Bild oben), gibt man die Kugeln auf das Backblech, befeuchtet die Holzform, streut Zucker auf die Form und drückt die Form auf die Kugel, bevor man sie wieder anhebt. Hinweis: Die erste Option hat natürlich ein bisschen weniger Zucker, aber nur bei der zweiten Option erhält die Bärentatze ihre bekannte Zuckerkruste."
     },
     {
       "@type": "HowToStep",
+      "name": "Bärentatzen ruhen lassen",
       "text": "Diese geformten Bärentatzen lässt man nun auf dem Blech über Nacht ruhen."
     },
     {
       "@type": "HowToStep",
+      "name": "Bärentatzen backen",
       "text": "Am nächsten Tag muss man die Bärentatzen noch für 15 Minuten bei 180° C im Ofen backen. Nicht länger, da die Bärentatzen außen knusprig, aber innen noch ein wenig weich, jedoch nicht teigig, sein sollen."
     },
     {
       "@type": "HowToStep",
+      "name": "Die Kunst perfektionieren",
       "text": "Letzteres ist die Kunst an diesen Plätzchen."
     }
   ],
