@@ -1,69 +1,65 @@
 {
     "@context": "https://schema.org",
     "@type": "Recipe",
-    "name": "Klassische Schokoladenkekse0",
+    "name": "Leckere Vanillekipferl",
     "author": {
-      "@type": "Person",
-      "name": "Jane Doe"
+        "@type": "Person",
+        "name": "Miriam"
     },
-    "datePublished": "2024-11-03",
-    "description": "Schokoladenkekse sind kleine, süße Leckerbissen, die durch ihre weiche Textur und den intensiven Geschmack von Schokolade begeistern. Oft mit zartschmelzenden Schokostückchen durchzogen, bieten sie bei jedem Bissen eine perfekte Kombination aus Knusprigkeit und Cremigkeit. Ihr Duft allein ist verlockend und erinnert an frisch gebackene Köstlichkeiten aus der heimischen Küche. Ob zu einer Tasse Kaffee oder als Snack zwischendurch – Schokoladenkekse sind ein unwiderstehlicher Genuss für alle Naschkatzen.",
-    "descriptionShort" : "Leckere und weiche klassische Schokoladenkekse.",
-    "prepTime": "PT15M",
-    "cookTime": "PT10M",
-    "totalTime": "PT25M",
-    "recipeYield": "24 Kekse",
-    "recipeCategory": "Dessert",
-    "recipeCuisine": "amerikanisch",
+    "datePublished": "2024-12-08",
+    "description": "Vanillekipferl sind ein Weihnachtsgebäck, das sehr nach Vanille und Mandeln schmeckt und auch sehr zerbrechlich sein kann. Dieses Rezept zerfällt jedoch nicht und ist sehr lecker. Eine wunderschöne Überraschung zu Weihnachten, die alle erfreut.",
+    "prepTime": "PT1H60M",
+    "cookTime": "PT13M",
+    "totalTime": "PT3H",
+    "recipeYield": "36 Plätzchen (3 Bleche)",
+    "recipeCategory": "Weihnachtsplätzchen",
+    "recipeCuisine": "Deutsch",
     "recipeIngredient": [
-      "2 1/4 Tassen Allzweckmehl",
-      "1/2 Teelöffel Natron",
-      "1 Tasse ungesalzene Butter, Zimmertemperatur",
-      "1/2 Tasse Kristallzucker",
-      "1 Tasse hellbrauner Zucker, gepackt",
-      "1 Teelöffel Salz",
-      "2 Teelöffel reiner Vanilleextrakt",
-      "2 große Eier",
-      "2 Tassen halbbittere und/oder Milchschokoladenstückchen"
+        "420 g Mehl",
+        "300 g Butter",
+        "180 g geschälte gemahlene Mandeln",
+        "90 g Zucker",
+        "3 Eigelb (M)",
+        "2 Päckchen 16 g Vanillezucker",
+        "1 Vanilleschote (Mark)"
     ],
     "recipeInstructions": [
-      {
-        "@type": "HowToStep",
-        "text": "Heizen Sie den Ofen auf 175°C (350°F) vor."
-      },
-      {
-        "@type": "HowToStep",
-        "text": "In einer kleinen Schüssel das Mehl und das Natron vermischen und beiseite stellen."
-      },
-      {
-        "@type": "HowToStep",
-        "text": "In einer großen Schüssel mit einem elektrischen Mixer Butter und Zucker auf mittlerer Stufe cremig rühren, bis die Mischung leicht und fluffig ist."
-      },
-      {
-        "@type": "HowToStep",
-        "text": "Salz, Vanille und Eier hinzufügen und vermischen, bis alles gut verbunden ist."
-      },
-      {
-        "@type": "HowToStep",
-        "text": "Nach und nach die Mehlmischung hinzufügen und nur so lange rühren, bis alles vermischt ist."
-      },
-      {
-        "@type": "HowToStep",
-        "text": "Die Schokoladenstückchen unterheben."
-      },
-      {
-        "@type": "HowToStep",
-        "text": "Teig mit einem Esslöffel portionsweise auf mit Backpapier ausgelegte Backbleche geben."
-      },
-      {
-        "@type": "HowToStep",
-        "text": "Backen, bis die Kekse goldbraun sind, etwa 10-12 Minuten."
-      },
-      {
-        "@type": "HowToStep",
-        "text": "Die Kekse ein paar Minuten auf dem Backblech abkühlen lassen, dann auf ein Kuchengitter legen."
-      }
+        {
+            "@type": "HowToStep",
+            "name": "Mehl sieben",
+            "text": "Das Mehl in die Schüssel sieben."
+        },
+        {
+            "@type": "HowToStep",
+            "name": "Teig zubereiten",
+            "text": "Butter, Zucker, gemahlene Mandeln und Eigelb zugeben und mit dem Handrührgerät (Knethaken) zu einem kompakten Teig verarbeiten oder alternativ mit den Händen durchkneten."
+        },
+        {
+            "@type": "HowToStep",
+            "name": "Teig kühlen",
+            "text": "In Frischhaltefolie verpackt für etwa eine Stunde in den Kühlschrank stellen."
+        },
+        {
+            "@type": "HowToStep",
+            "name": "Teig kneten",
+            "text": "Den Teig vor dem Formen nochmal kurz durchkneten (ist etwas bröckelig, aber das ist gewollt)."
+        },
+        {
+            "@type": "HowToStep",
+            "name": "Kipferl formen",
+            "text": "Die Arbeitsplatte muss eigentlich nicht mehr extra bemehlt werden, da der Teig normalerweise nicht klebt. Sollte er das tun, lieber noch etwas Mehl oder Mandeln zufügen. Ich forme die Kipferl immer, indem ich zuerst eine lange Teig-Wurst mache (in der gewünschten Dicke) und dann an den Seiten noch etwas dünner rolle, damit sie die typische Halbmondform bekommen."
+        },
+        {
+            "@type": "HowToStep",
+            "name": "Backen",
+            "text": "Mit Umluft können immer zwei Bleche auf einmal gebacken werden, was etwas Zeit spart. Die Kipferl bei 150°C Umluft für 13 Minuten backen, danach mit Puderzucker und Vanillezucker bestreuen und komplett auskühlen lassen, da sie sonst zerbrechen."
+        },
+        {
+            "@type": "HowToStep",
+            "name": "Tipp",
+            "text": "Macht kein doppeltes Rezept, wenn ihr nicht wirklich ausdauernd seid!"
+        }
     ],
-    "keywords": "Schokoladenkekse, Dessert, Backen"
-  }
-  
+    "keywords": "Weihnachten, Liebling, Backen"
+}
+</script>
