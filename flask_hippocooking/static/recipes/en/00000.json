@@ -1,0 +1,98 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Recipe",
+    "name": "Bear Paws",
+    "author": {
+      "@type": "Person",
+      "name": "Daniel"
+    },
+    "datePublished": "2024-12-08",
+    "description": "Bear paws are probably one of the most popular cookies, at least in southern Germany. With their bittersweet taste, they are a classic that cannot be missing from any Christmas market. They are one of my absolute favorite cookies, and I am often asked to bake them.",
+    "descriptionShort": "Bear paws, soft and crispy.",
+    "prepTime": "PT25M",
+    "cookTime": "PT15M",
+    "totalTime": "PT3H",
+    "recipeYield": "36 cookies",
+    "recipeCategory": "Christmas cookies",
+    "recipeCuisine": "German",
+    "recipeIngredient": [
+      "6 egg whites",
+      "300 g sugar",
+      "140 g sugar",
+      "200 g dark chocolate (50%)",
+      "500 g almonds, peeled, ground",
+      "1 tsp cinnamon",
+      "2 tbsp cocoa",
+      "2 packets, 16 g vanilla sugar",
+      "1 organic lemon",
+      "1 bowl of sugar for rolling"
+    ],
+    "recipeInstructions": [
+      {
+        "@type": "HowToStep",
+        "name": "Grate chocolate",
+        "text": "First, take the bars of dark chocolate and chop them with a knife on a cutting board until you have fine shavings. Note: Do not use pre-grated chocolate, as it often doesn’t taste good."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Whisk egg whites",
+        "text": "Next, whisk the egg whites in a large mixing bowl until stiff, then add the 300 g of sugar."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Mix dry ingredients",
+        "text": "In a second large bowl, mix the chocolate, almonds, cinnamon, cocoa, vanilla sugar, and grated lemon zest."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Fold in egg whites",
+        "text": "Now fold the sugar-egg white mixture into the dry ingredients."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Chill dough",
+        "text": "The dough is now ready but still a bit too liquid. It must be refrigerated for at least two hours."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Shape cookies",
+        "text": "Then form the cookies. Take a heaping teaspoon of dough and form it into a ball."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Roll balls in sugar",
+        "text": "Roll the ball in a bowl of sugar until it is generously coated."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Use molds",
+        "text": "Now you have two options: 1. If you have a coated Bear Paws mold (see the link above), press the balls into the mold and turn them out onto a baking sheet. 2. If you have a traditional wooden Bear Paws mold (which can be found at every Christmas market, see the image above), place the balls on the baking sheet, moisten the wooden mold, sprinkle sugar on it, press it onto the ball, and then lift it off again. Note: The first option naturally uses less sugar, but only the second option gives the Bear Paw its classic sugar crust."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Let Bear Paws rest",
+        "text": "Let the shaped Bear Paws rest on the sheet overnight."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Bake Bear Paws",
+        "text": "The next day, bake the Bear Paws for 15 minutes at 180°C in the oven. Do not bake them longer, as they should be crispy on the outside but still soft inside, not doughy."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Perfect the art",
+        "text": "This is the art of these cookies."
+      }
+    ],
+    "keywords": "Christmas, favorite, baking",
+    "nutrition": {
+      "@type": "NutritionInformation",
+      "calories": "5100 kcal",
+      "proteinContent": "170 g",
+      "carbohydrateContent": "540 g",
+      "fatContent": "300 g",
+      "servingSize": "1 cookie",
+      "servingCalories": "141 kcal"
+    }
+  }
+  

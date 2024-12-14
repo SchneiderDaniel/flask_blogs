@@ -53,9 +53,12 @@
         <p><strong>{{ translations.kueche }}:</strong> {{ json_recipe.recipeCuisine | default("Unbekannt") }}</p>
         <p><strong>{{ translations.stichworte }}:</strong> {{ json_recipe.keywords | default("Rezept") }}</p>
         <br>
-        <p><strong>{{ translations.vorbereitungszeit }}:</strong> {{ json_recipe.prepTime | default("PT0M") }}</p>
-        <p><strong>{{ translations.backzeit }}:</strong> {{ json_recipe.cookTime | default("PT0M") }}</p>
-        <p><strong>{{ translations.gesamtzeit }}:</strong> {{ json_recipe.totalTime | default("PT0M") }}</p>
+        <p><strong>{{ translations.vorbereitungszeit }}:</strong> {{ json_recipe.prepTime | default("PT0M") | replace("PT", "") }}</p>
+        <p><strong>{{ translations.backzeit }}:</strong> {{ json_recipe.cookTime | default("PT0M") | replace("PT", "") }}</p>
+       
+        <p><strong>{{ translations.gesamtzeit }}:</strong> {{ json_recipe.totalTime | default("PT0M") | replace("PT", "") }}</p>
+         <!-- <p><strong>{{ translations.gesamtzeit }}:</strong> {{ json_recipe.totalTime | default("PT0M") }}</p> -->
+
         <p><strong>{{ translations.ergibt }}:</strong> {{ json_recipe.recipeYield | default("1 Portion") }}</p>
 
     </div>
@@ -71,8 +74,14 @@
     <h2>{{ translations.anleitung }}</h2>
     <ol>
         {% for instruction in json_recipe.recipeInstructions | default([]) %}
-        <li><strong>{{ instruction.name | default("No recipeInstructions.") }}</strong>:  {{ instruction.text | default("No recipeInstructions.") }}</li>
 
+        <li>
+            {% if instruction.text | default("No recipeInstructions.") | length > 50 %}
+              <strong>{{ instruction.name | default("No recipeInstructions.") }}</strong>:  
+            {% endif %}
+            {{ instruction.text | default("No recipeInstructions.") }}
+        </li>
+          
         {% endfor %}
     </ol>
     </div>

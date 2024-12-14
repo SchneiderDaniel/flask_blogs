@@ -1,0 +1,98 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Recipe",
+    "name": "Patas de oso",
+    "author": {
+      "@type": "Person",
+      "name": "Daniel"
+    },
+    "datePublished": "2024-12-08",
+    "description": "Las patas de oso son probablemente unas de las galletas más conocidas, al menos en el sur de Alemania. Con su sabor amargo pero al mismo tiempo dulce, son un clásico que no puede faltar en ningún mercado navideño. Son una de mis galletas favoritas, y a menudo me piden que las haga.",
+    "descriptionShort": "Patas de oso, suaves y crujientes.",
+    "prepTime": "PT25M",
+    "cookTime": "PT15M",
+    "totalTime": "PT3H",
+    "recipeYield": "36 galletas",
+    "recipeCategory": "Galletas navideñas",
+    "recipeCuisine": "Alemana",
+    "recipeIngredient": [
+      "6 claras de huevo",
+      "300 g de azúcar",
+      "140 g de azúcar",
+      "200 g de chocolate negro (50%)",
+      "500 g de almendras, peladas, molidas",
+      "1 cucharadita de canela",
+      "2 cucharadas de cacao",
+      "2 paquetes, 16 g de azúcar vainillado",
+      "1 limón orgánico",
+      "1 bol de azúcar para enrollar"
+    ],
+    "recipeInstructions": [
+      {
+        "@type": "HowToStep",
+        "name": "Rallar el chocolate",
+        "text": "Primero, toma las tabletas de chocolate negro y pícalas con un cuchillo sobre una tabla de cortar hasta obtener virutas finas. Nota: No uses chocolate ya rallado, ya que generalmente no sabe bien."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Montar las claras de huevo",
+        "text": "Luego, monta las claras de huevo en un bol grande hasta que estén a punto de nieve y añade los 300 g de azúcar."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Mezclar los ingredientes secos",
+        "text": "En un segundo bol grande, mezcla el chocolate, las almendras, la canela, el cacao, el azúcar vainillado y la cáscara rallada del limón."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Incorporar las claras de huevo",
+        "text": "Ahora, incorpora la mezcla de claras de huevo y azúcar a los ingredientes secos."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Enfriar la masa",
+        "text": "La masa ya está lista pero aún un poco líquida. Debe ser refrigerada durante al menos dos horas."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Formar las galletas",
+        "text": "Luego forma las galletas. Toma una cantidad de masa del tamaño de una cucharadita colmada y forma una bola."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Enrollar las bolas en azúcar",
+        "text": "Enrolla la bola en un bol con azúcar hasta que esté generosamente cubierta."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Usar moldes",
+        "text": "Ahora tienes dos opciones: 1. Si tienes un molde para patas de oso recubierto (ver enlace arriba), presiona las bolas en el molde y desmóntalas sobre una bandeja de hornear. 2. Si tienes un molde tradicional de madera para patas de oso (que puedes encontrar en cualquier mercado navideño, ver imagen arriba), coloca las bolas sobre la bandeja de hornear, humedece el molde de madera, espolvorea azúcar sobre él, presiónalo sobre la bola y luego levántalo. Nota: La primera opción usa menos azúcar, pero solo la segunda opción da a la pata de oso su típica capa de azúcar."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Dejar reposar las patas de oso",
+        "text": "Deja reposar las patas de oso formadas sobre la bandeja durante toda la noche."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Hornear las patas de oso",
+        "text": "Al día siguiente, hornea las patas de oso durante 15 minutos a 180°C en el horno. No las hornees más tiempo, ya que deben estar crujientes por fuera pero aún un poco blandas por dentro, no crudas."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Perfeccionar el arte",
+        "text": "Este es el arte de estas galletas."
+      }
+    ],
+    "keywords": "Navidad, favorito, hornear",
+    "nutrition": {
+      "@type": "NutritionInformation",
+      "calories": "5100 kcal",
+      "proteinContent": "170 g",
+      "carbohydrateContent": "540 g",
+      "fatContent": "300 g",
+      "servingSize": "1 galleta",
+      "servingCalories": "141 kcal"
+    }
+  }
+  

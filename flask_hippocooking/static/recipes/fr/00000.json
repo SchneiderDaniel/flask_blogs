@@ -1,0 +1,98 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Recipe",
+    "name": "Pattes d'ours",
+    "author": {
+      "@type": "Person",
+      "name": "Daniel"
+    },
+    "datePublished": "2024-12-08",
+    "description": "Les pattes d'ours sont probablement l'une des gâteaux les plus populaires, du moins dans le sud de l'Allemagne. Avec leur goût amer mais en même temps sucré, elles sont un classique qui ne doit manquer dans aucun marché de Noël. Ce sont l'un de mes biscuits préférés, et on me demande souvent de les cuire.",
+    "descriptionShort": "Pattes d'ours, tendres et croustillantes.",
+    "prepTime": "PT25M",
+    "cookTime": "PT15M",
+    "totalTime": "PT3H",
+    "recipeYield": "36 biscuits",
+    "recipeCategory": "Biscuits de Noël",
+    "recipeCuisine": "Allemande",
+    "recipeIngredient": [
+      "6 blancs d'œufs",
+      "300 g de sucre",
+      "140 g de sucre",
+      "200 g de chocolat noir (50%)",
+      "500 g d'amandes, pelées et moulues",
+      "1 cuilère à café de cannelle",
+      "2 cuilères à soupe de cacao",
+      "2 paquets de sucre vanillé (16 g)",
+      "1 citron bio",
+      "1 bol de sucre pour enrober"
+    ],
+    "recipeInstructions": [
+      {
+        "@type": "HowToStep",
+        "name": "Râper le chocolat",
+        "text": "Tout d'abord, prenez les tablettes de chocolat noir et hachez-les avec un couteau sur une planche à découper jusqu'à obtenir des copeaux fins. Remarque : Ne prenez pas du chocolat râpé tout prêt, car il n'a souvent pas un bon goût."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Monter les blancs d'œufs",
+        "text": "Ensuite, montez les blancs d'œufs dans un grand bol jusqu'à ce qu'ils soient fermes, puis ajoutez les 300 g de sucre."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Mélanger les ingrédients secs",
+        "text": "Dans un autre grand bol, mélangez le chocolat, les amandes, la cannelle, le cacao, le sucre vanillé et le zeste râpé du citron."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Incorporer les blancs d'œufs",
+        "text": "Incorporez maintenant le mélange de blancs d'œufs et de sucre aux ingrédients secs."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Réfrigérer la pâte",
+        "text": "La pâte est maintenant prête mais encore un peu trop liquide. Elle doit être réfrigérée pendant au moins deux heures."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Former les biscuits",
+        "text": "Ensuite, formez les biscuits. Prenez une cuillère à soupe bien pleine de pâte et formez une boule."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Rouler les boules dans le sucre",
+        "text": "Roulez la boule dans un bol de sucre jusqu'à ce qu'elle soit généreusement recouverte."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Utiliser des moules",
+        "text": "Maintenant, vous avez deux options : 1. Si vous avez un moule à Pattes d'ours recouvert (voir le lien ci-dessus), appuyez les boules dans le moule et démoulez-les sur une plaque de cuisson. 2. Si vous avez un moule traditionnel en bois pour les Pattes d'ours (que l'on peut trouver sur n'importe quel marché de Noël, voir l'image ci-dessus), placez les boules sur la plaque de cuisson, humidifiez le moule en bois, saupoudrez de sucre dessus, appuyez-le sur la boule, puis retirez-le. Remarque : La première option utilise moins de sucre, mais seule la deuxième option donne à la Patte d'ours sa croûte de sucre classique."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Laisser reposer les pattes d'ours",
+        "text": "Laissez les Pattes d'ours formées reposer toute la nuit sur la plaque de cuisson."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Cuire les pattes d'ours",
+        "text": "Le lendemain, faites cuire les Pattes d'ours pendant 15 minutes à 180°C dans le four. Ne les cuisez pas plus longtemps, car elles doivent être croustillantes à l'extérieur mais encore un peu moelleuses à l'intérieur, pas pâteuses."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Perfectionner l'art",
+        "text": "C'est l'art de ces biscuits."
+      }
+    ],
+    "keywords": "Noël, favori, cuisson",
+    "nutrition": {
+      "@type": "NutritionInformation",
+      "calories": "5100 kcal",
+      "proteinContent": "170 g",
+      "carbohydrateContent": "540 g",
+      "fatContent": "300 g",
+      "servingSize": "1 biscuit",
+      "servingCalories": "141 kcal"
+    }
+  }
+  
