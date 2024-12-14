@@ -2,11 +2,11 @@
 
 {% block head %}
 
-    <meta name="description" content="{{ json_recipe.description | default('Leckere Kekse.') }}">
+<meta name="description" content="{{ json_recipe.description | default('Leckere Kekse.') }}">
 
 
-    <!-- Google Recipe Structured Data using JSON-LD -->
-    <script type="application/ld+json">
+<!-- Google Recipe Structured Data using JSON-LD -->
+<script type="application/ld+json">
         {
             "@context": "https://schema.org",
             "@type": "Recipe",
@@ -32,93 +32,114 @@
         }
     </script>
 
-    <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='css/recipes.css') }}>
+<link rel="stylesheet" type="text/css" href={{ url_for('static', filename='css/recipes.css' ) }}>
 
 {% endblock %}
 
 {% block content %}
 <div class="content_box">
-    
 
-    <h1>{{ json_recipe.name | default("Recipe") }}</h1>
-    <br>
-    <p><strong>{{ translations.beschreibung }}:</strong> {{ json_recipe.description | default("Description not available.") }}</p>
+    <!-- <h1>{{ json_recipe.name | default("Recipe") }}</h1> -->
 
-    <div style="text-align: center;">
-        <img src="{{ url_for('images.serve_image', image_id=recipe_id) }}" alt="{{ json_recipe.name | default('Rezept') }}" style="max-width: 100%; height: auto;" />
+    <h1 class="text-center">{{ json_recipe.name | default("Recipe") }}</h1>
 
-        <p><strong>{{ translations.autor }}:</strong> {{ json_recipe.author.name | default("Unbekannt") }}</p>
-        <p><strong>{{ translations.veroeffentlichungsdatum }}:</strong> {{ json_recipe.datePublished | default("2024-01-01") }}</p>
-        <p><strong>{{ translations.kategorie }}:</strong> {{ json_recipe.recipeCategory | default("Allgemein") }}</p>
-        <p><strong>{{ translations.kueche }}:</strong> {{ json_recipe.recipeCuisine | default("Unbekannt") }}</p>
-        <p><strong>{{ translations.stichworte }}:</strong> {{ json_recipe.keywords | default("Rezept") }}</p>
-        <br>
-        <p><strong>{{ translations.vorbereitungszeit }}:</strong> {{ json_recipe.prepTime | default("PT0M") | replace("PT", "") }}</p>
-        <p><strong>{{ translations.backzeit }}:</strong> {{ json_recipe.cookTime | default("PT0M") | replace("PT", "") }}</p>
-       
-        <p><strong>{{ translations.gesamtzeit }}:</strong> {{ json_recipe.totalTime | default("PT0M") | replace("PT", "") }}</p>
-         <!-- <p><strong>{{ translations.gesamtzeit }}:</strong> {{ json_recipe.totalTime | default("PT0M") }}</p> -->
-
-        <p><strong>{{ translations.ergibt }}:</strong> {{ json_recipe.recipeYield | default("1 Portion") }}</p>
-
-    </div>
-
-    <div>
-    <h2>{{ translations.zutaten }}</h2>
-    <ul>
-        {% for ingredient in json_recipe.recipeIngredient | default([]) %}
-            <li>{{ ingredient }}</li>
-        {% endfor %}
-    </ul>
-
-    <h2>{{ translations.anleitung }}</h2>
-    <ol>
-        {% for instruction in json_recipe.recipeInstructions | default([]) %}
-
-        <li>
-            {% if instruction.text | default("No recipeInstructions.") | length > 50 %}
-              <strong>{{ instruction.name | default("No recipeInstructions.") }}</strong>:  
-            {% endif %}
-            {{ instruction.text | default("No recipeInstructions.") }}
-        </li>
-          
-        {% endfor %}
-    </ol>
-
-
-    <h2>{{ translations.naehrwerte }}</h2>
-    <table>
-        <tr>
-          <td style="padding-right: 20px;"><strong>{{ translations.gesamtkalorien }}:</strong></td>
-          <td>{{ json_recipe.nutrition.calories | default("0 kcal") }}</td>
-        </tr>
-        <tr>
-          <td style="padding-right: 20px;"><strong>{{ translations.protein }}:</strong></td>
-          <td>{{ json_recipe.nutrition.proteinContent | default("0 g") }}</td>
-        </tr>
-        <tr>
-          <td style="padding-right: 20px;"><strong>{{ translations.kohlenhydate }}:</strong></td>
-          <td>{{ json_recipe.nutrition.carbohydrateContent | default("0 g") }}</td>
-        </tr>
-        <tr>
-          <td style="padding-right: 20px;"><strong>{{ translations.fett }}:</strong></td>
-          <td>{{ json_recipe.nutrition.fatContent | default("0 g") }}</td>
-        </tr>
-        <tr>
-          <td style="padding-right: 20px;"><strong>{{ translations.serviergroesse }}:</strong></td>
-          <td>{{ json_recipe.nutrition.servingSize | default("0") }}</td>
-        </tr>
-        <tr>
-          <td style="padding-right: 20px;"><strong>{{ translations.servierkalorien }}:</strong></td>
-          <td>{{ json_recipe.nutrition.servingCalories | default("0 kcal") }}</td>
-        </tr>
-      </table>
       
-      
+
+    <div class="container mt-4">
+        <div class="row">
+            <!-- First text block -->
+            <div class="col-md-6 mb-4">
+                <!-- <div class="p-3"> -->
+                <p><strong>{{ translations.beschreibung }}:</strong> {{ json_recipe.description | default("Description
+                    not available.") }}</p>
+
+                <div style="text-align: center;">
+                    <img src="{{ url_for('images.serve_image', image_id=recipe_id) }}"
+                        alt="{{ json_recipe.name | default('Rezept') }}" style="max-width: 100%; height: auto;" />
+
+                    <p><strong>{{ translations.autor }}:</strong> {{ json_recipe.author.name | default("Unbekannt") }}
+                    </p>
+                    <p><strong>{{ translations.veroeffentlichungsdatum }}:</strong> {{ json_recipe.datePublished |
+                        default("2024-01-01") }}</p>
+                    <p><strong>{{ translations.kategorie }}:</strong> {{ json_recipe.recipeCategory |
+                        default("Allgemein") }}</p>
+                    <p><strong>{{ translations.kueche }}:</strong> {{ json_recipe.recipeCuisine | default("Unbekannt")
+                        }}</p>
+                    <p><strong>{{ translations.stichworte }}:</strong> {{ json_recipe.keywords | default("Rezept") }}
+                    </p>
+                    <br>
+                    <p><strong>{{ translations.vorbereitungszeit }}:</strong> {{ json_recipe.prepTime | default("PT0M")
+                        | replace("PT", "") }}</p>
+                    <p><strong>{{ translations.backzeit }}:</strong> {{ json_recipe.cookTime | default("PT0M") |
+                        replace("PT", "") }}</p>
+
+                    <p><strong>{{ translations.gesamtzeit }}:</strong> {{ json_recipe.totalTime | default("PT0M") |
+                        replace("PT", "") }}</p>
+                    <!-- <p><strong>{{ translations.gesamtzeit }}:</strong> {{ json_recipe.totalTime | default("PT0M") }}</p> -->
+
+                    <p><strong>{{ translations.ergibt }}:</strong> {{ json_recipe.recipeYield | default("1 Portion") }}
+                    </p>
+
+                    <!-- </div> -->
+                </div>
+            </div>
+
+            <!-- Second text block -->
+            <div class="col-md-6 mb-4">
+                <!-- <div class="p-3 border bg-light"> -->
+                <h2>{{ translations.zutaten }}</h2>
+                <ul>
+                    {% for ingredient in json_recipe.recipeIngredient | default([]) %}
+                    <li>{{ ingredient }}</li>
+                    {% endfor %}
+                </ul>
+
+                <h2>{{ translations.anleitung }}</h2>
+                <ol>
+                    {% for instruction in json_recipe.recipeInstructions | default([]) %}
+
+                    <li>
+                        {% if instruction.text | default("No recipeInstructions.") | length > 50 %}
+                        <strong>{{ instruction.name | default("No recipeInstructions.") }}</strong>:
+                        {% endif %}
+                        {{ instruction.text | default("No recipeInstructions.") }}
+                    </li>
+
+                    {% endfor %}
+                </ol>
+
+
+                <h2>{{ translations.naehrwerte }}</h2>
+                <table>
+                    <tr>
+                        <td style="padding-right: 20px;"><strong>{{ translations.gesamtkalorien }}:</strong></td>
+                        <td>{{ json_recipe.nutrition.calories | default("0 kcal") }}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-right: 20px;"><strong>{{ translations.protein }}:</strong></td>
+                        <td>{{ json_recipe.nutrition.proteinContent | default("0 g") }}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-right: 20px;"><strong>{{ translations.kohlenhydate }}:</strong></td>
+                        <td>{{ json_recipe.nutrition.carbohydrateContent | default("0 g") }}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-right: 20px;"><strong>{{ translations.fett }}:</strong></td>
+                        <td>{{ json_recipe.nutrition.fatContent | default("0 g") }}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-right: 20px;"><strong>{{ translations.serviergroesse }}:</strong></td>
+                        <td>{{ json_recipe.nutrition.servingSize | default("0") }}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-right: 20px;"><strong>{{ translations.servierkalorien }}:</strong></td>
+                        <td>{{ json_recipe.nutrition.servingCalories | default("0 kcal") }}</td>
+                    </tr>
+                </table>
+
+                <!-- </div> -->
+            </div>
+        </div>
     </div>
-
-
-
-
 </div>
 {% endblock %}
