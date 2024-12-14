@@ -37,6 +37,9 @@ Could you please translate the values of this JSON into German (de), English (en
 
 
 
+# HTML texte
+
+Unten ist eine json beigefügt. Bitte prüfe hier als erstes die Rechschreibung der values. Danach übersetze die values der json in English, spanisch und französisch. Bitte gebe mir alle 4 json codes zum kopieren:
 
 
 

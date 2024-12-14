@@ -5,11 +5,18 @@
     "veroeffentlichungsdatum": "Fecha de Publicación",
     "kategorie": "Categoría",
     "kueche": "Cocina",
-    "stichworte": "Palabras Clave",
-    "vorbereitungszeit": "Tiempo de Preparación",
-    "backzeit": "Tiempo de Cocción",
-    "gesamtzeit": "Tiempo Total",
+    "stichworte": "Palabras clave",
+    "vorbereitungszeit": "Tiempo de preparación",
+    "backzeit": "Tiempo de horneado",
+    "gesamtzeit": "Tiempo total",
     "ergibt": "Rinde",
     "zutaten": "Ingredientes",
-    "anleitung": "Instrucciones"
+    "anleitung": "Instrucciones",
+    "naehrwerte": "Información nutricional",
+    "gesamtkalorien": "Calorías totales",
+    "protein": "Proteína",
+    "kohlenhydate": "Carbohidratos",
+    "fett": "Grasas",
+    "serviergroesse": "Tamaño de la porción",
+    "servierkalorien": "Calorías por porción"
 }

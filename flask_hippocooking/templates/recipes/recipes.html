@@ -84,6 +84,37 @@
           
         {% endfor %}
     </ol>
+
+
+    <h2>{{ translations.naehrwerte }}</h2>
+    <table>
+        <tr>
+          <td style="padding-right: 20px;"><strong>{{ translations.gesamtkalorien }}:</strong></td>
+          <td>{{ json_recipe.nutrition.calories | default("0 kcal") }}</td>
+        </tr>
+        <tr>
+          <td style="padding-right: 20px;"><strong>{{ translations.protein }}:</strong></td>
+          <td>{{ json_recipe.nutrition.proteinContent | default("0 g") }}</td>
+        </tr>
+        <tr>
+          <td style="padding-right: 20px;"><strong>{{ translations.kohlenhydate }}:</strong></td>
+          <td>{{ json_recipe.nutrition.carbohydrateContent | default("0 g") }}</td>
+        </tr>
+        <tr>
+          <td style="padding-right: 20px;"><strong>{{ translations.fett }}:</strong></td>
+          <td>{{ json_recipe.nutrition.fatContent | default("0 g") }}</td>
+        </tr>
+        <tr>
+          <td style="padding-right: 20px;"><strong>{{ translations.serviergroesse }}:</strong></td>
+          <td>{{ json_recipe.nutrition.servingSize | default("0") }}</td>
+        </tr>
+        <tr>
+          <td style="padding-right: 20px;"><strong>{{ translations.servierkalorien }}:</strong></td>
+          <td>{{ json_recipe.nutrition.servingCalories | default("0 kcal") }}</td>
+        </tr>
+      </table>
+      
+      
     </div>
 
 

@@ -11,6 +11,12 @@
     "gesamtzeit": "Total Time",
     "ergibt": "Yields",
     "zutaten": "Ingredients",
-    "anleitung": "Instructions"
+    "anleitung": "Instructions",
+    "naehrwerte": "Nutritional Information",
+    "gesamtkalorien": "Total Calories",
+    "protein": "Protein",
+    "kohlenhydate": "Carbohydrates",
+    "fett": "Fat",
+    "serviergroesse": "Serving Size",
+    "servierkalorien": "Calories per Serving"
 }
-
