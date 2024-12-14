@@ -74,39 +74,37 @@
         </script>
 
         <script>
-            document.addEventListener('DOMContentLoaded', function () {
+            function updateCookieBanner() {
                 const cookieBanner = document.getElementById('cookie-banner');
                 const cookieOverlay = document.getElementById('cookie-overlay');
-                const acceptButton = document.getElementById('accept-cookies');
 
                 // Check if the 'cookieConsentHippocookingcom' cookie is set
                 if (!document.cookie.split('; ').find(row => row.startsWith('cookieConsentHippocookingcom='))) {
                     cookieBanner.style.display = 'block';
                     cookieOverlay.style.display = 'block';
                 } else {
-                    // Hide overlay if consent is given
+                    cookieBanner.style.display = 'none';
                     cookieOverlay.style.display = 'none';
                 }
+            }
+
+            document.addEventListener('DOMContentLoaded', function () {
+                const acceptButton = document.getElementById('accept-cookies');
+
+                updateCookieBanner();
 
                 acceptButton.addEventListener('click', function () {
                     document.cookie = "cookieConsentHippocookingcom=true; path=/; max-age=" + (60 * 60 * 24 * 365); // 1 year expiry
-                    cookieBanner.style.display = 'none';
-                    cookieOverlay.style.display = 'none';
+                    updateCookieBanner();
                 });
             });
-        </script>
 
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const cookieOverlay = document.getElementById('cookie-overlay');
-
-                {% if not cookie_consent %}
-                // Show the overlay if consent has not been given
-                cookieOverlay.style.display = 'block';
-                {% endif %}
+            // Handle back navigation
+            window.addEventListener('pageshow', function () {
+                updateCookieBanner();
             });
         </script>
-
+        
     </div>
 </body>
 
