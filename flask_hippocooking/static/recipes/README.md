@@ -72,6 +72,8 @@ bitte füge in dieser json zu recipeInstructions für jedes element einen  key "
 - Thailändisch
 - Türkisch
 - Griechisch
+- Österreichisch
+- Schweizerisch
 
 
 ## Keywords
