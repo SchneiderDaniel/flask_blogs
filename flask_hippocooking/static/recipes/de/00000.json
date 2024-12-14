@@ -84,5 +84,14 @@
       "text": "Letzteres ist die Kunst an diesen Plätzchen."
     }
   ],
-  "keywords": "Weihnachten, Liebling, Backen"
+  "keywords": "Weihnachten, Liebling, Backen",
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "calories": "5100 kcal",
+    "proteinContent": "170 g",
+    "carbohydrateContent": "540 g",
+    "fatContent": "300 g",
+    "servingSize": "1 Plätzchen",
+    "servingCalories": "141 kcal"
+  }
 }

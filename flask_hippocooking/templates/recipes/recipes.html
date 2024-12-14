@@ -27,6 +27,7 @@
             "recipeCuisine": "{{ json_recipe.recipeCuisine | default('Unbekannt') }}",
             "recipeIngredient": {{ json_recipe.recipeIngredient | default([]) | tojson }},
             "recipeInstructions": {{ json_recipe.recipeInstructions | default([]) | tojson }},
+            "nutrition": {{ json_recipe.nutrition | default([]) | tojson }},
             "keywords": "{{ json_recipe.keywords | default('Rezept') }}"
         }
     </script>
@@ -70,7 +71,8 @@
     <h2>{{ translations.anleitung }}</h2>
     <ol>
         {% for instruction in json_recipe.recipeInstructions | default([]) %}
-            <li>{{ instruction.text | default("No recipeInstructions.") }}</li>
+        <li><strong>{{ instruction.name | default("No recipeInstructions.") }}</strong>:  {{ instruction.text | default("No recipeInstructions.") }}</li>
+
         {% endfor %}
     </ol>
     </div>

@@ -1,65 +1,77 @@
 {
-    "@context": "https://schema.org",
-    "@type": "Recipe",
-    "name": "Leckere Vanillekipferl",
-    "author": {
-        "@type": "Person",
-        "name": "Miriam"
+  "@context": "https://schema.org",
+  "@type": "Recipe",
+  "name": "Leckere Vanillekipferl",
+  "author": {
+    "@type": "Person",
+    "name": "Miriam"
+  },
+  "datePublished": "2024-12-08",
+  "description": "Vanillekipferl sind ein Weihnachtsgebäck, das sehr nach Vanille und Mandeln schmeckt und auch sehr zerbrechlich sein kann. Dieses Rezept zerfällt jedoch nicht und ist sehr lecker. Eine wunderschöne Überraschung zu Weihnachten, die alle erfreut.",
+  "descriptionShort": "Vanillekipferl, weich und knusprig.",
+  "prepTime": "PT1H60M",
+  "cookTime": "PT13M",
+  "totalTime": "PT3H",
+  "recipeYield": "36 Plätzchen (3 Bleche)",
+  "recipeCategory": "Weihnachtsplätzchen",
+  "recipeCuisine": "Deutsch",
+  "recipeIngredient": [
+    "420 g Mehl",
+    "300 g Butter",
+    "180 g geschälte gemahlene Mandeln",
+    "90 g Zucker",
+    "3 Eigelb (M)",
+    "2 Päckchen 16 g Vanillezucker",
+    "1 Vanilleschote (Mark)"
+  ],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "name": "Mehl sieben",
+      "text": "Das Mehl in die Schüssel sieben."
     },
-    "datePublished": "2024-12-08",
-    "description": "Vanillekipferl sind ein Weihnachtsgebäck, das sehr nach Vanille und Mandeln schmeckt und auch sehr zerbrechlich sein kann. Dieses Rezept zerfällt jedoch nicht und ist sehr lecker. Eine wunderschöne Überraschung zu Weihnachten, die alle erfreut.",
-    "descriptionShort" : "Vanillekipferl, weich und knusprig.",
-    "prepTime": "PT1H60M",
-    "cookTime": "PT13M",
-    "totalTime": "PT3H",
-    "recipeYield": "36 Plätzchen (3 Bleche)",
-    "recipeCategory": "Weihnachtsplätzchen",
-    "recipeCuisine": "Deutsch",
-    "recipeIngredient": [
-        "420 g Mehl",
-        "300 g Butter",
-        "180 g geschälte gemahlene Mandeln",
-        "90 g Zucker",
-        "3 Eigelb (M)",
-        "2 Päckchen 16 g Vanillezucker",
-        "1 Vanilleschote (Mark)"
-    ],
-    "recipeInstructions": [
-        {
-            "@type": "HowToStep",
-            "name": "Mehl sieben",
-            "text": "Das Mehl in die Schüssel sieben."
-        },
-        {
-            "@type": "HowToStep",
-            "name": "Teig zubereiten",
-            "text": "Butter, Zucker, gemahlene Mandeln und Eigelb zugeben und mit dem Handrührgerät (Knethaken) zu einem kompakten Teig verarbeiten oder alternativ mit den Händen durchkneten."
-        },
-        {
-            "@type": "HowToStep",
-            "name": "Teig kühlen",
-            "text": "In Frischhaltefolie verpackt für etwa eine Stunde in den Kühlschrank stellen."
-        },
-        {
-            "@type": "HowToStep",
-            "name": "Teig kneten",
-            "text": "Den Teig vor dem Formen nochmal kurz durchkneten (ist etwas bröckelig, aber das ist gewollt)."
-        },
-        {
-            "@type": "HowToStep",
-            "name": "Kipferl formen",
-            "text": "Die Arbeitsplatte muss eigentlich nicht mehr extra bemehlt werden, da der Teig normalerweise nicht klebt. Sollte er das tun, lieber noch etwas Mehl oder Mandeln zufügen. Ich forme die Kipferl immer, indem ich zuerst eine lange Teig-Wurst mache (in der gewünschten Dicke) und dann an den Seiten noch etwas dünner rolle, damit sie die typische Halbmondform bekommen."
-        },
-        {
-            "@type": "HowToStep",
-            "name": "Backen",
-            "text": "Mit Umluft können immer zwei Bleche auf einmal gebacken werden, was etwas Zeit spart. Die Kipferl bei 150°C Umluft für 13 Minuten backen, danach mit Puderzucker und Vanillezucker bestreuen und komplett auskühlen lassen, da sie sonst zerbrechen."
-        },
-        {
-            "@type": "HowToStep",
-            "name": "Tipp",
-            "text": "Macht kein doppeltes Rezept, wenn ihr nicht wirklich ausdauernd seid!"
-        }
-    ],
-    "keywords": "Weihnachten, Liebling, Backen"
+    {
+      "@type": "HowToStep",
+      "name": "Teig zubereiten",
+      "text": "Butter, Zucker, gemahlene Mandeln und Eigelb zugeben und mit dem Handrührgerät (Knethaken) zu einem kompakten Teig verarbeiten oder alternativ mit den Händen durchkneten."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Teig kühlen",
+      "text": "In Frischhaltefolie verpackt für etwa eine Stunde in den Kühlschrank stellen."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Teig kneten",
+      "text": "Den Teig vor dem Formen nochmal kurz durchkneten (ist etwas bröckelig, aber das ist gewollt)."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Kipferl formen",
+      "text": "Die Arbeitsplatte muss eigentlich nicht mehr extra bemehlt werden, da der Teig normalerweise nicht klebt. Sollte er das tun, lieber noch etwas Mehl oder Mandeln zufügen. Ich forme die Kipferl immer, indem ich zuerst eine lange Teig-Wurst mache (in der gewünschten Dicke) und dann an den Seiten noch etwas dünner rolle, damit sie die typische Halbmondform bekommen."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Backen",
+      "text": "Mit Umluft können immer zwei Bleche auf einmal gebacken werden, was etwas Zeit spart. Die Kipferl bei 150°C Umluft für 13 Minuten backen, danach mit Puderzucker und Vanillezucker bestreuen und komplett auskühlen lassen, da sie sonst zerbrechen."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Tipp",
+      "text": "Macht kein doppeltes Rezept, wenn ihr nicht wirklich ausdauernd seid!"
+    }
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "calories": "142 kcal",
+    "fatContent": "9.7g",
+    "saturatedFatContent": "5.3g",
+    "carbohydrateContent": "11.8g",
+    "sugarContent": "9.9g",
+    "proteinContent": "1.9g",
+    "fiberContent": "0.5g",
+    "cholesterolContent": "43mg",
+    "sodiumContent": "2mg"
+  },
+  "keywords": "Weihnachten, Liebling, Backen"
 }
