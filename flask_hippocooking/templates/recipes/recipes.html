@@ -39,17 +39,14 @@
 {% block content %}
 <div class="content_box">
 
-    <!-- <h1>{{ json_recipe.name | default("Recipe") }}</h1> -->
-
     <h1 class="text-center">{{ json_recipe.name | default("Recipe") }}</h1>
 
-      
+
 
     <div class="container mt-4">
         <div class="row">
             <!-- First text block -->
             <div class="col-md-6 mb-4">
-                <!-- <div class="p-3"> -->
                 <p><strong>{{ translations.beschreibung }}:</strong> {{ json_recipe.description | default("Description
                     not available.") }}</p>
 
@@ -75,7 +72,6 @@
 
                     <p><strong>{{ translations.gesamtzeit }}:</strong> {{ json_recipe.totalTime | default("PT0M") |
                         replace("PT", "") }}</p>
-                    <!-- <p><strong>{{ translations.gesamtzeit }}:</strong> {{ json_recipe.totalTime | default("PT0M") }}</p> -->
 
                     <p><strong>{{ translations.ergibt }}:</strong> {{ json_recipe.recipeYield | default("1 Portion") }}
                     </p>
@@ -86,7 +82,6 @@
 
             <!-- Second text block -->
             <div class="col-md-6 mb-4">
-                <!-- <div class="p-3 border bg-light"> -->
                 <h2>{{ translations.zutaten }}</h2>
                 <ul>
                     {% for ingredient in json_recipe.recipeIngredient | default([]) %}
@@ -136,8 +131,6 @@
                         <td>{{ json_recipe.nutrition.servingCalories | default("0 kcal") }}</td>
                     </tr>
                 </table>
-
-                <!-- </div> -->
             </div>
         </div>
     </div>
