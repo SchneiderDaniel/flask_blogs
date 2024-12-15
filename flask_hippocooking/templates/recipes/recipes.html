@@ -7,30 +7,45 @@
 
 <!-- Google Recipe Structured Data using JSON-LD -->
 <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Recipe",
-            "name": "{{ json_recipe.name | default('Klassische Schokoladenkekse') }}",
-            "image": "https://hippocooking.com/images/{{ recipe_id | default('00000') }}",
-            "author": {
-                "@type": "Person",
-                "name": "{{ json_recipe.author.name | default('Unbekannt') }}"
-            },
-            "mainEntityOfPage": "https://hippocooking.com/recipes/{{ locale_id | default('en') }}/{{ recipe_id | default('00000') }}",
-            "datePublished": "{{ json_recipe.datePublished | default('2024-01-01') }}",
-            "description": "{{ json_recipe.description | default('Leckere Kekse.') }}",
-            "prepTime": "{{ json_recipe.prepTime | default('PT0M') }}",
-            "cookTime": "{{ json_recipe.cookTime | default('PT0M') }}",
-            "totalTime": "{{ json_recipe.totalTime | default('PT0M') }}",
-            "recipeYield": "{{ json_recipe.recipeYield | default('1 Portion') }}",
-            "recipeCategory": "{{ json_recipe.recipeCategory | default('Allgemein') }}",
-            "recipeCuisine": "{{ json_recipe.recipeCuisine | default('Unbekannt') }}",
-            "recipeIngredient": {{ json_recipe.recipeIngredient | default([]) | tojson }},
-            "recipeInstructions": {{ json_recipe.recipeInstructions | default([]) | tojson }},
-            "nutrition": {{ json_recipe.nutrition | default([]) | tojson }},
-            "keywords": "{{ json_recipe.keywords | default('Rezept') }}"
-        }
-    </script>
+    {
+        "@context": "https://schema.org",
+        "@type": "Recipe",
+        "name": "{{ json_recipe.name | default('Klassische Schokoladenkekse') }}",
+        "image": "https://hippocooking.com/images/{{ recipe_id | default('00000') }}",
+        "author": {
+            "@type": "Person",
+            "name": "{{ json_recipe.author.name | default('Unbekannt') }}"
+        },
+        "mainEntityOfPage": "https://hippocooking.com/recipes/{{ locale_id | default('en') }}/{{ recipe_id | default('00000') }}",
+        "datePublished": "{{ json_recipe.datePublished | default('2024-01-01') }}",
+        "description": "{{ json_recipe.description | default('Leckere Kekse.') }}",
+        "prepTime": "{{ json_recipe.prepTime | default('PT0M') }}",
+        "cookTime": "{{ json_recipe.cookTime | default('PT0M') }}",
+        "totalTime": "{{ json_recipe.totalTime | default('PT0M') }}",
+        "recipeYield": "{{ json_recipe.recipeYield | default('1 Portion') }}",
+        "recipeCategory": "{{ json_recipe.recipeCategory | default('Allgemein') }}",
+        "recipeCuisine": "{{ json_recipe.recipeCuisine | default('Unbekannt') }}",
+        "recipeIngredient": {{ json_recipe.recipeIngredient | default([]) | tojson }},
+        "recipeInstructions": {{ json_recipe.recipeInstructions | default([]) | tojson }},
+        "nutrition": {{ json_recipe.nutrition | default([]) | tojson }},
+        "keywords": "{{ json_recipe.keywords | default('Rezept') }}"
+    }
+</script>
+
+<!-- Iamge Structured Data using JSON-LD -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "ImageObject",
+        "contentUrl": "https://hippocooking.com/images/{{ recipe_id | default('00000') }}",
+        "name": "{{ json_recipe.name | default('Rezept') }}",
+        "description": "An image of {{ json_recipe.description | default('a delicious recipe') }}.",
+        "author": {
+            "@type": "Person",
+            "name": "{{ json_recipe.author.name | default('Unbekannt') }}"
+        },
+    }
+</script>
 
 <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='css/recipes.css' ) }}>
 
@@ -52,7 +67,9 @@
 
                 <div style="text-align: center;">
                     <img src="{{ url_for('images.serve_image', image_id=recipe_id) }}"
-                        alt="{{ json_recipe.name | default('Rezept') }}" style="max-width: 100%; height: auto;" />
+                        alt="{{ json_recipe.descriptionShort | default('Rezept') }}"
+                        title="{{ json_recipe.name | default('Rezept Bild') }}" style="max-width: 100%; height: auto;"
+                        width="800" height="600" loading="lazy" />
 
                     <p><strong>{{ translations.autor }}:</strong> {{ json_recipe.author.name | default("Unbekannt") }}
                     </p>
