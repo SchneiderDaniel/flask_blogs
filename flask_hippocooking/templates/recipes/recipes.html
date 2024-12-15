@@ -98,12 +98,15 @@
                     <p><strong>{{ translations.ergibt }}:</strong> {{ json_recipe.recipeYield | default("1 Portion") }}
                     </p>
 
+
                     <!-- </div> -->
                 </div>
             </div>
 
             <!-- Second text block -->
             <div class="col-md-6 mb-4">
+
+
                 <h2>{{ translations.zutaten }}</h2>
                 <ul>
                     {% for ingredient in json_recipe.recipeIngredient | default([]) %}
@@ -125,6 +128,9 @@
                     {% endfor %}
                 </ol>
 
+                <button class="print-button" onclick="window.print()">
+                    <img src="https://img.icons8.com/ios-filled/50/ffffff/print.png" alt="Print Icon">
+                </button>
 
                 <h2>{{ translations.naehrwerte }}</h2>
                 <table>
@@ -153,6 +159,8 @@
                         <td>{{ json_recipe.nutrition.servingCalories | default("0 kcal") }}</td>
                     </tr>
                 </table>
+
+                
             </div>
         </div>
     </div>

@@ -11,7 +11,7 @@
 
 {% block content %}
 
-<!-- Jumbotron -->
+<!-- Jumbotron --> 
 <div class="jumbotron text-center bg-light p-5 custom-bg-color1">
     <h1 class="display-4">{{ translations.willkommen }}</h1>
     <p class="lead">{{ translations.aufbau }}</p>
@@ -32,6 +32,9 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ json.name }}</h5>
                         <p class="card-text">{{ json.descriptionShort }}</p>
+                        <p class="card-text author-name">
+                            &copy; {{ json.author.name }}
+                        </p>
                     </div>
                 </div>
             </a>
@@ -41,6 +44,7 @@
         {% endfor %}
     </div>
 </div>
+
 
 
 

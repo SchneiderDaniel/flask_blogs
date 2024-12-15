@@ -1,0 +1,26 @@
+.print-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #962828;
+    color: white;
+    border: none;
+    padding: 0;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+}
+
+.print-button:hover {
+    background-color: #742424;
+}
+
+.print-button img {
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin-top: 14px;
+}
