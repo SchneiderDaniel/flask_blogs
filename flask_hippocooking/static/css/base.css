@@ -40,9 +40,39 @@ body,html {
 }
 
 /* Style headings */
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Quicksand', sans-serif; /* Use a bold or heavier weight if needed */
+h1 {
+    font-family: 'Quicksand', sans-serif;
     font-weight: 600; /* Optional: change to 400 for a normal weight */
+}
+
+h2 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400; /* Optional: change to 400 for a normal weight */
+    font-size: 1.5rem; /* Adjust this value to your preference */
+}
+
+h3 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    font-size: 1.25rem; /* Adjust this value to your preference */
+}
+
+h4 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    font-size: 1.1rem; /* Adjust this value to your preference */
+}
+
+h5 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    font-size: 1rem; /* Adjust this value to your preference */
+}
+
+h6 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem; /* Adjust this value to your preference */
 }
 
 /* Styling for paragraphs and content */
