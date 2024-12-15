@@ -1,24 +1,71 @@
-.print-button {
+.button-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px
+}
+
+.icon-button {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    background-color: #962828;
     color: white;
     border: none;
-    padding: 0;
+    padding: 10px;
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
     width: 50px;
     height: 50px;
-    margin: 5px;
 }
 
-.print-button:hover {
-    background-color: #742424;
+/* Print Button bleibt unverändert */
+.icon-button.print {
+    background-color: #007BFF;
 }
 
-.print-button img {
+.icon-button.print:hover {
+    background-color: #0056b3;
+}
+
+/* Instagram Button */
+.icon-button.instagram {
+    background-color: #E1306C;
+}
+
+.icon-button.instagram:hover {
+    background-color: #C13584;
+}
+
+/* Facebook Button */
+.icon-button.facebook {
+    background-color: #1877F2;
+}
+
+.icon-button.facebook:hover {
+    background-color: #166FE5;
+}
+
+/* Pinterest Button */
+.icon-button.pinterest {
+    background-color: #E60023;
+}
+
+.icon-button.pinterest:hover {
+    background-color: #C1351D;
+}
+
+/* WhatsApp Button */
+.icon-button.whatsapp {
+    background-color: #25D366;
+}
+
+.icon-button.whatsapp:hover {
+    background-color: #128C7E;
+}
+
+.icon-button img {
     display: block;
     width: 24px;
     height: 24px;
