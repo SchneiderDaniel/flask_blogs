@@ -1,4 +1,4 @@
-## 1. Stichpunkte
+# 1. Stichpunkte
 
 Bitte schreibe den Inhalt unten in eine json struktur wie hier
 recipeInstructions": [
@@ -12,6 +12,9 @@ Der key "name" soll eine Zusammenfassung in 1-3 worten von "text" sein.
 zusätzlich, kannst du hier auch die Rechtschreibung prüfen und korrigieren, aber nur wenig verändern?
 Der Text ist:
 
+
+# 1.1  Prompt for json creation:
+write me the following as a json with only text and no attributes:
 
 # 2. Prompt um die Nutrion werte zu schätzen.
 
@@ -89,7 +92,5 @@ bitte füge in dieser json zu recipeInstructions für jedes element einen  key "
 - Backen
 - Einfach
 
-# Prompt for json creation:
-write me the following as a json with only text and no attributes:
 
 
