@@ -37,7 +37,7 @@
     {
         "@context": "https://schema.org/",
         "@type": "ImageObject",
-        "contentUrl": "https://hippocooking.com/images/{{ recipe_id | default('00000') }}",
+        "contentUrl": "https://hippocooking.com/images/{{ recipe_id | default('00000') }}.jpg",
         "name": "{{ json_recipe.name | default('Rezept') }}",
         "description": "An image of {{ json_recipe.description | default('a delicious recipe') }}.",
         "author": {
