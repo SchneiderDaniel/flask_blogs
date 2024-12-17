@@ -2,9 +2,9 @@
 
 {% block head %}
 
-<link rel="stylesheet" type="text/css" href={{ url_for('static', filename='css/tile.css') }}>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/tile.css') }}">
 <meta name="description" content="{{ translations_base.beschreibung }}">
-
+<meta property="og:image" content="url_for('static', filename='resources/images/logo_huge.png')">
 
 {% endblock %}
 

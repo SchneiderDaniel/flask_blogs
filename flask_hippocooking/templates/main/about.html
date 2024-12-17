@@ -2,8 +2,8 @@
 
 {% block head %}
 
-<link rel="stylesheet" type="text/css" href={{ url_for('static', filename='css/about.css') }}>
-
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/about.css') }}">
+<meta property="og:image" content="url_for('static', filename='resources/images/logo_huge.png')">
 {% endblock %}
 
 

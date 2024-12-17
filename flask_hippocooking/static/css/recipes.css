@@ -18,6 +18,7 @@
     border-radius: 5px;
     width: 50px;
     height: 50px;
+    transition: transform 0.2s ease;
 }
 
 /* Print Button bleibt unverändert */
@@ -70,4 +71,8 @@
     width: 24px;
     height: 24px;
     margin-top: 16px;
+}
+
+.icon-button:hover {
+    transform: scale(1.1);
 }

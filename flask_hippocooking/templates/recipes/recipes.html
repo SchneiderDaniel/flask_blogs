@@ -3,6 +3,7 @@
 {% block head %}
 
 <meta name="description" content="{{ json_recipe.description | default('Leckere Kekse.') }}">
+<meta property="og:image" content="https://hippocooking.com/images/{{ recipe_id | default('00000') }}.jpg">
 
 <!-- Google Recipe Structured Data using JSON-LD -->
 <script type="application/ld+json">
@@ -10,7 +11,7 @@
         "@context": "https://schema.org",
         "@type": "Recipe",
         "name": "{{ json_recipe.name | default('Klassische Schokoladenkekse') }}",
-        "image": "https://hippocooking.com/images/{{ recipe_id | default('00000') }}",
+        "image": "https://hippocooking.com/images/{{ recipe_id | default('00000') }}.jpg",
         "author": {
             "@type": "Person",
             "name": "{{ json_recipe.author.name | default('Unbekannt') }}"
@@ -42,14 +43,41 @@
         "author": {
             "@type": "Person",
             "name": "{{ json_recipe.author.name | default('Unbekannt') }}"
-        },
+        }
     }
 </script>
 
 <script src="{{url_for('static', filename='js/full_screen_image.js')}}"></script>
 
 
-<link rel="stylesheet" type="text/css" href={{ url_for('static', filename='css/recipes.css' ) }}>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/recipes.css' ) }}">
+
+<script>
+    function copyToClipboard() {
+        const url = window.location.href;
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(url).then(() => {
+                alert("Link copied to clipboard!");
+            }).catch(err => {
+                console.error("Error copying to clipboard", err);
+                fallbackCopy(url);
+            });
+        } else {
+            fallbackCopy(url);
+        }
+    }
+
+    function fallbackCopy(text) {
+        const tempInput = document.createElement("input");
+        document.body.appendChild(tempInput);
+        tempInput.value = text;
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+        alert("Link copied to clipboard!");
+    }
+
+</script>
 
 {% endblock %}
 
@@ -130,32 +158,43 @@
 
                 <div class="button-row">
                     <!-- Print Button -->
-                    <button class="icon-button print" onclick="window.print()">
+                    <button type="button" class="icon-button print" onclick="window.print()"
+                        aria-label="Print this page">
                         <img src="{{ url_for('static', filename='resources/icons/print.png') }}" alt="Print Icon">
                     </button>
-                
-                    <!-- Instagram Share Button -->
-                    <button class="icon-button instagram" onclick="window.open('https://www.instagram.com/share?url=' + encodeURIComponent(window.location.href), '_blank')">
-                        <img src="{{ url_for('static', filename='resources/icons/instagram.png') }}" alt="Instagram Icon">
+
+                    <!-- Instagram Share Button - Copy URL -->
+                    <button type="button" class="icon-button instagram" onclick="copyToClipboard()"
+                        aria-label="Copy link to share on Instagram">
+                        <img src="{{ url_for('static', filename='resources/icons/instagram.png') }}"
+                            alt="Instagram Icon">
                     </button>
-                
+
                     <!-- Facebook Share Button -->
-                    <button class="icon-button facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), '_blank')">
+                    <button type="button" class="icon-button facebook"
+                        onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), '_blank', 'noopener,noreferrer')"
+                        aria-label="Share this page on Facebook">
                         <img src="{{ url_for('static', filename='resources/icons/facebook.png') }}" alt="Facebook Icon">
                     </button>
-                
+
                     <!-- Pinterest Share Button -->
-                    <button class="icon-button pinterest" onclick="window.open('https://www.pinterest.com/pin/create/button/?url=' + encodeURIComponent(window.location.href), '_blank')">
-                        <img src="{{ url_for('static', filename='resources/icons/pinterest.png') }}" alt="Pinterest Icon">
+                    <button type="button" class="icon-button pinterest"
+                        onclick="window.open('https://www.pinterest.com/pin/create/button/?url=' + encodeURIComponent(window.location.href), '_blank', 'noopener,noreferrer')"
+                        aria-label="Share this page on Pinterest">
+                        <img src="{{ url_for('static', filename='resources/icons/pinterest.png') }}"
+                            alt="Pinterest Icon">
                     </button>
-                
+
                     <!-- WhatsApp Share Button -->
-                    <button class="icon-button whatsapp" onclick="window.open('https://api.whatsapp.com/send?text=' + encodeURIComponent(window.location.href), '_blank')">
+                    <button type="button" class="icon-button whatsapp"
+                        onclick="window.open('https://api.whatsapp.com/send?text=' + encodeURIComponent(window.location.href), '_blank', 'noopener,noreferrer')"
+                        aria-label="Share this page on WhatsApp">
                         <img src="{{ url_for('static', filename='resources/icons/whatsapp.png') }}" alt="WhatsApp Icon">
                     </button>
                 </div>
-                
-            
+
+
+
 
                 <h2>{{ translations.naehrwerte }}</h2>
                 <table>
@@ -185,7 +224,7 @@
                     </tr>
                 </table>
 
-                
+
             </div>
         </div>
     </div>
