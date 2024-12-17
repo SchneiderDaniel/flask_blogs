@@ -5,6 +5,8 @@
 <meta name="description" content="{{ json_recipe.description | default('Leckere Kekse.') }}">
 <meta property="og:image" content="https://hippocooking.com/images/{{ recipe_id | default('00000') }}.jpg">
 
+<title>{{ json_recipe.name | default("Recipe") }}</title>
+
 <!-- Google Recipe Structured Data using JSON-LD -->
 <script type="application/ld+json">
     {
