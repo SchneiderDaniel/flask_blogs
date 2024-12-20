@@ -10,3 +10,11 @@
     text-transform: capitalize; /* Capitalize the first letter of each word */
     text-align: center; /* Centers the text */
 }
+
+.keywords-tags {
+    display: flex;
+    justify-content: center;  /* Centers the child elements horizontally */
+    flex-wrap: wrap;          /* Allows the tags to wrap to the next line if needed */
+    gap: 10px;                /* Optional, adds spacing between the tags */
+    text-align: center;       /* Centers the text within each tag */
+}

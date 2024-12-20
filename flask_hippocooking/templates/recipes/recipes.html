@@ -107,17 +107,17 @@
                     </a>
 
                     <!-- Keywords as tags -->
-                        {% if json_recipe.keywords %}
-                            {% set keywords = json_recipe.keywords.split(',') %}
-                            <div class="keywords-tags">
-                                {% for keyword in keywords %}
-                                    <span class="recipe-tag">{{ keyword.strip() }}</span>
-                                {% endfor %}
-                            </div>
-                        {% else %}
-                            {{ translations.keine_stichworte }}
-                        {% endif %}
-                    </p>
+                    {% if json_recipe.keywords %}
+                        {% set keywords = json_recipe.keywords.split(',') %}
+                        <div class="keywords-tags">
+                            {% for keyword in keywords %}
+                                <span class="recipe-tag">{{ keyword.strip() }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ translations.keine_stichworte }}
+                    {% endif %}
+                    <br>
 
                     <p><strong>{{ translations.autor }}:</strong> {{ json_recipe.author.name | default("Unbekannt") }}</p>
                     <p><strong>{{ translations.veroeffentlichungsdatum }}:</strong> {{ json_recipe.datePublished | default("2024-01-01") }}</p>

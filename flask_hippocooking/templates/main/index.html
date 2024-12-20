@@ -55,6 +55,18 @@
                          alt="Image {{ json.name }}" 
                          title="{{ json.descriptionShort | default('Rezept') }}" 
                          style="pointer-events: none;">
+                    
+                    <!-- Keywords as tags -->
+                    <!-- {% if json.keywords %}
+                    {% set keywords = json.keywords.split(',') %}
+                    <div class="keywords-tags">
+                        {% for keyword in keywords %}
+                            <span class="recipe-tag">{{ keyword.strip() }}</span>
+                        {% endfor %}
+                    </div>
+                    {% endif %} -->
+
+
                     <div class="card-body">
                         <h2 class="card-title">{{ json.name }}</h2>
                         <p class="card-text">{{ json.descriptionShort }}</p>
@@ -65,6 +77,10 @@
                         {% if json.recipeCuisine %}
                             <p class="card-text recipe-tag"> {{ json.recipeCuisine }}</p>
                         {% endif %}
+
+                         
+                        
+
                     </div>
                 </div>
             </a>
