@@ -1,4 +1,11 @@
-# 1. Stichpunkte
+# 0 Text 
+Bitte korrigiere diesen Text, aber behalte den Stil des textes: 
+
+
+# 1 Prompt for json creation:
+write me the following as a json with only text and no attributes:
+
+# 1.1 Stichpunkte
 
 Bitte schreibe den Inhalt unten in eine json struktur wie hier
 recipeInstructions": [
@@ -12,9 +19,6 @@ Der key "name" soll eine Zusammenfassung in 1-3 worten von "text" sein.
 zusätzlich, kannst du hier auch die Rechtschreibung prüfen und korrigieren, aber nur wenig verändern?
 Der Text ist:
 
-
-# 1.1  Prompt for json creation:
-write me the following as a json with only text and no attributes:
 
 # 2. Prompt um die Nutrion werte zu schätzen.
 
@@ -32,11 +36,9 @@ Ganz Unten findest du ein rezept als json im google recipe schema. Kannst du bit
 Hier ist das Rezept als json:
 
 
-
-
 # 3. Prompt for Translation
 
-Could you please translate the values of this JSON into German (de), English (en), Spanish (es) and French (fr)? For each language, provide a separate output. Please do not translate the types in the json. Also make sure that prepTime, cookTime and totalTime are in the ISO 8601 timeformat. But do not add 0 minutes or 0 hours in the format. So no 0H or 0M: 
+Could you please translate the values of this JSON into German (de), English (en), Spanish (es) and French (fr)? Also correct writing error, but keep the changes minimal. For each language, provide a separate output. Please do not translate the types in the json. Also make sure that prepTime, cookTime and totalTime are in the ISO 8601 timeformat. But do not add 0 minutes or 0 hours in the format. So no 0H or 0M: 
 
 
 
