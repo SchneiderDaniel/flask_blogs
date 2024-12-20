@@ -143,6 +143,8 @@ def robots_txt():
 def sitemap_xml():
     xml = ['<?xml version="1.0" encoding="UTF-8"?>']
     xml.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
+    xml.append(' xmlns:xhtml="http://www.w3.org/1999/xhtml">')
+
 
     # Get array of locale
     locale_array = current_app.config['BABEL_SUPPORTED_LOCALES']

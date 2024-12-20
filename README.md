@@ -23,6 +23,10 @@ cd flask_hippocooking
 .\env\Scripts\activate   
 python run.py
 
+or 
+
+.\run_dev_server.bat
+
 
 ## Docker Cheatsheet
 
