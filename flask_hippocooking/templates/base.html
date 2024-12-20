@@ -13,17 +13,27 @@
     <meta name="keywords" content="Recipes, tasty">
     {% endblock %}
 
-    
 
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-43DKSZYBDG"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+        // Überprüfe, ob die URL "localhost" enthält
+        if (window.location.hostname !== "localhost") {
+            // Google tag (gtag.js) Code hinzufügen, wenn nicht localhost
+            var script = document.createElement("script");
+            script.async = true;
+            script.src = "https://www.googletagmanager.com/gtag/js?id=G-43DKSZYBDG";
+            document.head.appendChild(script);
 
-        gtag('config', 'G-43DKSZYBDG');
+            script.onload = function() {
+                var gtagScript = document.createElement("script");
+                gtagScript.innerHTML = `
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', 'G-43DKSZYBDG');
+                `;
+                document.head.appendChild(gtagScript);
+            };
+        }
     </script>
 
     {% block head %}{% endblock %}
