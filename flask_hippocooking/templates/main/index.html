@@ -3,8 +3,9 @@
 {% block head %}
 
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/tile.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/tags.css') }}">
 <meta name="description" content="{{ translations_base.beschreibung }}">
-<meta property="og:image" content="url_for('static', filename='resources/images/logo_huge.png')">
+<meta property="og:image" content="{{ url_for('static', filename='resources/images/logo_huge.png') }}">
 <title>{{ translations.titel }}</title>
 {% endblock %}
 
@@ -16,10 +17,7 @@
     <h1 class="display-4">{{ translations.willkommen }}</h1>
     <p class="lead">{{ translations.aufbau }}</p>
     <img src="{{ url_for('static', filename='resources/images/logo_huge.png') }}" alt="Logo of Hippocooking.com" title="Hippocooking.com Logo" style="min-width: 150px; max-width: 20%; height: auto; pointer-events: none;">
-
-
 </div>
-
 
 <div class="container py-4">
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="tile-gallery">
@@ -31,11 +29,15 @@
                     <img src="{{ url_for('images.serve_image', image_id=id_item) }}" 
                         class="card-img-top lazy-image" alt="Image {{ json.name }}" title="{{ json.descriptionShort | default('Rezept') }}" style="pointer-events: none;">
                     <div class="card-body">
-                        <h2 class="card-title">{{ json.name }}</h5>
+                        <h2 class="card-title">{{ json.name }}</h2>
                         <p class="card-text">{{ json.descriptionShort }}</p>
                         <p class="card-text author-name">
                             &copy; {{ json.author.name }}
                         </p>
+                        <!-- Add the recipe cuisine tag here -->
+                        {% if json.recipeCuisine %}
+                            <p class="card-text recipe-tag"> {{ json.recipeCuisine }}</p>
+                        {% endif %}
                     </div>
                 </div>
             </a>
@@ -46,11 +48,6 @@
     </div>
 </div>
 
-
-
-
-<!-- <img class="img img-fluid" src="{{ url_for('static', filename='resources/imgage/no_image.jpg') }}"> -->
-
-<script src="{{url_for('static', filename='js/lazy_image_loading.js')}}"></script>
+<script src="{{ url_for('static', filename='js/lazy_image_loading.js') }}"></script>
 
 {% endblock %}

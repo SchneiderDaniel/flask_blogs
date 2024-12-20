@@ -53,6 +53,7 @@
 
 
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/recipes.css' ) }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/tags.css' ) }}">
 
 <script>
     function copyToClipboard() {
@@ -92,10 +93,9 @@
 
     <div class="container mt-4">
         <div class="row">
-            <!-- First text block -->
+           <!-- First text block -->
             <div class="col-md-6 mb-4">
-                <p><strong>{{ translations.beschreibung }}:</strong> {{ json_recipe.description | default("Description
-                    not available.") }}</p>
+                <p><strong>{{ translations.beschreibung }}:</strong> {{ json_recipe.description | default("Description not available.") }}</p>
 
                 <div style="text-align: center;">
                     <a href="{{ url_for('images.serve_image', image_id=recipe_id) }}" target="_blank"
@@ -106,30 +106,31 @@
                             style="max-width: 100%; height: auto;" width="800" height="600" loading="lazy" />
                     </a>
 
-                    <p><strong>{{ translations.autor }}:</strong> {{ json_recipe.author.name | default("Unbekannt") }}
+                    <!-- Keywords as tags -->
+                        {% if json_recipe.keywords %}
+                            {% set keywords = json_recipe.keywords.split(',') %}
+                            <div class="keywords-tags">
+                                {% for keyword in keywords %}
+                                    <span class="recipe-tag">{{ keyword.strip() }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ translations.keine_stichworte }}
+                        {% endif %}
                     </p>
-                    <p><strong>{{ translations.veroeffentlichungsdatum }}:</strong> {{ json_recipe.datePublished |
-                        default("2024-01-01") }}</p>
-                    <p><strong>{{ translations.kategorie }}:</strong> {{ json_recipe.recipeCategory |
-                        default("Allgemein") }}</p>
-                    <p><strong>{{ translations.kueche }}:</strong> {{ json_recipe.recipeCuisine | default("Unbekannt")
-                        }}</p>
-                    <p><strong>{{ translations.stichworte }}:</strong> {{ json_recipe.keywords | default("Rezept") }}
-                    </p>
+
+                    <p><strong>{{ translations.autor }}:</strong> {{ json_recipe.author.name | default("Unbekannt") }}</p>
+                    <p><strong>{{ translations.veroeffentlichungsdatum }}:</strong> {{ json_recipe.datePublished | default("2024-01-01") }}</p>
+                    <p><strong>{{ translations.kategorie }}:</strong> {{ json_recipe.recipeCategory | default("Allgemein") }}</p>
+                    <p><strong>{{ translations.kueche }}:</strong> {{ json_recipe.recipeCuisine | default("Unbekannt") }}</p>
+
+                    
+                    
                     <br>
-                    <p><strong>{{ translations.vorbereitungszeit }}:</strong> {{ json_recipe.prepTime | default("PT0M")
-                        | replace("PT", "") }}</p>
-                    <p><strong>{{ translations.backzeit }}:</strong> {{ json_recipe.cookTime | default("PT0M") |
-                        replace("PT", "") }}</p>
-
-                    <p><strong>{{ translations.gesamtzeit }}:</strong> {{ json_recipe.totalTime | default("PT0M") |
-                        replace("PT", "") }}</p>
-
-                    <p><strong>{{ translations.ergibt }}:</strong> {{ json_recipe.recipeYield | default("1 Portion") }}
-                    </p>
-
-
-                    <!-- </div> -->
+                    <p><strong>{{ translations.vorbereitungszeit }}:</strong> {{ json_recipe.prepTime | default("PT0M") | replace("PT", "") }}</p>
+                    <p><strong>{{ translations.backzeit }}:</strong> {{ json_recipe.cookTime | default("PT0M") | replace("PT", "") }}</p>
+                    <p><strong>{{ translations.gesamtzeit }}:</strong> {{ json_recipe.totalTime | default("PT0M") | replace("PT", "") }}</p>
+                    <p><strong>{{ translations.ergibt }}:</strong> {{ json_recipe.recipeYield | default("1 Portion") }}</p>
                 </div>
             </div>
 

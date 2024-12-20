@@ -1,0 +1,12 @@
+.recipe-tag {
+    display: inline-block; /* Makes the tag stay in one line */
+    background-color: #F8F8EC ; /* Background color of the tag */
+    color: black; /* Text color */
+    padding: 5px 10px; /* Padding around the text */
+    border-radius: 20px; /* Rounded corners to make it pill-shaped */
+    font-size: 0.9em; /* Slightly smaller font */
+    margin-top: 10px; /* Spacing from the previous content */
+    font-weight: bold; /* Makes the text bold */
+    text-transform: capitalize; /* Capitalize the first letter of each word */
+    text-align: center; /* Centers the text */
+}
