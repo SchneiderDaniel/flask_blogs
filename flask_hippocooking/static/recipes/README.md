@@ -3,7 +3,7 @@ Bitte korrigiere diesen Text, aber behalte den Stil des textes:
 
 
 # 1 Prompt for json creation:
-write me the following as a json with only text and no attributes:
+"Please provide the following list of recipe ingredients in JSON format. Each ingredient should be listed on a new line, with only the text of the ingredient (no additional attributes)."
 
 # 1.1 Stichpunkte
 
