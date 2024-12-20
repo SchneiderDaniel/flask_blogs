@@ -72,6 +72,11 @@ def process_images_in_folder(folder_path):
             # Define the processed image output path
             processed_image_path = os.path.join(folder_path, "p_" + filename)
 
+            # Check if the processed file is a processed image exists
+            if filename.lower().startswith('p'):
+                print(f"Skipping {filename}, already processed.")
+                continue  # Skip processed  image
+
             # Check if the processed file already exists
             if os.path.exists(processed_image_path):
                 print(f"Skipping {filename}, already processed.")
