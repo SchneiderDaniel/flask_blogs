@@ -1,14 +1,24 @@
 {% extends 'base.html' %}
 
 {% block head %}
-
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/tile.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/tags.css') }}">
 <meta name="description" content="{{ translations_base.beschreibung }}">
 <meta property="og:image" content="{{ url_for('static', filename='resources/images/logo_huge.png') }}">
 <title>{{ translations.titel }}</title>
-{% endblock %}
 
+<!-- Add Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+    /* Make sure the placeholder uses Font Awesome */
+    #search-input::placeholder {
+        font-family: "Font Awesome 5 Free", "Font Awesome", sans-serif;
+        font-weight: 900; /* Font Awesome icons use the 'solid' style */
+    }
+</style>
+
+{% endblock %}
 
 {% block content %}
 
@@ -19,15 +29,32 @@
     <img src="{{ url_for('static', filename='resources/images/logo_huge.png') }}" alt="Logo of Hippocooking.com" title="Hippocooking.com Logo" style="min-width: 150px; max-width: 20%; height: auto; pointer-events: none;">
 </div>
 
+<!-- Search Bar with Icon Inside -->
+<div class="container py-4">
+    <div class="input-group">
+        <input type="text" id="search-input" class="form-control" placeholder="&#xf002; ..." onkeyup="filterRecipes()">
+    </div>
+</div>
+
+<!-- Recipe Tiles -->
 <div class="container py-4">
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="tile-gallery">
         {% for json, id_item in zip(json_files, id_data) %}
-        <div class="col tile">
+        <div class="col tile recipe-item" 
+             data-name="{{ json.name | lower }}" 
+             data-description="{{ json.description | lower }}" 
+             data-descriptionshort="{{ json.descriptionShort | lower }}"
+             data-recipeCuisine="{{ json.recipeCuisine | lower }}" 
+             data-recipeCategory="{{ json.recipeCategory | lower }}"
+             data-keywords="{{ json.keywords | join(' ') | lower }}">
             <a href="{{ url_for('recipes.recipe', recipe_id=id_item) }}" class="text-decoration-none">
                 <div class="card h-100">
                     {% set image_id = id_item %}
                     <img src="{{ url_for('images.serve_image', image_id=id_item) }}" 
-                        class="card-img-top lazy-image" alt="Image {{ json.name }}" title="{{ json.descriptionShort | default('Rezept') }}" style="pointer-events: none;">
+                         class="card-img-top lazy-image" 
+                         alt="Image {{ json.name }}" 
+                         title="{{ json.descriptionShort | default('Rezept') }}" 
+                         style="pointer-events: none;">
                     <div class="card-body">
                         <h2 class="card-title">{{ json.name }}</h2>
                         <p class="card-text">{{ json.descriptionShort }}</p>
@@ -49,5 +76,42 @@
 </div>
 
 <script src="{{ url_for('static', filename='js/lazy_image_loading.js') }}"></script>
+
+<script>
+    function filterRecipes() {
+        console.log("filterRecipes() function is being triggered");
+
+        // Get the value from the search input
+        var input = document.getElementById('search-input').value;
+        var filter = input.toLowerCase();  // Convert the input to lowercase for case-insensitive comparison
+        
+        // Get all the recipe items
+        var items = document.getElementsByClassName('recipe-item');
+        
+        // Loop through each recipe item and check if any of the fields match the search filter
+        for (var i = 0; i < items.length; i++) {
+            var name = items[i].getAttribute('data-name');
+            var descriptionShort = items[i].getAttribute('data-descriptionshort');
+            var description = items[i].getAttribute('data-description');
+            var recipeCuisine = items[i].getAttribute('data-recipeCuisine');
+            var recipeCategory = items[i].getAttribute('data-recipeCategory');
+            var keywords = items[i].getAttribute('data-keywords');
+            
+            // Check if any field contains the search filter (case-insensitive)
+            if (
+                name.includes(filter) || 
+                descriptionShort.includes(filter) || 
+                description.includes(filter) || 
+                recipeCuisine.includes(filter) || 
+                recipeCategory.includes(filter) || 
+                keywords.includes(filter)
+            ) {
+                items[i].style.display = '';  // Show the item if it matches
+            } else {
+                items[i].style.display = 'none';  // Hide the item if it does not match
+            }
+        }
+    }
+</script>
 
 {% endblock %}
