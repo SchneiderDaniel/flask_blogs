@@ -34,6 +34,48 @@
     }
 </script>
 
+<!-- Google webpage Structured Data using JSON-LD -->
+
+<script type="application/ld+json" id="image-schema">
+
+        {
+            "@context": "http://schema.org",
+            "@type": "WebPage",
+            "mainEntityOfPage": {
+              "@type": "ImageObject",
+              "url": "https://hippocooking.com/images/{{ recipe_id | default('00000') }}.jpg",
+              "height": "800",
+              "width": "1201"
+            }
+          }
+</script>
+
+<script>
+    window.onload = function() {
+      var imageUrl = "https://hippocooking.com/images/{{ recipe_id | default('00000') }}.jpg";
+      var img = new Image();
+      img.src = imageUrl;
+  
+      img.onload = function() {
+        var imageWidth = img.width;
+        var imageHeight = img.height;
+  
+        // Find the JSON-LD script element by ID
+        var jsonLdScript = document.getElementById('image-schema');
+        if (jsonLdScript) {
+          var jsonData = JSON.parse(jsonLdScript.textContent);
+          jsonData.mainEntityOfPage.width = imageWidth;
+          jsonData.mainEntityOfPage.height = imageHeight;
+          jsonLdScript.textContent = JSON.stringify(jsonData);
+        }
+      };
+  
+      img.onerror = function() {
+        console.error("Image failed to load: " + imageUrl);
+      };
+    };
+  </script>
+
 <!-- Iamge Structured Data using JSON-LD -->
 <script type="application/ld+json">
     {
@@ -93,9 +135,10 @@
 
     <div class="container mt-4">
         <div class="row">
-           <!-- First text block -->
+            <!-- First text block -->
             <div class="col-md-6 mb-4">
-                <p><strong>{{ translations.beschreibung }}:</strong> {{ json_recipe.description | default("Description not available.") }}</p>
+                <p><strong>{{ translations.beschreibung }}:</strong> {{ json_recipe.description | default("Description
+                    not available.") }}</p>
 
                 <div style="text-align: center;">
                     <a href="{{ url_for('images.serve_image', image_id=recipe_id) }}" target="_blank"
@@ -108,29 +151,37 @@
 
                     <!-- Keywords as tags -->
                     {% if json_recipe.keywords %}
-                        {% set keywords = json_recipe.keywords.split(',') %}
-                        <div class="keywords-tags">
-                            {% for keyword in keywords %}
-                                <span class="recipe-tag">{{ keyword.strip() }}</span>
-                            {% endfor %}
-                        </div>
+                    {% set keywords = json_recipe.keywords.split(',') %}
+                    <div class="keywords-tags">
+                        {% for keyword in keywords %}
+                        <span class="recipe-tag">{{ keyword.strip() }}</span>
+                        {% endfor %}
+                    </div>
                     {% else %}
-                        {{ translations.keine_stichworte }}
+                    {{ translations.keine_stichworte }}
                     {% endif %}
                     <br>
 
-                    <p><strong>{{ translations.autor }}:</strong> {{ json_recipe.author.name | default("Unbekannt") }}</p>
-                    <p><strong>{{ translations.veroeffentlichungsdatum }}:</strong> {{ json_recipe.datePublished | default("2024-01-01") }}</p>
-                    <p><strong>{{ translations.kategorie }}:</strong> {{ json_recipe.recipeCategory | default("Allgemein") }}</p>
-                    <p><strong>{{ translations.kueche }}:</strong> {{ json_recipe.recipeCuisine | default("Unbekannt") }}</p>
+                    <p><strong>{{ translations.autor }}:</strong> {{ json_recipe.author.name | default("Unbekannt") }}
+                    </p>
+                    <p><strong>{{ translations.veroeffentlichungsdatum }}:</strong> {{ json_recipe.datePublished |
+                        default("2024-01-01") }}</p>
+                    <p><strong>{{ translations.kategorie }}:</strong> {{ json_recipe.recipeCategory |
+                        default("Allgemein") }}</p>
+                    <p><strong>{{ translations.kueche }}:</strong> {{ json_recipe.recipeCuisine | default("Unbekannt")
+                        }}</p>
 
-                    
-                    
+
+
                     <br>
-                    <p><strong>{{ translations.vorbereitungszeit }}:</strong> {{ json_recipe.prepTime | default("PT0M") | replace("PT", "") }}</p>
-                    <p><strong>{{ translations.backzeit }}:</strong> {{ json_recipe.cookTime | default("PT0M") | replace("PT", "") }}</p>
-                    <p><strong>{{ translations.gesamtzeit }}:</strong> {{ json_recipe.totalTime | default("PT0M") | replace("PT", "") }}</p>
-                    <p><strong>{{ translations.ergibt }}:</strong> {{ json_recipe.recipeYield | default("1 Portion") }}</p>
+                    <p><strong>{{ translations.vorbereitungszeit }}:</strong> {{ json_recipe.prepTime | default("PT0M")
+                        | replace("PT", "") }}</p>
+                    <p><strong>{{ translations.backzeit }}:</strong> {{ json_recipe.cookTime | default("PT0M") |
+                        replace("PT", "") }}</p>
+                    <p><strong>{{ translations.gesamtzeit }}:</strong> {{ json_recipe.totalTime | default("PT0M") |
+                        replace("PT", "") }}</p>
+                    <p><strong>{{ translations.ergibt }}:</strong> {{ json_recipe.recipeYield | default("1 Portion") }}
+                    </p>
                 </div>
             </div>
 

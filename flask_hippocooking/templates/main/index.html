@@ -18,6 +18,38 @@
     }
 </style>
 
+<!-- Structured Data (JSON-LD) for Site Navigation -->
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SiteNavigationElement",
+      "name": "Main Navigation",
+      "url": "https://www.hippocooking.com",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "url": "https://www.hippocooking.com"
+      },
+      "about": {
+        "@type": "WebPage",
+        "url": "https://www.hippocooking.com/about"
+      },
+      "relatedLink": [
+        {
+          "@type": "WebPage",
+          "url": "https://www.hippocooking.com/impressum"
+        },
+        {
+          "@type": "WebPage",
+          "url": "https://www.hippocooking.com/dataprotection"
+        }
+      ]
+    }
+  </script>
+  
+  
+  
+
+
 {% endblock %}
 
 {% block content %}
