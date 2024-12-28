@@ -63,6 +63,7 @@ bitte füge in dieser json zu recipeInstructions für jedes element einen  key "
 - Kuchen
 - Weihnachtsplätzchen
 - Kekse
+- Frühstück
 
 
 
@@ -79,6 +80,7 @@ bitte füge in dieser json zu recipeInstructions für jedes element einen  key "
 - Griechisch
 - Österreichisch
 - Schweizerisch
+- Englisch
 
 
 ## Keywords
