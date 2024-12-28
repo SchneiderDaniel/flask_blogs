@@ -2,6 +2,9 @@ import os
 from PIL import Image, ImageDraw, ImageFont
 
 def add_watermark(image, watermark_text="Hippocooking.com"):
+    
+    # return image
+
     # Get image size
     width, height = image.size
 
@@ -39,7 +42,7 @@ def add_watermark(image, watermark_text="Hippocooking.com"):
 
 
 
-def scale_image(image, target_width=1080):
+def scale_image(image, target_width=1440):
     # Get the current width and height of the image
     width, height = image.size
     aspect_ratio = height / width
