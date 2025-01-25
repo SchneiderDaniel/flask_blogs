@@ -73,4 +73,13 @@ or
 `docker-compose up --build --force-recreate`
 
 
+docker-compose down
+docker-compose up -d
+
 http://localhost:5000/?lang=de
+
+
+# Cert
+docker exec -it certbot /bin/sh
+certbot certonly --webroot -w /var/www/certbot -d hippocooking.com -d www.hippocooking.com
+exit
