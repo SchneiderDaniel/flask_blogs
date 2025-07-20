@@ -17,6 +17,7 @@ LOGFILE="${LOGDIR}/${LOGPREFIX}$(date '+%Y%m%d_%H%M%S').log"
     "
 
     echo "Restarting Docker services..."
+    cd /root/flask_blogs || { echo 'Failed to change directory'; exit 1; }
     docker-compose restart
 
     echo "Certificate renewal completed at $(date)"
