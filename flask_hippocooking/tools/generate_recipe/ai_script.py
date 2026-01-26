@@ -8,7 +8,7 @@ from google import genai
 from google.genai import types
 
 # --- CONFIGURATION ---
-BASE_DIR = Path("./static/recipes")
+BASE_DIR = Path("../../static/recipes")
 LANGUAGES = ["de", "en", "es", "fr"]
 
 TAXONOMY = {
@@ -33,7 +33,7 @@ TAXONOMY = {
 }
 
 # --- API KEY LOADER ---
-def load_api_key(filename=".geminikey.txt"):
+def load_api_key(filename="../../.geminikey.txt"):
     p = Path(filename)
     if not p.exists():
         return None
