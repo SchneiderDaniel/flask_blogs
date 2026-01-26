@@ -40,14 +40,9 @@ def load_api_key(filename="../../.geminikey.txt"):
     return p.read_text(encoding="utf-8").strip()
 
 # --- UTILS ---
-def get_next_recipe_id():
-    existing_ids = []
-    for lang in LANGUAGES:
-        path = BASE_DIR / lang
-        if path.exists():
-            existing_ids.extend([int(f.stem) for f in path.glob("*.json") if f.stem.isdigit()])
-    next_num = max(existing_ids) + 1 if existing_ids else 0
-    return f"{next_num:05d}"
+def validate_id(recipe_id):
+    """Checks if the ID is exactly 5 digits."""
+    return recipe_id.isdigit() and len(recipe_id) == 5
 
 def get_concatenated_input():
     desc = desc_input.get("1.0", tk.END).strip()
@@ -60,17 +55,15 @@ def get_concatenated_input():
     return f"1. Description:\n{desc}\n\n2. Ingredients:\n{ingr}\n\n3. Instruction:\n{inst}"
 
 # --- CORE AGENT ---
-def run_agent(recipe_text):
+def run_agent(recipe_text, recipe_id):
     api_key = load_api_key()
     if not api_key:
         messagebox.showerror("Error", "Missing API Key in .geminikey.txt")
         return
     
     client = genai.Client(api_key=api_key)
-    recipe_id = get_next_recipe_id()
     current_date = datetime.date.today().isoformat()
     
-    # Reference structure for the AI
     example_format = {
         "@context": "https://schema.org",
         "@type": "Recipe",
@@ -150,7 +143,7 @@ def run_agent(recipe_text):
                 with open(file_path, "w", encoding="utf-8") as f:
                     json.dump(all_languages_json[lang], f, indent=2, ensure_ascii=False)
         
-        messagebox.showinfo("Success", f"Recipe ID {recipe_id} generated and saved for all languages.")
+        messagebox.showinfo("Success", f"Recipe ID {recipe_id} generated and saved successfully.")
 
     except Exception as e:
         messagebox.showerror("Error", f"An error occurred: {str(e)}")
@@ -158,16 +151,18 @@ def run_agent(recipe_text):
 # --- UI LOGIC ---
 def on_preview():
     text = get_concatenated_input()
+    recipe_id = id_input.get().strip()
+    
     if not text:
-        messagebox.showwarning("Warning", "Please fill in all fields to see a preview.")
+        messagebox.showwarning("Warning", "Please fill in all text fields.")
         return
     
     preview_win = tk.Toplevel(root)
-    preview_win.title("Final Script Input Preview")
+    preview_win.title("Preview")
     preview_win.geometry("500x600")
     
-    lbl = tk.Label(preview_win, text="This is the string being sent to the AI:", font=("Arial", 10, "italic"))
-    lbl.pack(pady=10)
+    tk.Label(preview_win, text=f"Target Filename: {recipe_id if recipe_id else '[EMPTY ID]'}.json", font=("Arial", 10, "bold")).pack(pady=5)
+    tk.Label(preview_win, text="Prompt Content:", font=("Arial", 10, "italic")).pack(pady=5)
     
     ptxt = scrolledtext.ScrolledText(preview_win, wrap=tk.WORD)
     ptxt.insert(tk.END, text)
@@ -178,17 +173,30 @@ def on_preview():
 
 def on_submit():
     text = get_concatenated_input()
+    recipe_id = id_input.get().strip()
+    
+    if not validate_id(recipe_id):
+        messagebox.showerror("Invalid ID", "The ID must be exactly a 5-digit number (e.g., 00123).")
+        return
+        
     if not text:
         messagebox.showwarning("Warning", "Please fill in all fields.")
         return
-    run_agent(text)
+        
+    run_agent(text, recipe_id)
 
 # --- UI SETUP ---
 root = tk.Tk()
 root.title("Recipe AI Generator")
-root.geometry("600x800")
+root.geometry("600x850")
 
-# Input Fields
+# ID Field
+tk.Label(root, text="Recipe ID (5 digits, e.g. 00042)", font=("Arial", 10, "bold")).pack(pady=(15, 0))
+id_input = tk.Entry(root, font=("Arial", 12), justify='center')
+id_input.pack(padx=20, pady=5)
+id_input.insert(0, "00000") # Default placeholder
+
+# Text Fields
 tk.Label(root, text="1. Description", font=("Arial", 10, "bold")).pack(pady=(15, 0))
 desc_input = scrolledtext.ScrolledText(root, height=6)
 desc_input.pack(padx=20, pady=5, fill=tk.X)
