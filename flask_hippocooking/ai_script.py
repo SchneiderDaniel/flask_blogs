@@ -1,16 +1,16 @@
 import os
 import json
 import datetime
+import tkinter as tk
+from tkinter import messagebox, scrolledtext
 from pathlib import Path
 from google import genai
 from google.genai import types
 
 # --- CONFIGURATION ---
 BASE_DIR = Path("./static/recipes")
-INPUT_FILE = Path("recipe_input.txt")
 LANGUAGES = ["de", "en", "es", "fr"]
 
-# Taxonomy definition for the prompt
 TAXONOMY = {
     "categories": {
         "de": ["Vorspeise", "Hauptspeise", "Dessert", "Kuchen", "Kekse", "Frühstück"],
@@ -36,41 +36,40 @@ TAXONOMY = {
 def load_api_key(filename=".geminikey.txt"):
     p = Path(filename)
     if not p.exists():
-        print(f"❌ Error: {filename} not found.")
         return None
     return p.read_text(encoding="utf-8").strip()
 
 # --- UTILS ---
 def get_next_recipe_id():
-    """Checks all language folders to find the absolute highest ID."""
     existing_ids = []
     for lang in LANGUAGES:
         path = BASE_DIR / lang
         if path.exists():
             existing_ids.extend([int(f.stem) for f in path.glob("*.json") if f.stem.isdigit()])
-    
     next_num = max(existing_ids) + 1 if existing_ids else 0
     return f"{next_num:05d}"
 
+def get_concatenated_input():
+    desc = desc_input.get("1.0", tk.END).strip()
+    ingr = ingr_input.get("1.0", tk.END).strip()
+    inst = inst_input.get("1.0", tk.END).strip()
+    
+    if not desc or not ingr or not inst:
+        return None
+    
+    return f"1. Description:\n{desc}\n\n2. Ingredients:\n{ingr}\n\n3. Instruction:\n{inst}"
+
 # --- CORE AGENT ---
-def run_agent():
+def run_agent(recipe_text):
     api_key = load_api_key()
     if not api_key:
-        print("🛑 Script stopped: Missing API Key.")
+        messagebox.showerror("Error", "Missing API Key in .geminikey.txt")
         return
     
     client = genai.Client(api_key=api_key)
-
-    if not INPUT_FILE.exists():
-        print(f"❌ Error: {INPUT_FILE} not found.")
-        return
-
-    recipe_text = INPUT_FILE.read_text(encoding="utf-8")
     recipe_id = get_next_recipe_id()
     current_date = datetime.date.today().isoformat()
     
-    print(f"🚀 Analyzing ID {recipe_id} with Gemini 2.0 Flash...")
-
     # Reference structure for the AI
     example_format = {
         "@context": "https://schema.org",
@@ -100,7 +99,6 @@ def run_agent():
         }
     }
 
-    # Integration of your specific 11-point requirements
     master_prompt = f"""
         Act as a professional Culinary Data Analyst.
         Convert the input text into a structured JSON for these languages: {", ".join(LANGUAGES)}.
@@ -148,18 +146,66 @@ def run_agent():
             if lang in all_languages_json:
                 target_folder = BASE_DIR / lang
                 target_folder.mkdir(parents=True, exist_ok=True)
-                
                 file_path = target_folder / f"{recipe_id}.json"
-                
                 with open(file_path, "w", encoding="utf-8") as f:
                     json.dump(all_languages_json[lang], f, indent=2, ensure_ascii=False)
-                
-                print(f"✅ Saved: {file_path}")
-            else:
-                print(f"⚠️ Warning: Language '{lang}' missing in AI response.")
+        
+        messagebox.showinfo("Success", f"Recipe ID {recipe_id} generated and saved for all languages.")
 
     except Exception as e:
-        print(f"❌ Error: {e}")
+        messagebox.showerror("Error", f"An error occurred: {str(e)}")
 
-if __name__ == "__main__":
-    run_agent()
+# --- UI LOGIC ---
+def on_preview():
+    text = get_concatenated_input()
+    if not text:
+        messagebox.showwarning("Warning", "Please fill in all fields to see a preview.")
+        return
+    
+    preview_win = tk.Toplevel(root)
+    preview_win.title("Final Script Input Preview")
+    preview_win.geometry("500x600")
+    
+    lbl = tk.Label(preview_win, text="This is the string being sent to the AI:", font=("Arial", 10, "italic"))
+    lbl.pack(pady=10)
+    
+    ptxt = scrolledtext.ScrolledText(preview_win, wrap=tk.WORD)
+    ptxt.insert(tk.END, text)
+    ptxt.config(state=tk.DISABLED)
+    ptxt.pack(padx=10, pady=10, fill=tk.BOTH, expand=True)
+    
+    tk.Button(preview_win, text="Close", command=preview_win.destroy).pack(pady=10)
+
+def on_submit():
+    text = get_concatenated_input()
+    if not text:
+        messagebox.showwarning("Warning", "Please fill in all fields.")
+        return
+    run_agent(text)
+
+# --- UI SETUP ---
+root = tk.Tk()
+root.title("Recipe AI Generator")
+root.geometry("600x800")
+
+# Input Fields
+tk.Label(root, text="1. Description", font=("Arial", 10, "bold")).pack(pady=(15, 0))
+desc_input = scrolledtext.ScrolledText(root, height=6)
+desc_input.pack(padx=20, pady=5, fill=tk.X)
+
+tk.Label(root, text="2. Ingredients", font=("Arial", 10, "bold")).pack(pady=(15, 0))
+ingr_input = scrolledtext.ScrolledText(root, height=10)
+ingr_input.pack(padx=20, pady=5, fill=tk.X)
+
+tk.Label(root, text="3. Instruction", font=("Arial", 10, "bold")).pack(pady=(15, 0))
+inst_input = scrolledtext.ScrolledText(root, height=12)
+inst_input.pack(padx=20, pady=5, fill=tk.X)
+
+# Buttons
+btn_frame = tk.Frame(root)
+btn_frame.pack(pady=25)
+
+tk.Button(btn_frame, text="👁 Preview Text", command=on_preview, width=15, height=2).pack(side=tk.LEFT, padx=10)
+tk.Button(btn_frame, text="🚀 Generate Recipe", command=on_submit, bg="#2e7d32", fg="white", font=("Arial", 10, "bold"), width=20, height=2).pack(side=tk.LEFT, padx=10)
+
+root.mainloop()
