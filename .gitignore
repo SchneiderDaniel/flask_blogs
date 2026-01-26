@@ -2,12 +2,15 @@ env
 .env
 __pycache__
 
+
+
 *.zip
 
 #Python
 flask_hippocooking/env
 flask_hippocooking/homepage/__pycache__
 flask_hippocooking/homepage/main/__pycache__
+flask_hippocooking/.geminikey.txt
 
 
 # Env files

@@ -2,3 +2,4 @@ flask==3.0.3
 uwsgi==2.0.28; platform_system != "Windows"
 bootstrap-flask==2.4.1
 Flask-Babel==4.0.0
+google-generativeai
