@@ -6,6 +6,8 @@ from tkinter import messagebox, scrolledtext
 from pathlib import Path
 from google import genai
 from google.genai import types
+# TODO author via input + concat with the image script
+
 
 # --- CONFIGURATION ---
 BASE_DIR = Path("../../static/recipes")
